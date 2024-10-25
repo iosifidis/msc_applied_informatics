@@ -44,3 +44,7 @@ Covers assignments related to software systems technology.
 ## Conclusion
 
 This repository is an invaluable resource for students enrolled in the M.Sc. in Applied Informatics program, offering a structured and detailed compilation of academic work and projects across various courses in the curriculum.
+
+## GitHub Stats
+
+![Alt](https://repobeats.axiom.co/api/embed/cd0e5a264fcd583686230b82eeede762fb23b52a.svg "Repobeats analytics image")
