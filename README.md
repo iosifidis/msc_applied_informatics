@@ -20,7 +20,7 @@ Contains assignments related to application development and big data analysis.
   - Web development files (`index.html`, `script.js`, `styles.css`)  
   - Data files (`.csv`)  
 
-### [Cloud Service Development](https://github.com/iosifidis/msc_applied_informatics/tree/main/s1/Cloud%20Service%20Development/)
+### [Cloud Service Development](./s1/Cloud%20Service%20Development/)
 Contains excersises related to cloud service development.  
 - **Languages Used:** Java, PHP  
 - **Key Files:**   
@@ -28,14 +28,14 @@ Contains excersises related to cloud service development.
   - Eclipse Projects (`.zip`)   
   - Walkthrough files (`docx`, `pdf`)
 
-### [Programming - Software Engineering in Business](https://github.com/iosifidis/msc_applied_informatics/tree/main/s1/Programming%20-%20Software%20Engineering%20in%20Business)
+### [Programming - Software Engineering in Business](./s1/Programming%20-%20Software%20Engineering%20in%20Business)
 Assignments that involve programming and software technology applications in business.
 - **Languages Used:** Java  
 - **Key Files:**  
   - Source code (`src`)  
   - Assignment documents (`.pdf`, `.iml`)
 
-### Software Systems Engineering
+### [Software Systems Engineering](./s1/Software%20Systems%20Engineering)
 Covers assignments related to software systems technology.  
 - **Languages Used:** Various  
 - **Key Files:**  
