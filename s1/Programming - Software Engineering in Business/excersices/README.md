@@ -1,6 +1,6 @@
 # Programming - Software Engineering in Business
 
-Welcome to the repository for the Master's in Applied Informatics, specializing in Software Development and Cloud program at the University of Macedonia.
+Welcome to the repository for the Programming - Software Engineering in Business.
 
 ## [Week 2](./weeek2)
 
