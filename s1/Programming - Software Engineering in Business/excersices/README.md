@@ -25,3 +25,41 @@ In this exercise, we implemented a ClockDisplay class to simulate a digital cloc
 - **Method Calls and Incrementing Values**: The timeTick() method demonstrates handling interrelated data, where minutes affect hours.   
 
 Overall, this exercise covers essential object-oriented principles, including encapsulation, method encapsulation, data validation, and constructor usage, enhancing code robustness and readability.
+
+## [Week 4](./week4)
+
+We covered foundational Java concepts and techniques for managing data through classes and collections. These concepts are essential for creating structured and efficient applications. Below is a summary of the key points learned:
+
+1. **Using Classes and Objects in Java:**
+
+- We created classes (Main and Notebook) to define the properties and functionality of objects. For instance, the Notebook class stores notes and provides methods for adding, viewing, and deleting them.   
+- Constructors are special methods used to initialize objects. We used the Notebook constructor to set the owner of the notebook.   
+
+2. **ArrayLists and Object Collections:**
+
+- ArrayList is a dynamic data structure that allows storage of objects and automatically expands as new elements are added.   
+- We used ArrayList<String> to store notes (as String values) and ArrayList<Integer> to store integers (as Integer objects).   
+- ArrayList requires objects for data storage, so primitive types (e.g., int) need to be "wrapped" using corresponding wrapper classes (e.g., Integer).   
+
+3. **Wrapper Classes and Autoboxing/Unboxing:**
+
+- Wrapper classes (such as Integer for int) enable the storage of primitive types in collections, making it easier to use them in environments requiring objects.   
+- Autoboxing and Unboxing facilitate automatic conversion between primitives and their corresponding objects. In the programs, we saw how int values are automatically converted to Integer when stored in an ArrayList, and how Integer values are converted back to int upon retrieval.   
+
+4. **Data Management through Methods:**
+
+- Creating and using methods like storeNote, listNotes, showNote, and removeNote helps in organizing and reusing code.   
+- Each method serves a specific purpose, e.g., storeNote adds a note, while showNote displays a specific note based on its number.   
+- Organizing code into methods simplifies program maintenance and expansion.   
+
+5. **Boundary Checks:**
+
+To avoid errors, we verify that indices are within the bounds of the ArrayList before displaying or deleting notes. This is important to ensure the program does not try to access invalid positions in the list, thus avoiding exceptions such as IndexOutOfBoundsException.
+
+Through these examples, we learned to:
+
+- Create and manage objects.   
+- Use dynamic data structures like ArrayList.   
+- Apply wrapper classes for collections and automatic type conversion (autoboxing/unboxing).   
+- Organize code into smaller, purpose-specific methods for improved functionality management.   
+- These techniques and concepts strengthen the ability to write organized, scalable, and efficient code in Java.   
