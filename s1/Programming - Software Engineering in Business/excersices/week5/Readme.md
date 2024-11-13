@@ -48,6 +48,6 @@ int x = in.nextInt();
 double y = in.nextDouble();   
 String s = in.nextLine();   
 
-int x = Integer.parseInt(in.nextLine());
-double y = Double.parseDouble(in.nextLine());
-String s = in.nextLine();
+int x = Integer.parseInt(in.nextLine());   
+double y = Double.parseDouble(in.nextLine());   
+String s = in.nextLine();   
