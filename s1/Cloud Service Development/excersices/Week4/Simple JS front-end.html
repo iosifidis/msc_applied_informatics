@@ -1,0 +1,29 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<html>
+	<head>
+	</head>
+	<body>
+		<script>
+		
+			function myFunction() {
+				var form = new FormData();
+				var settings = {
+					"url": "http://localhost:8080/askName/Nikos",
+					"method": "GET",
+					"timeout": 0,
+					"processData": false,
+					"mimeType": "multipart/form-data",
+					"contentType": false,
+					"data": form
+				};
+				$.ajax(settings).done(function (response) {
+					document.getElementById("result").innerHTML = response;
+				});
+			}
+			
+		</script>	
+		<p id='result'> Show result here! </p>
+		<button name='Something' onclick="myFunction();"> OK </button>
+	</body>
+</html>
