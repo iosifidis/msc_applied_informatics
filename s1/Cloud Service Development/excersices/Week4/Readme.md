@@ -1,4 +1,4 @@
-## Documentation for Student Management API
+## Τεκμηρίωση για το project Student Management API
 
 Αυτός ο κώδικας περιγράφει μια εφαρμογή Spring Boot που υλοποιεί ένα σύστημα διαχείρισης φοιτητών με τη χρήση ενός RESTful API. Ας αναλύσουμε τις κλάσεις, τις λειτουργίες τους, και τη χρήση του Service Layer.
 
