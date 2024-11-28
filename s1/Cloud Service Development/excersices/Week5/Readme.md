@@ -177,6 +177,44 @@ public class HelloService {
   - `addStudent`: Προσθέτει φοιτητή στη βάση και ενημερώνει τη λίστα.  
   - Χρησιμοποιεί `PreparedStatement` για ασφαλή αποθήκευση δεδομένων.  
 
+## Διάγραμμα Ενότητας
+
+<pre>
++---------------------+
+| DemoApplication     |
+| (Entry Point)       |
++---------------------+
+           |
+           v
++---------------------+
+| HelloController     |
+| (REST API)          |
+|  - /askName         |
+|  - /addStudent      |
+|  - /students        |
+|  - /list            |
++---------------------+
+           |
+           v
++---------------------+
+| HelloService        |
+| (Business Logic)    |
+|  - addStudent       |
+|  - getStudent       |
+|  - getStudents      |
++---------------------+
+           |
+           v
++---------------------+
+| Student             |
+| (Data Model)        |
+|  - String name      |
+|  - int age          |
+|  - String location  |
++---------------------+
+
+</pre>
+
 ## Γιατί Χρησιμοποιούμε Service
 
 - Το `Service Layer` δημιουργείται για να ακολουθήσουμε τη διαστρωμάτωση εφαρμογών:   
