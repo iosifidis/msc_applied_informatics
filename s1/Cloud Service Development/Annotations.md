@@ -19,3 +19,5 @@
 **@RequestParam**
 - Τοποθεσία: Στις παραμέτρους των μεθόδων όπως helloNameAndAge(@RequestParam(value="age") int age).  
 - Λειτουργία: Λαμβάνει παραμέτρους από το URL, οι οποίοι ορίζονται μετά το ? στο URL (π.χ., /helloandage/Stathis?age=40). Χρησιμοποιείται για την πρόσβαση σε query parameters που δεν είναι μέρος της διαδρομής (path).  
+
+**@Autowired**
