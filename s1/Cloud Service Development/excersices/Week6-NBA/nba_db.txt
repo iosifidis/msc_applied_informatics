@@ -1,0 +1,102 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.3
+-- https://www.phpmyadmin.net/
+--
+-- Φιλοξενητής: 127.0.0.1
+-- Χρόνος δημιουργίας: 11 Δεκ 2022 στις 17:36:09
+-- Έκδοση διακομιστή: 10.4.14-MariaDB
+-- Έκδοση PHP: 7.2.34
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Βάση δεδομένων: `nba_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `players`
+--
+
+CREATE TABLE `players` (
+  `Name` varchar(100) NOT NULL,
+  `Team` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `players`
+--
+
+INSERT INTO `players` (`Name`, `Team`) VALUES
+('Larry Bird', 'Celtics'),
+('Kevin McHale', 'Celtics'),
+('Robert Parish', 'Celtics'),
+('Dennis Johnson', 'Celtics'),
+('Sam Vincent', 'Celtics'),
+('Magic Johnson', 'Lakers'),
+('James Worthy', 'Lakers'),
+('Kareem Abdul Jabbar', 'Lakers'),
+('Byron Scott', 'Lakers'),
+('Bob McAdoo', 'Lakers');
+
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `statistics`
+--
+
+CREATE TABLE `statistics` (
+  `Name` varchar(100) NOT NULL,
+  `points` int(11) NOT NULL,
+  `rebounds` int(11) NOT NULL,
+  `assists` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `statistics`
+--
+
+INSERT INTO `statistics` (`Name`, `points`, `rebounds`, `assists`) VALUES
+('Magic Johnson', 1800, 1500, 900),
+('Byron Scott', 1256, 654, 123),
+('James Worthy', 1223, 1233, 156),
+('Bob McAdoo', 327, 2345, 18),
+('Kareem Abdul Jabbar', 2346, 2222, 22),
+('Sam Vincent', 686, 233, 789),
+('Dennis Johnson', 2300, 453, 678),
+('Larry Bird', 2800, 1865, 1065),
+('Kevin McHale', 3112, 1980, 123),
+('Robert Parish', 896, 2531, 122);
+
+-- --------------------------------------------------------
+
+--
+-- Δομή πίνακα για τον πίνακα `teams`
+--
+
+CREATE TABLE `teams` (
+  `Name` varchar(100) NOT NULL,
+  `City` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Άδειασμα δεδομένων του πίνακα `teams`
+--
+
+INSERT INTO `teams` (`Name`, `City`) VALUES
+('Lakers', 'Los Angeles'),
+('Celtics', 'Boston');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
