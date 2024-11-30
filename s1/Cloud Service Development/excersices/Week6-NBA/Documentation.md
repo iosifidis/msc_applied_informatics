@@ -55,6 +55,16 @@ CREATE TABLE Stats (
 );
 ```
 
+Αφού θα συνδεθούμε με βάση δεδομένων, προσθέστε στο αρχείο `pom.xml` το παρακάτω κώδικα:
+
+```
+        <dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.25</version>
+		</dependency>
+```
+
 ## 3. Δημιουργία Στρώματος Υπηρεσιών (Service Layer)
 
 Η λογική του προβλήματος πρέπει να διαχωριστεί από τη βάση δεδομένων. Χρησιμοποιήστε ένα `Service` για να διαχειριστείτε τα δεδομένα στη μνήμη.
@@ -78,70 +88,181 @@ CREATE TABLE Stats (
 
 Παράδειγμα:
 ```
+// Η NBA Application (δεν την πειράζουμε)
+@SpringBootApplication
+public class NbApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(NbApplication.class, args);
+	}
+
+}
+======================================
 // Οντότητα Team
 public class Team {
-    private int teamId;
-    private String name;
-    private String city;
-    private List<Player> players;
+	
+	String name;
+	String city;
+	ArrayList<Player> pList = new ArrayList<Player>();
+	
+	
+	public Team(String name, String city, ArrayList<Player> pList) {
+		this.name = name;
+		this.city = city;
+		this.pList = pList;
+	}
 
-    // Constructors, Getters, Setters
-}
-
+	public Team(String name, String city) {
+		this.name = name;
+		this.city = city;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getCity() {
+		return city;
+	}
+	public ArrayList<Player> getpList() {
+		return pList;
+	}
+    // Μέθοδος addPlayer στην λίστα
+	public void addPlayer(Player player) {
+		pList.add(player);
+	}
+======================================
 // Οντότητα Player
 public class Player {
-    private int playerId;
-    private String name;
-    private Stats stats;
-
-    // Constructors, Getters, Setters
+	String name;
+	Statistics stats;
+	
+	public Player(String name, Statistics stats) {
+		this.name = name;
+		this.stats = stats;
+	}
+	public String getName() {
+		return name;
+	}
+	public Statistics getStats() {
+		return stats;
+	}
 }
-
+======================================
 // Οντότητα Stats
-public class Stats {
-    private int points;
-    private int assists;
-    private int rebounds;
+public class Statistics {
+	
+	int points;
+	int rebounds;
+	int assists;
+	
+	public Statistics(int points, int rebounds, int assists) {
+		this.points = points;
+		this.rebounds = rebounds;
+		this.assists = assists;
+	}
 
-    // Constructors, Getters, Setters
-}
+	public int getPoints() {
+		return points;
+	}
+
+	public int getRebounds() {
+		return rebounds;
+	}
+
+	public int getAssists() {
+		return assists;
+	}
+}	
 ```
 
-## 5. Εφαρμογή Business Logic
+## 5. Εφαρμογή Business Logic (Service)
 
 Η λογική για τα endpoints πρέπει να υλοποιηθεί στη `NBAService`.
 
 Παράδειγμα Υλοποίησης Λειτουργικότητας:
 
 ```
+@Service
 public class NBAService {
-    private List<Team> teams;
-
-    public NBAService(List<Team> teams) {
-        this.teams = teams;
-    }
-
-    public List<Player> getTopScorers() {
-        return teams.stream()
-            .flatMap(team -> team.getPlayers().stream())
-            .sorted((p1, p2) -> Integer.compare(p2.getStats().getPoints(), p1.getStats().getPoints()))
-            .limit(10)
-            .collect(Collectors.toList());
-    }
-
-    // Παρόμοια για getTopRebounders, getTopPassers
-
-    public List<Player> getTopPlayers() {
-        return teams.stream()
-            .flatMap(team -> team.getPlayers().stream())
-            .sorted((p1, p2) -> Integer.compare(
-                (p2.getStats().getPoints() + p2.getStats().getAssists() + p2.getStats().getRebounds()),
-                (p1.getStats().getPoints() + p1.getStats().getAssists() + p1.getStats().getRebounds())
-            ))
-            .limit(10)
-            .collect(Collectors.toList());
-    }
+	
+	List<Team> tList = new ArrayList<Team>();
+	
+	public void setTeam(ArrayList<Team> t) {
+		tList =t;	
+	}
+	
+	public ArrayList<Player> getTopScorers() {
+		ArrayList<Player> allPlayers = new ArrayList<Player>();
+		
+		for(int i=0;i<tList.size();i++) {
+				allPlayers.addAll(tList.get(i).getpList());
+		}
+		for(int i=0;i<allPlayers.size()-1;i++) {
+			for(int j=i;j<allPlayers.size();j++) {
+				if(allPlayers.get(j).getStats().getPoints() > allPlayers.get(i).getStats().getPoints()) {
+					Player temp = allPlayers.get(j);
+					allPlayers.set(j, allPlayers.get(i));
+					allPlayers.set(i, temp);
+				}
+			}
+		}
+		return allPlayers;
+	}
+	
+	public ArrayList<Player> getTopRebounders() {
+		ArrayList<Player> allPlayers = new ArrayList<Player>();
+		
+		for(int i=0;i<tList.size();i++) {
+			allPlayers.addAll(tList.get(i).getpList());
+		}
+		for(int i=0;i<allPlayers.size()-1;i++) {
+			for(int j=i;j<allPlayers.size();j++) {
+				if(allPlayers.get(j).getStats().getRebounds() > allPlayers.get(i).getStats().getRebounds()) {
+					Player temp = allPlayers.get(j);
+					allPlayers.set(j, allPlayers.get(i));
+					allPlayers.set(i, temp);
+				}
+			}
+		}
+		return allPlayers;
+	}
+	
+	public ArrayList<Player> getTopPassers() {
+		ArrayList<Player> allPlayers = new ArrayList<Player>();
+		
+		for(int i=0;i<tList.size();i++) {
+			allPlayers.addAll(tList.get(i).getpList());
+		}
+		for(int i=0;i<allPlayers.size()-1;i++) {
+			for(int j=i;j<allPlayers.size();j++) {
+				if(allPlayers.get(j).getStats().getAssists() > allPlayers.get(i).getStats().getAssists()) {
+					Player temp = allPlayers.get(j);
+					allPlayers.set(j, allPlayers.get(i));
+					allPlayers.set(i, temp);
+				}
+			}
+		}
+		return allPlayers;
+	}
+	
+	public ArrayList<Player> getTopPlayers() {
+		ArrayList<Player> allPlayers = new ArrayList<Player>();
+		
+		for(int i=0;i<tList.size();i++) {
+			allPlayers.addAll(tList.get(i).getpList());
+		}
+		for(int i=0;i<allPlayers.size()-1;i++) {
+			for(int j=i;j<allPlayers.size();j++) {
+				if(allPlayers.get(j).getStats().getPoints()+allPlayers.get(j).getStats().getRebounds()+allPlayers.get(j).getStats().getAssists() > allPlayers.get(i).getStats().getPoints()+allPlayers.get(i).getStats().getRebounds()+allPlayers.get(i).getStats().getAssists()) {
+					Player temp = allPlayers.get(j);
+					allPlayers.set(j, allPlayers.get(i));
+					allPlayers.set(i, temp);
+				}
+			}
+		}
+		return allPlayers;
+	}
 }
+
 ```
 
 ## 6. Δημιουργία Controller
@@ -151,35 +272,32 @@ public class NBAService {
 Παράδειγμα:
 
 ```
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/nba")
 public class NBAController {
-    private final NBAService nbaService;
-
-    @Autowired
-    public NBAController(NBAService nbaService) {
-        this.nbaService = nbaService;
-    }
-
-    @GetMapping("/top-scorers")
-    public List<Player> getTopScorers() {
-        return nbaService.getTopScorers();
-    }
-
-    @GetMapping("/top-rebounders")
-    public List<Player> getTopRebounders() {
-        return nbaService.getTopRebounders();
-    }
-
-    @GetMapping("/top-passers")
-    public List<Player> getTopPassers() {
-        return nbaService.getTopPassers();
-    }
-
-    @GetMapping("/top-players")
-    public List<Player> getTopPlayers() {
-        return nbaService.getTopPlayers();
-    }
+	
+	@Autowired
+	private NBAService nbaS;
+	
+	@GetMapping(path="/topScorers")
+	public ArrayList<Player> getTopScorers() {
+		return nbaS.getTopScorers();
+	}
+	
+	@GetMapping(path="/topRebounders")
+	public ArrayList<Player> getTopRebounders() {
+		return nbaS.getTopRebounders();
+	}
+	
+	@GetMapping(path="/topPassers")
+	public ArrayList<Player> getTopPassers() {
+		return nbaS.getTopPassers();
+	}
+	
+	@GetMapping(path="/topPlayers")
+	public ArrayList<Player> getTopPlayers() {
+		 return nbaS.getTopPlayers();
+	}
 }
 ```
 
@@ -190,55 +308,144 @@ public class NBAController {
 Παράδειγμα:
 
 ```
-@Component
-public class NBAServiceConfig {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+@Configuration
+public class NBAServiceConfig implements CommandLineRunner {
+	
+	@Autowired
+	private NBAService nbaS;
+	
+	public void run(String... args) throws Exception {
+		nbaS.setTeam(loadFromDB());
+		System.out.println("DB has been loaded to NBAService!!!");
+	}
 
-    @Bean
-    public NBAService nbaService() {
-        List<Team> teams = jdbcTemplate.query("SELECT * FROM Team", (rs, rowNum) -> {
-            Team team = new Team();
-            team.setTeamId(rs.getInt("Team_ID"));
-            team.setName(rs.getString("Name"));
-            team.setCity(rs.getString("City"));
-
-            List<Player> players = jdbcTemplate.query(
-                "SELECT * FROM Player WHERE Team_ID = ?",
-                new Object[]{team.getTeamId()},
-                (playerRs, playerRowNum) -> {
-                    Player player = new Player();
-                    player.setPlayerId(playerRs.getInt("Player_ID"));
-                    player.setName(playerRs.getString("Name"));
-
-                    Stats stats = jdbcTemplate.queryForObject(
-                        "SELECT * FROM Stats WHERE Player_ID = ?",
-                        new Object[]{player.getPlayerId()},
-                        (statsRs, statsRowNum) -> new Stats(
-                            statsRs.getInt("Points"),
-                            statsRs.getInt("Assists"),
-                            statsRs.getInt("Rebounds")
-                        )
-                    );
-                    player.setStats(stats);
-                    return player;
-                }
-            );
-            team.setPlayers(players);
-            return team;
-        });
-
-        return new NBAService(teams);
-    }
+	private ArrayList<Team> loadFromDB() throws Exception {
+		ArrayList<Team> tList = new ArrayList<Team>();
+		ArrayList<Player> pList = new ArrayList<Player>();
+		
+	      // create our mysql database connection
+	      String myDriver = "org.gjt.mm.mysql.Driver";
+	      String myUrl = "jdbc:mysql://localhost/nba_db";
+	      Class.forName(myDriver);
+	      Connection conn = DriverManager.getConnection(myUrl, "root", "");
+	      
+	      String query = "SELECT * FROM teams";
+	      Statement st = conn.createStatement();
+	      ResultSet rs = st.executeQuery(query);
+	      
+	      while(rs.next()) {
+		        String name = rs.getString("name");
+		        String city = rs.getString("city");
+		        tList.add(new Team(name,city));
+	      }
+	      st.close();
+	      
+	      String query2 = "SELECT * FROM players,statistics where players.name = statistics.name";
+	      Statement st1 = conn.createStatement();
+	      ResultSet rs1 = st1.executeQuery(query2);
+	      
+	      while(rs1.next()) {
+		        String name = rs1.getString("name");
+		        String team = rs1.getString("team");
+		        int points = rs1.getInt("points");
+		        int assists = rs1.getInt("assists");
+		        int rebounds = rs1.getInt("rebounds");
+		        
+		        int pos = 0;
+		        for(int i=0;i<tList.size();i++) {
+		        	if(tList.get(i).getName().equals(team)) {
+		        		pos = i;
+		        		break;
+		        	}
+		        }
+		        
+	   		  	tList.get(pos).addPlayer(new Player(name, new Statistics(points,rebounds,assists)));
+	   	  }
+	      st1.close();
+		
+		return tList;
+	}
+	
 }
 ```
 
-## 8. Τεστ και Βελτιστοποίηση
+## 8. Front End
 
-Δοκιμάστε τη λειτουργικότητα:
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Stats</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1 id="header">Select Stats Category...</h1>
 
-- Δημιουργήστε δεδομένα για δοκιμή.   
-- Ελέγξτε αν τα endpoints επιστρέφουν σωστά αποτελέσματα.   
-- Χρησιμοποιήστε εργαλεία όπως Postman για API Testing.   
+    <!-- Buttons to fetch stats -->
+    <button onclick="showStats('topScorers')">Top Scorers</button>
+    <button onclick="showStats('topRebounders')">Top Rebounders</button>
+    <button onclick="showStats('topPassers')">Top Passers</button>
+    <button onclick="showStats('topPlayers')">Top Players</button>
 
-Με αυτές τις οδηγίες, μπορείτε να σχεδιάσετε και να υλοποιήσετε παρόμοια πληροφοριακά συστήματα.
+    <!-- Table to display stats -->
+    <table border="1" id="resultsTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Points</th>
+                <th>Rebounds</th>
+                <th>Assists</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data will be populated here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Function to fetch and display stats
+        function showStats(endpoint) {
+            document.getElementById("header").innerText = `Showing: ${endpoint.replace('top', '')}`;
+            $.ajax({
+                url: `http://localhost:8080/${endpoint}`,
+                method: "GET",
+                success: function (response) {
+                    console.log("Response from server:", response); // Log the response for debugging
+                    updateTable(response);
+                },
+                error: function () {
+                    alert("Failed to fetch data. Please check the server or endpoint URL.");
+                }
+            });
+        }
+
+        // Function to update the table with stats
+        function updateTable(json) {
+            const result = Array.isArray(json) ? json : JSON.parse(json); // Ensure JSON is parsed
+            const tableBody = document.getElementById("resultsTable").getElementsByTagName("tbody")[0];
+
+            // Clear existing rows
+            tableBody.innerHTML = "";
+
+            // Populate table with new data
+            result.forEach(player => {
+                const row = tableBody.insertRow();
+                const nameCell = row.insertCell(0);
+                const pointsCell = row.insertCell(1);
+                const reboundsCell = row.insertCell(2);
+                const assistsCell = row.insertCell(3);
+
+                nameCell.innerText = player.name;
+                pointsCell.innerText = player.stats.points || "N/A";
+                reboundsCell.innerText = player.stats.rebounds || "N/A";
+                assistsCell.innerText = player.stats.assists || "N/A";
+            });
+        }
+    </script>
+</body>
+</html>
+```
+
+

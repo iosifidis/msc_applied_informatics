@@ -189,7 +189,6 @@ INSERT INTO `teams` (`Name`, `City`) VALUES
     </table>
 </body>
 </html>
-
 ```
 
 

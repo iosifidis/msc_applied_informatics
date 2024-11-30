@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Ορίζει το character set του εγγράφου και τη ρύθμιση του viewport για responsive σχεδίαση -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Stats</title>
+    <!-- Προσθήκη του jQuery για την εύκολη υλοποίηση AJAX αιτημάτων -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Επικεφαλίδα που θα εμφανίζει την τρέχουσα κατηγορία στατιστικών -->
+    <h1 id="header">Select Stats Category...</h1>
+
+    <!-- Κουμπιά για την επιλογή της στατιστικής κατηγορίας -->
+    <button onclick="showStats('topScorers')">Top Scorers</button>
+    <button onclick="showStats('topRebounders')">Top Rebounders</button>
+    <button onclick="showStats('topPassers')">Top Passers</button>
+    <button onclick="showStats('topPlayers')">Top Players</button>
+
+    <!-- Πίνακας για την εμφάνιση των στατιστικών -->
+    <table border="1" id="resultsTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Points</th>
+                <th>Rebounds</th>
+                <th>Assists</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Τα δεδομένα θα προστεθούν εδώ από την JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        /// Η συνάρτηση showStats καλεί το κατάλληλο endpoint του API και εμφανίζει τα στατιστικά
+        function showStats(endpoint) {
+            // Ενημέρωση της επικεφαλίδας με το όνομα της στατιστικής κατηγορίας
+            document.getElementById("header").innerText = `Showing: ${endpoint.replace('top', '')}`;
+            
+            // Κλήση AJAX για να πάρουμε τα δεδομένα από τον server
+            $.ajax({
+                url: `http://localhost:8080/${endpoint}`, // Το URL για το συγκεκριμένο endpoint
+                method: "GET", // Τύπος αιτήματος GET
+                success: function (response) {
+                    console.log("Response from server:", response); // Εμφάνιση των δεδομένων στον κονσόλα για debugging
+                    updateTable(response); // Ενημέρωση του πίνακα με τα δεδομένα
+                },
+                error: function () {
+                    alert("Failed to fetch data. Please check the server or endpoint URL."); // Ειδοποίηση αν αποτύχει η αίτηση
+                }
+            });
+        }
+
+        // Η συνάρτηση updateTable ενημερώνει τον πίνακα με τα δεδομένα που επιστράφηκαν
+        function updateTable(json) {
+            const result = Array.isArray(json) ? json : JSON.parse(json); // Εξασφαλίζει ότι το JSON είναι σωστά αναλυμένο
+            const tableBody = document.getElementById("resultsTable").getElementsByTagName("tbody")[0];
+
+            // Καθαρισμός των υπαρχόντων γραμμών στον πίνακα
+            tableBody.innerHTML = "";
+
+            // Προσθήκη νέων γραμμών στον πίνακα για κάθε παίκτη
+            result.forEach(player => {
+                const row = tableBody.insertRow(); // Δημιουργία νέας γραμμής στον πίνακα
+                const nameCell = row.insertCell(0); // Δημιουργία κελιού για το όνομα
+                const pointsCell = row.insertCell(1); // Δημιουργία κελιού για τους πόντους
+                const reboundsCell = row.insertCell(2); // Δημιουργία κελιού για τα ριμπάουντ
+                const assistsCell = row.insertCell(3); // Δημιουργία κελιού για τις ασίστ
+
+                // Εισαγωγή των δεδομένων στα κελιά
+                nameCell.innerText = player.name; // Εισαγωγή ονόματος παίκτη
+                pointsCell.innerText = player.stats.points || "N/A"; // Εισαγωγή πόντων, αν δεν υπάρχουν, "N/A"
+                reboundsCell.innerText = player.stats.rebounds || "N/A"; // Εισαγωγή ριμπάουντ, αν δεν υπάρχουν, "N/A"
+                assistsCell.innerText = player.stats.assists || "N/A"; // Εισαγωγή ασίστ, αν δεν υπάρχουν, "N/A"
+            });
+        }
+    </script>
+</body>
+</html>
+
