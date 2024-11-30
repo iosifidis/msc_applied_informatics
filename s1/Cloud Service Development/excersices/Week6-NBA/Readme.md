@@ -122,8 +122,12 @@ INSERT INTO `teams` (`Name`, `City`) VALUES
 4. Ελεγκτής (Controller):
 
   - Δημιουργήστε τον `NBAController` για να υλοποιήσετε τα απαιτούμενα endpoints.
+  
+5. Configuration (Config):
 
-5. Αρχείο `pom.xml`:
+  - Δημιουργήστε το `NBAServiceConfig` για να φορτώνει τις εγγραφές από τη βάση δεδομένων και τις αποθηκεύει στη μνήμη μέσω της Service.   
+
+6. Αρχείο `pom.xml`:
 
   - Προσθέστε στο αρχείο `pom.xml` το παρακάτω για την σύνδεση με την βάση δεδομένων:
 
@@ -135,9 +139,7 @@ INSERT INTO `teams` (`Name`, `City`) VALUES
 		</dependency>
 ```
 
-
-
-6. Front-End Υλοποίηση:
+7. Front-End Υλοποίηση:
 
   - Δημιουργήστε ένα αρχείο index.html με την εξής βασική δομή:
 
