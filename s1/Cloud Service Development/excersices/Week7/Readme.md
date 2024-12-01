@@ -152,7 +152,7 @@ function addStudent() {
 - Το Swagger UI διευκολύνει την τεκμηρίωση και τον έλεγχο των API.    
 - Η λειτουργία του frontend ενημερώθηκε με τη χρήση του POST endpoint.   
 
-##  Χρησιμοποιούμενα Annotations
+## 7. Χρησιμοποιούμενα Annotations
 
 - `@RestController`: Δημιουργεί RESTful API.   
 - `@GetMapping`: Χειρίζεται HTTP GET αιτήματα.   

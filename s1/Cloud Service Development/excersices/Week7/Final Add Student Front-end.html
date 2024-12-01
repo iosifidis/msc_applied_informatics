@@ -1,0 +1,101 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<html>
+	<head>
+	</head>
+	<body onload='showAll();'>
+		<script>
+		
+			function showAll() {
+				var settings = {
+					"url": "http://localhost:8080/students",
+					"method": "GET",
+					"timeout": 0,
+					"processData": false,
+					"mimeType": "multipart/form-data",
+					"contentType": false
+				};
+				$.ajax(settings).done(function (response) {
+					updateTable(response);
+				});
+			}
+
+			function updateTable(json) {
+				result = jQuery.parseJSON(json);
+				var table = document.getElementById("resultsTable");
+				
+				var rowCount = table.rows.length;
+				for (var i = rowCount - 1; i > 0; i--) {
+					table.deleteRow(i);
+				}				
+				
+				for(var k in result) {
+					var student = result[k];
+					name = student.name;
+					age = student.age;
+					loc = student.location;
+					var row = table.insertRow(-1);
+					var cell1 = row.insertCell(0);
+					var cell2 = row.insertCell(1);
+					var cell3 = row.insertCell(2);
+					cell1.innerHTML = name;
+					cell2.innerHTML = age;
+					cell3.innerHTML = loc;
+				} 
+			}
+
+			// Αυτή την function αλλάξαμε, ειδικά στην method όπου μπήκε ως POST
+			function addStudent() {  
+			    // Δημιουργούμε ένα αντικείμενο ρυθμίσεων για το AJAX request.
+			    var settings = {
+				"url": "http://localhost:8080/addStudent", // URL για το endpoint της εφαρμογής που προσθέτει φοιτητή.
+				"method": "POST", // Ορίζουμε ότι θα κάνουμε POST request.
+				"timeout": 0, // Δεν υπάρχει χρονικό όριο για το request.
+				"headers": {
+				    "Content-Type": "application/json" // Ορίζουμε ότι τα δεδομένα θα σταλούν σε μορφή JSON.
+				},
+				"data": JSON.stringify({ // Μετατρέπουμε τα δεδομένα του φοιτητή σε JSON μορφή.
+				    "name": document.getElementById("name").value, // Ανάκτηση του ονόματος από το input πεδίο.
+				    "age": document.getElementById("age").value,   // Ανάκτηση της ηλικίας από το input πεδίο.
+				    "location": document.getElementById("location").value // Ανάκτηση της τοποθεσίας από το input πεδίο.
+				}),
+			    };
+
+			    // Εκτέλεση του AJAX request.
+			    $.ajax(settings).done(function (response) {
+				// Μετά την επιτυχή ολοκλήρωση, καλούμε τη συνάρτηση showAll().
+				showAll(); // Ανανεώνουμε την προβολή όλων των φοιτητών.
+			    });
+		}
+		
+		</script>	
+
+		<h1> Existing Students </h1>
+		<table border='1' id='resultsTable'>
+			<tr>
+				<th width='200'> Name </th>
+				<th width='200'> Age </th>
+				<th width='200'> Location </th>
+			</tr>
+		</table>
+
+		<br><br>
+
+		<table>
+			<tr>
+				<td> Name: </td>
+				<td> <input type='text' id='name' />
+			</tr>
+			<tr>
+				<td> Age: </td>
+				<td> <input type='text' id='age' />
+			</tr>
+			<tr>
+				<td> Location: </td>
+				<td> <input type='text' id='location' />
+			</tr>
+		</table>
+		<button name='addStudent' onclick="addStudent();"> Add Student </button>		
+		
+	</body>
+</html>
