@@ -1,0 +1,104 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<html>
+	<head>
+	</head>
+	<body onload='showAll();'>
+		<script>
+		
+			function showAll() {
+				var settings = {
+					"url": "http://localhost:8080/allproducts", // Εδώ βάζω το endpoint από τον controller
+					"method": "GET",
+					"timeout": 0,
+					"processData": false,
+					"mimeType": "multipart/form-data",
+					"contentType": false
+				};
+				$.ajax(settings).done(function (response) {
+					updateTable(response);
+				});
+			}
+
+			function updateTable(json) {
+			    var result = jQuery.parseJSON(json); // Μετατροπή JSON string σε αντικείμενο
+			    var table = document.getElementById("resultsTable");
+
+			    // Διαγραφή υπαρχουσών γραμμών εκτός της κεφαλίδας
+			    var rowCount = table.rows.length;
+			    for (var i = rowCount - 1; i > 0; i--) {
+				table.deleteRow(i);
+			    }
+
+			    // Προσθήκη γραμμών για κάθε προϊόν
+			    for (var k in result) {
+				var product = result[k];
+				var code = product.code;
+				var name = product.name;
+				var price = product.timi;
+
+				var row = table.insertRow(-1); // Προσθήκη νέας γραμμής στο τέλος
+				var cell1 = row.insertCell(0);
+				var cell2 = row.insertCell(1);
+				var cell3 = row.insertCell(2);
+
+				cell1.innerHTML = code;
+				cell2.innerHTML = name;
+				cell3.innerHTML = price;
+			    }
+			}
+
+
+			function addProduct() {				
+				var settings = {
+					"url": "http://localhost:8080/addProduct",
+					"method": "POST",
+					"timeout": 0,
+					"headers": {
+					"Content-Type": "application/json"
+					},
+				"data": JSON.stringify({
+					"code": document.getElementById("code").value,
+					 "name": document.getElementById("name").value,
+					"timi": document.getElementById("price").value
+				  }),
+
+				};
+				$.ajax(settings).done(function (response) {
+					showAll();
+				});
+			}
+		
+		</script>	
+
+		<h1> Existing Products </h1>
+		<table border='1' id='resultsTable'>
+		    <tr>
+			<th width='200'> Code </th>
+			<th width='200'> Name </th>
+			<th width='200'> Price </th>
+		    </tr>
+		</table>
+
+
+		<br><br>
+
+		<table>
+			<tr>
+			  <td> Code: </td>
+			  <td> <input type='text' id='code' /></td>
+			</tr> <!-- Προσθήκη σωστού κλεισίματος -->
+			<tr>
+			  <td> Name: </td>
+			  <td> <input type='text' id='name' /></td>
+			</tr>
+			<tr>
+			  <td> Price: </td>
+			  <td> <input type='text' id='price' /></td>
+			</tr>
+
+		</table>
+		<button name='addProduct' onclick="addProduct();"> Add Product </button>		
+		
+	</body>
+</html>
