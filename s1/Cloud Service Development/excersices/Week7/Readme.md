@@ -70,17 +70,18 @@ public void addStudent(@RequestBody Student st) throws Exception {
 
 - Προσθήκη Dependencies (στο αρχείο `pom.xml`):   
 ```
-<dependency>
-    <groupId>org.springdoc</groupId>
-    <artifactId>springdoc-openapi-ui</artifactId>
-    <version>1.6.6</version>
-</dependency>
+		<dependency>
+		    <groupId>org.springdoc</groupId>
+		    <artifactId>springdoc-openapi-ui</artifactId>
+		    <version>1.6.15</version>
+		</dependency>
+		
 ```
 
 και στο αρχείο `application.properties` μέσα στα resources:
 ```
-springdoc.api-docs.path=./api
-springdoc.swagger.ui.path=./api-ui
+springdoc.api-docs.path=/api
+springdoc.swagger-ui.path=/api-ui
 ```
 
 **URL Swagger**:  
