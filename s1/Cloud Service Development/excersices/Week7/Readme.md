@@ -75,7 +75,6 @@ public void addStudent(@RequestBody Student st) throws Exception {
 		    <artifactId>springdoc-openapi-ui</artifactId>
 		    <version>1.6.15</version>
 		</dependency>
-		
 ```
 
 και στο αρχείο `application.properties` μέσα στα resources:
