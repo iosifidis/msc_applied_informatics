@@ -73,6 +73,20 @@ public void addStudent(@RequestBody Student st) throws Exception {
     }
 ```
 
+ΠΡΟΣΟΧΗ: Στην κλάση Student ο κώδικας γίνεται:
+
+```
+@Entity 
+public class Student {
+	
+	@Id 
+	private String name;
+```
+
+όπου τα annotations σημαίνουν:
+- `@Entity`: Ενδεικνύει ότι αυτή η κλάση είναι οντότητα στη βάση δεδομένων   
+- `@Id`: Σημαίνει ότι αυτό το πεδίο είναι το πρωτεύον κλειδί της οντότητας
+
 <hr>
 
 ## 3. Testing μέσω Swagger UI
