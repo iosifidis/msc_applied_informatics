@@ -78,15 +78,32 @@ public String addProduct(@RequestBody Product pr) throws Exception {
 Κώδικας:
 ```
 @GetMapping(path = "/findproduct")
-public String findProduct(String name) {
-    if (name == null || name.isBlank()) {
-        return "Σφάλμα: Δεν δόθηκε όνομα προϊόντος.";
-    }
-    Product product = ms.findProduct(name);
-    return product != null 
-        ? "Το προϊόν " + product.getName() + " βρέθηκε." 
-        : "Το προϊόν " + name + " δεν βρέθηκε.";
-}
+ public String findProduct(String name) {
+	 return ms.findProduct(name);
+ }
+```
+
+ενώ η κλάση `Service` έχει υλοποίηση:
+
+```
+	 public String findProduct(String pr) {
+
+		 String result = "Το προϊόν " + pr + " δεν βρέθηκε.";
+		 
+//			// Έλεγχος αν το όνομα είναι άκυρο
+//		    if (pr == null || pr.isBlank()) {
+//		        result = "Σφάλμα: Δεν δόθηκε όνομα προϊόντος.";
+//		    }
+
+		    // Εύρεση του προϊόντος. Αναζητά το προϊόν στη λίστα συγκρίνοντας τα ονόματα
+		    for (Product product : pList) {
+		         if (product.getName().equalsIgnoreCase(pr)) {
+		        	 result = "Το προϊόν " + pr + " βρέθηκε."; // Επιστροφή του προϊόντος αν βρεθεί
+		         }
+
+		    }
+		    return result;
+	 }
 ```
 
 <hr>
