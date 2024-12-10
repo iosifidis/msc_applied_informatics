@@ -39,19 +39,6 @@ public class MarketController {
 	 // Endpoint για την εύρεση προϊόντος με βάση το όνομά του
 	 @GetMapping(path = "/findproduct")
 	 public String findProduct(String name) {
-	     // Ελέγχει αν το όνομα είναι null ή κενό και επιστρέφει μήνυμα σφάλματος
-	     if (name == null || name.isBlank()) {
-	         return "Σφάλμα: Δεν δόθηκε όνομα προϊόντος.";
-	     }
-	
-	     // Καλεί την υπηρεσία MarketService για την εύρεση του προϊόντος
-	     Product product = ms.findProduct(name);
-	     if (product != null) {
-	         // Επιστρέφει μήνυμα ότι το προϊόν βρέθηκε
-	         return "Το προϊόν " + product.getName() + " βρέθηκε.";
-	     } else {
-	         // Επιστρέφει μήνυμα ότι το προϊόν δεν βρέθηκε
-	         return "Το προϊόν " + name + " δεν βρέθηκε.";
-	     }
+		 return ms.findProduct(name);
 	 }
 }

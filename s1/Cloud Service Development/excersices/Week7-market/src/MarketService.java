@@ -71,14 +71,22 @@ public class MarketService {
 	 }
 	
 	 // Μέθοδος για την εύρεση προϊόντος με βάση το όνομά του
-	 public Product findProduct(String pr) {
-	     // Αναζητά το προϊόν στη λίστα συγκρίνοντας τα ονόματα
-	     for (Product product : pList) {
-	         if (product.getName().equalsIgnoreCase(pr)) {
-	             return product; // Επιστροφή του προϊόντος αν βρεθεί
-	         }
-	     }
-	     // Επιστρέφει null αν το προϊόν δεν βρεθεί
-	     return null;
+	 public String findProduct(String pr) {
+
+		 String result = "Το προϊόν " + pr + " δεν βρέθηκε.";
+		 
+//			// Έλεγχος αν το όνομα είναι άκυρο
+//		    if (pr == null || pr.isBlank()) {
+//		        result = "Σφάλμα: Δεν δόθηκε όνομα προϊόντος.";
+//		    }
+
+		    // Εύρεση του προϊόντος. Αναζητά το προϊόν στη λίστα συγκρίνοντας τα ονόματα
+		    for (Product product : pList) {
+		         if (product.getName().equalsIgnoreCase(pr)) {
+		        	 result = "Το προϊόν " + pr + " βρέθηκε."; // Επιστροφή του προϊόντος αν βρεθεί
+		         }
+
+		    }
+		    return result;
 	 }
 }
