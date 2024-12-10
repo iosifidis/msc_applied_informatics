@@ -1,4 +1,4 @@
-package gr.uom.market_week6;
+package gr.uom.market_week7;
 
 import java.util.List;
 
@@ -8,27 +8,50 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import org.springframework.web.bind.annotation.RequestBody;
 
+//Ενεργοποιεί το CORS (Cross-Origin Resource Sharing) για όλους τους προορισμούς (origins) και κεφαλίδες (headers)
 @CrossOrigin(origins = "*", allowedHeaders = "*")
+//Δηλώνει ότι αυτή η κλάση είναι REST Controller
 @RestController
 public class MarketController {
+
+	 // Εξάρτηση του MarketService μέσω @Autowired για παροχή υπηρεσιών
+	 @Autowired
+	 private MarketService ms;
+	 
+	 // Endpoint για την ανάκτηση όλων των προϊόντων
+	 @GetMapping(path = "/allproducts")
+	 public List<Product> getAllProducts() throws Exception {
+	     // Επιστρέφει τη λίστα προϊόντων από την υπηρεσία MarketService
+	     return ms.getAllProducts();
+	 } 
+	 
+	 // Endpoint για την προσθήκη νέου προϊόντος
+	 @PostMapping(path = "/addproduct")
+	 public String addProduct(@RequestBody Product pr) throws Exception {
+	     // Καλεί την υπηρεσία MarketService για την προσθήκη του προϊόντος
+	     ms.addProduct(pr);
+	     // Επιστρέφει μήνυμα επιτυχίας
+	     return "Το προϊόν προστέθηκε με επιτυχία!";
+	 }
+	 
+	 // Endpoint για την εύρεση προϊόντος με βάση το όνομά του
+	 @GetMapping(path = "/findproduct")
+	 public String findProduct(String name) {
+	     // Ελέγχει αν το όνομα είναι null ή κενό και επιστρέφει μήνυμα σφάλματος
+	     if (name == null || name.isBlank()) {
+	         return "Σφάλμα: Δεν δόθηκε όνομα προϊόντος.";
+	     }
 	
-	@Autowired
-	private MarketService ms;
-	
-	@GetMapping(path="/allproducts")
-	public List<Product> getAllProducts() throws Exception{
-		return ms.getAllProducts();
-	} 
-	
-	@PostMapping(path="/addproduct")
-	public void addProduct(@RequestBody Product pr) throws Exception {
-		ms.addProduct(pr);
-	}
-	
-	@PostMapping(path = "/findproduct")
-	public Product findProduct(@RequestBody String pr) throws Exception {
-	    return ms.findProduct(pr);
-	}
+	     // Καλεί την υπηρεσία MarketService για την εύρεση του προϊόντος
+	     Product product = ms.findProduct(name);
+	     if (product != null) {
+	         // Επιστρέφει μήνυμα ότι το προϊόν βρέθηκε
+	         return "Το προϊόν " + product.getName() + " βρέθηκε.";
+	     } else {
+	         // Επιστρέφει μήνυμα ότι το προϊόν δεν βρέθηκε
+	         return "Το προϊόν " + name + " δεν βρέθηκε.";
+	     }
+	 }
 }

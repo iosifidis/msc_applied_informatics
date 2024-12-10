@@ -1,4 +1,4 @@
-package gr.uom.market_week6;
+package gr.uom.market_week7;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,70 +9,76 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+//Δηλώνει ότι αυτή η κλάση είναι υπηρεσία (service) και διαχειρίζεται τις λειτουργίες της αγοράς
 @Service
 public class MarketService {
 
-	List<Product> pList;
+	 // Λίστα που περιέχει όλα τα προϊόντα
+	 private List<Product> pList;
 	
+	 // Μέθοδος για την επιστροφή όλων των προϊόντων από τη λίστα
+	 public List<Product> getAllProducts() {
+	     return pList;
+	 }
 	
-	public List<Product> getAllProducts() {
-		return pList;
-	}
-
-	public void addProduct(Product pr) throws Exception {
-	    if (pList == null) {
-	        pList = new ArrayList<>();
-	    }
-	    pList.add(pr); // Προσθέτει το προϊόν στη λίστα
-	    saveToDB(pr);  // Αποθηκεύει στη βάση
-	}
-
-	private void saveToDB(Product pr) throws Exception {
-	    // Σύνδεση στη βάση δεδομένων
-	    String myDriver = "org.gjt.mm.mysql.Driver";
-	    String myUrl = "jdbc:mysql://localhost/market";
-	    Connection conn = null;
-	    Class.forName(myDriver);
-	    conn = DriverManager.getConnection(myUrl, "root", "");
-
-	    // Ελέγξτε αν η σύνδεση είναι επιτυχής
-	    if (conn != null) {
-	        System.out.println("Connection established successfully.");
-	    }
-
-	    // Προετοιμασία του SQL query για εισαγωγή δεδομένων
-	    String query = "INSERT INTO products (code, name, price) VALUES (?, ?, ?)";
-	    PreparedStatement preparedStmt = conn.prepareStatement(query);
-	      
-	    preparedStmt.setInt(1, pr.getCode());  // Ανάθεση του κωδικού του προϊόντος
-	    preparedStmt.setString(2, pr.getName());  // Ανάθεση του ονόματος του προϊόντος
-	    preparedStmt.setInt(3, pr.getPrice());  // Ανάθεση της τιμής του προϊόντος
-	      
-	    // Εκτέλεση του query
-	    preparedStmt.executeUpdate();  // Χρησιμοποιούμε το executeUpdate αντί για execute
-	        
-	    System.out.println("Product added successfully.");
-	    // Κλείσιμο σύνδεσης
-	    if (conn != null) {
+	 // Ιδιωτική μέθοδος για την αποθήκευση ενός προϊόντος στη βάση δεδομένων
+	 private void saveToDB(Product pr) throws Exception {
+	     // Ορισμός του driver για τη σύνδεση με MySQL
+	     String myDriver = "org.gjt.mm.mysql.Driver";
+	     String myUrl = "jdbc:mysql://localhost/market";
+	     Connection conn = null;
+	     Class.forName(myDriver); // Φόρτωση της κλάσης του driver
+	     conn = DriverManager.getConnection(myUrl, "root", ""); // Δημιουργία σύνδεσης
+	
+	     // Έλεγχος εάν η σύνδεση είναι επιτυχής
+	     if (conn != null) {
+	         System.out.println("Connection established successfully.");
+	     }
+	
+	     // Δημιουργία του SQL query για την εισαγωγή δεδομένων
+	     String query = "INSERT INTO products (code, name, price) VALUES (?, ?, ?)";
+	     PreparedStatement preparedStmt = conn.prepareStatement(query);
+	
+	     // Ανάθεση τιμών στα placeholders του query
+	     preparedStmt.setInt(1, pr.getCode());  // Κωδικός προϊόντος
+	     preparedStmt.setString(2, pr.getName());  // Όνομα προϊόντος
+	     preparedStmt.setInt(3, pr.getPrice());  // Τιμή προϊόντος
+	
+	     // Εκτέλεση του query
+	     preparedStmt.executeUpdate();  // Ενημερώνει τη βάση δεδομένων
+	
+	     System.out.println("Product added successfully.");
+	     
+	     // Κλείσιμο της σύνδεσης
+	     if (conn != null) {
 	         conn.close();
-	    }
-	    
-	}
-
-		
-
-	public void setList(ArrayList<Product> loadFromDB) {
-		pList = loadFromDB;
-	}
+	     }
+	 }
 	
-	public Product findProduct(String productName) {
-	    for (Product product : pList) {
-	        if (product.getName() != null && product.getName().equalsIgnoreCase(productName)) {
-	            return product;
-	        }
-	    }
-	    // Επιστροφή null ή άλλου αντικειμένου αν δεν βρεθεί το προϊόν
-	    return null;
-	}
-
+	 // Μέθοδος για την προσθήκη προϊόντος στη λίστα και τη βάση δεδομένων
+	 public void addProduct(Product pr) throws Exception {
+	     // Εάν η λίστα είναι κενή, αρχικοποιείται
+	     if (pList == null) {
+	         pList = new ArrayList<>();
+	     }
+	     pList.add(pr); // Προσθήκη του προϊόντος στη λίστα
+	     saveToDB(pr);  // Αποθήκευση του προϊόντος στη βάση δεδομένων
+	 }
+	
+	 // Μέθοδος για την ενημέρωση της λίστας προϊόντων από δεδομένα της βάσης δεδομένων
+	 public void setList(ArrayList<Product> loadFromDB) {
+	     pList = loadFromDB;
+	 }
+	
+	 // Μέθοδος για την εύρεση προϊόντος με βάση το όνομά του
+	 public Product findProduct(String pr) {
+	     // Αναζητά το προϊόν στη λίστα συγκρίνοντας τα ονόματα
+	     for (Product product : pList) {
+	         if (product.getName().equalsIgnoreCase(pr)) {
+	             return product; // Επιστροφή του προϊόντος αν βρεθεί
+	         }
+	     }
+	     // Επιστρέφει null αν το προϊόν δεν βρεθεί
+	     return null;
+	 }
 }

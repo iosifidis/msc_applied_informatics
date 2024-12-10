@@ -35,7 +35,7 @@
 				var product = result[k];
 				var code = product.code;
 				var name = product.name;
-				var price = product.timi;
+				var price = product.price;
 
 				var row = table.insertRow(-1); // Προσθήκη νέας γραμμής στο τέλος
 				var cell1 = row.insertCell(0);
@@ -49,25 +49,72 @@
 			}
 
 
-			function addProduct() {				
-				var settings = {
-					"url": "http://localhost:8080/addProduct",
-					"method": "POST",
-					"timeout": 0,
-					"headers": {
-					"Content-Type": "application/json"
-					},
-				"data": JSON.stringify({
-					"code": document.getElementById("code").value,
-					 "name": document.getElementById("name").value,
-					"timi": document.getElementById("price").value
-				  }),
+			// Αυτή την function αλλάξαμε, ειδικά στην method όπου μπήκε ως POST
+			function addProduct() {  
+			    var code = document.getElementById("code").value; // Ανάκτηση του κωδικού από το input πεδίο.
+			    var name = document.getElementById("name").value; // Ανάκτηση της ονόματος προϊόντος από το input πεδίο.
+			    var price = document.getElementById("price").value; // Ανάκτηση της τιμής από το input πεδίο.
+			    
+			       // Ελέγξτε αν τα πεδία είναι κενά πριν τα στείλετε
+			    if (!code || !name || !price) {
+				alert("Please fill in all fields.");
+				return;
+			    }
+			
+			    // Δημιουργούμε ένα αντικείμενο ρυθμίσεων για το AJAX request.
+			    var settings = {
+				"url": "http://localhost:8080/addproduct", // URL για το endpoint της εφαρμογής που προσθέτει προϊόν.
+				"method": "POST", // Ορίζουμε ότι θα κάνουμε POST request.
+				"timeout": 0, // Δεν υπάρχει χρονικό όριο για το request.
+				"headers": {
+				    "Content-Type": "application/json" // Ορίζουμε ότι τα δεδομένα θα σταλούν σε μορφή JSON.
+				},
+				"data": JSON.stringify({ // Μετατρέπουμε τα δεδομένα του προϊόντος σε JSON μορφή.
+				    "code": code, 
+				    "name": name,   
+				    "price": price 
+				}),
+			    };
 
-				};
-				$.ajax(settings).done(function (response) {
-					showAll();
+			    // Εκτέλεση του AJAX request.
+			    $.ajax(settings).done(function (response) {
+				// Μετά την επιτυχή ολοκλήρωση, καλούμε τη συνάρτηση showAll().
+				showAll(); // Ανανεώνουμε την προβολή όλων των προϊόντων.
+			    });
+			}
+			
+			function findProduct() {
+			    // Λήψη της τιμής του ονόματος προϊόντος από το πεδίο εισαγωγής και αφαίρεση τυχόν κενών
+			    var productName = document.getElementById("searchName").value.trim();
+
+			    // Έλεγχος αν το όνομα του προϊόντος είναι κενό
+			    if (productName === "") {
+				alert("Please enter a product name."); // Εμφάνιση ειδοποίησης για τον χρήστη
+				return; // Διακοπή της εκτέλεσης αν δεν έχει δοθεί όνομα προϊόντος
+			    }
+
+			    // Εκτύπωση του ονόματος προϊόντος για debugging στο console
+			    console.log("Searching for product: " + productName);
+
+			    // Ρυθμίσεις για το αίτημα AJAX
+			    var settings = {
+				"url": "http://localhost:8080/findproduct?name=" + encodeURIComponent(productName), // URL με κωδικοποιημένο όνομα προϊόντος ως query parameter
+				"method": "GET", // Μέθοδος αιτήματος HTTP
+				"timeout": 0, // Καμία προθεσμία για το αίτημα
+			    };
+
+			    // Εκτέλεση του AJAX αιτήματος χρησιμοποιώντας τη βιβλιοθήκη jQuery
+			    $.ajax(settings)
+				.done(function (response) { // Αν το αίτημα ολοκληρωθεί επιτυχώς
+				    console.log("Response from backend: " + response); // Εκτύπωση της απόκρισης για debugging
+				    document.getElementById("searchResult").innerHTML = response; // Ενημέρωση του DOM με το αποτέλεσμα αναζήτησης
+				})
+				.fail(function () { // Αν το αίτημα αποτύχει
+				    document.getElementById("searchResult").innerHTML = "Error: Unable to find product."; // Εμφάνιση μηνύματος σφάλματος στον χρήστη
 				});
 			}
+
+
 		
 		</script>	
 
@@ -82,12 +129,11 @@
 
 
 		<br><br>
-
-		<table>
+	<table>
 			<tr>
 			  <td> Code: </td>
 			  <td> <input type='text' id='code' /></td>
-			</tr> <!-- Προσθήκη σωστού κλεισίματος -->
+			</tr> 
 			<tr>
 			  <td> Name: </td>
 			  <td> <input type='text' id='name' /></td>
@@ -98,7 +144,20 @@
 			</tr>
 
 		</table>
-		<button name='addProduct' onclick="addProduct();"> Add Product </button>		
+		<button name='addProduct' onclick="addProduct();"> Add Product </button>	
+		
+		<br><br>
+
+		<h2>Search Product</h2>
+		<table>
+			<tr>
+			  <td> Name: </td>
+			  <td> <input type='text' id='searchName' /></td>
+			</tr>
+		</table>
+		<button name='findProduct' onclick="findProduct();"> Find Product </button>
+		<br>
+		<div id="searchResult" style="margin-top: 20px; color: blue; font-weight: bold;"></div>	
 		
 	</body>
 </html>
