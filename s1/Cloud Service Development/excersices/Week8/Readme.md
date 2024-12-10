@@ -41,7 +41,7 @@ spring.jpa.show-sql=true
 
 ## 3. Ενημερωμένα Endpoints και κλάσεις.
 
-- ΚΛΑΣΗ `StudentRepository`
+### ΚΛΑΣΗ `StudentRepository`
 
 Η κλάση `StudentRepository` είναι ένα interface που επεκτείνει το `JpaRepository`, το οποίο παρέχεται από το Spring Data JPA. Αυτή η κλάση αναλαμβάνει τη διαχείριση των δεδομένων για την οντότητα `Student`.
 
@@ -52,7 +52,7 @@ public interface StudentRepository extends JpaRepository<Student, String> {
 }
 ```
 
-- ΚΛΑΣΗ `Student` ο κώδικας γίνεται:
+### ΚΛΑΣΗ `Student` ο κώδικας γίνεται:
 
 ```
 @Entity 
@@ -66,7 +66,7 @@ public class Student {
    - `@Entity`: Ενδεικνύει ότι αυτή η κλάση είναι οντότητα στη βάση δεδομένων   
    - `@Id`: Σημαίνει ότι αυτό το πεδίο είναι το πρωτεύον κλειδί της οντότητας   
 
-- ΚΛΑΣΗ `HelloService`
+### ΚΛΑΣΗ `HelloService`
 
 Σβήνω την λίστα `List<Student> sList` στην πρώτη γραμμή και προσθέτω τον κώδικα:
 
@@ -91,7 +91,7 @@ public List<Student> getAllStudents() throws Exception {
     }
 ```
 
-- ΚΛΑΣΗ `HelloServiceConfig`
+### ΚΛΑΣΗ `HelloServiceConfig`
 
 Εάν στο αρχείο `application.properties` έχουμε:
 
