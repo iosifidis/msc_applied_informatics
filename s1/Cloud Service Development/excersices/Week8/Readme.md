@@ -214,17 +214,17 @@ function addStudent() {
 
 <hr>
 
-## 7. Συμπεράσματα
-- Το POST endpoint αντικατέστησε το GET για την προσθήκη φοιτητών, εξασφαλίζοντας καλύτερη χρήση των HTTP μεθόδων.  
-- Το Swagger UI διευκολύνει την τεκμηρίωση και τον έλεγχο των API.   
-- Η λειτουργία του frontend ενημερώθηκε με τη χρήση του POST endpoint.   
-
-<hr>
-
-## 8. Χρησιμοποιούμενα Annotations
+## 7. Χρησιμοποιούμενα Annotations
 - `@RestController`: Δημιουργεί RESTful API.   
 - `@GetMapping`: Χειρίζεται HTTP GET αιτήματα.   
 - `@PostMapping`: Χειρίζεται HTTP POST αιτήματα.   
 - `@RequestBody`: Δέχεται JSON δεδομένα από το body του αιτήματος.   
 - `@Autowired`: Κάνει inject το service class στον controller.   
+
+<hr>
+
+## 7. Συμπεράσματα
+- Το POST endpoint αντικατέστησε το GET για την προσθήκη φοιτητών, εξασφαλίζοντας καλύτερη χρήση των HTTP μεθόδων.  
+- Το Swagger UI διευκολύνει την τεκμηρίωση και τον έλεγχο των API.   
+- Η λειτουργία του frontend ενημερώθηκε με τη χρήση του POST endpoint.   
 
