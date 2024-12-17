@@ -16,7 +16,7 @@
   - **NOCC (Number of Child Classes)**   
   - **CBO (Coupling Between Objects)**   
   - **LCOM (Lack of Cohesion of Methods)**   
-  - **WMC* (Weighted Methods per Class)**   
+  - **WMC** (Weighted Methods per Class)**   
   - **SIZE2 (Μέγεθος)**   
 
 ## 2. Διαχείριση Αποτελεσμάτων
@@ -39,7 +39,7 @@
 - Εστιάζουμε στις κλάσεις με υψηλές τιμές στις μετρικές.   
 
 ### Ανάλυση Τελευταίας Έκδοσης
-- Χρησιμοποιούμε τις μετρικές **DIT, NOCC, CBO, LCOM, WMC*, SIZE2**.   
+- Χρησιμοποιούμε τις μετρικές DIT, NOCC, CBO, LCOM, WMC*, SIZE2.   
 - Παρατηρήσεις:   
   - Όσο υψηλότερη είναι η τιμή, τόσο χειρότερη η κλάση.   
   - Ταξινομούμε φθίνουσα κάθε μετρική και εντοπίζουμε το **Top 10%** των κλάσεων.   
