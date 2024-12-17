@@ -16,7 +16,7 @@
   - **NOCC (Number of Child Classes)**   
   - **CBO (Coupling Between Objects)**   
   - **LCOM (Lack of Cohesion of Methods)**   
-  - **WMC** (Weighted Methods per Class)**   
+  - **WMC* (Weighted Methods per Class)**   
   - **SIZE2 (Μέγεθος)**   
 
 ## 2. Διαχείριση Αποτελεσμάτων
