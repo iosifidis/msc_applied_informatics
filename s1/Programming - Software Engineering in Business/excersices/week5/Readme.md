@@ -1,53 +1,95 @@
-# Βιβλιοθήκες - Αλφαριθμητικά - Μετατροπές - Διάβασμα δεδομένων
+### Σημειώσεις: Βιβλιοθήκες, Αλφαριθμητικά, Μετατροπές και Διάβασμα Δεδομένων
 
-## Χρήση κλάσεων βιβλιοθήκης
+#### Χρήση Κλάσεων Βιβλιοθήκης
 
-Η δεσμευμένη λέξη **static** χρησιμοποιείται για τη δήλωση μεταβλητών κλάσης (class variables), ή αλλιώς στατικών μεταβλητών (static variables). Οι μεταβλητές κλάσεις είναι πεδία που αποθηκεύονται στην ίδια την κλάση και όχι σε ένα αντικείμενο. Κάθε στιγμή δηλαδή κατά τη διάρκεια εκτέλεσης ενός προγράμματος υπάρχει ένα μόνο αντίγραφο μιας μεταβλητής κλάσης ανεξάρτητα από τον αριθμό των στιγμιοτύπων/αντικειμένων της.
+- Η δεσμευμένη λέξη **static** χρησιμοποιείται για τη δήλωση μεταβλητών κλάσης (class variables) ή αλλιώς στατικών μεταβλητών (static variables). 
+  - Οι μεταβλητές κλάσεις αποθηκεύονται στην ίδια την κλάση και όχι σε αντικείμενα. Υπάρχει μόνο ένα αντίγραφο κατά την εκτέλεση ενός προγράμματος, ανεξάρτητα από τον αριθμό των στιγμιοτύπων.
+  - Παράδειγμα:
+    ```java
+    private static final int gravity = 3;
+    ```
 
-Η δεσμευμένη λέξη **final** χρησιμοποιείται συχνά για τον ορισμό σταθερών (constants), η τιμή των οποίων παραμένει αμετάβλητη σε όλη τη διάρκεια εκτέλεσης ενός προγράμματος. Η δήλωση σταθερών στη Java γίνεται με τη δεσμευμένη λέξη final.
+- Η δεσμευμένη λέξη **final** χρησιμοποιείται για τον ορισμό σταθερών (constants), οι οποίες παραμένουν αμετάβλητες κατά την εκτέλεση του προγράμματος.
+  - Για κοινή χρήση μιας σταθεράς σε όλα τα στιγμιότυπα, δηλώνουμε τη σταθερά ως "class constant" με `static final`.
 
-Πολλές φορές μια σταθερά χρησιμοποιείται από όλα τα στιγμιότυπα μιας κλάσης. Σε αυτή την περίπτωση δηλώνουμε μια σταθερά κλάσης (class constant) συνδυάζοντας τις δεσμευμένες λέξεις static και final, όπως στην περίπτωση της gravity παραπάνω.
+#### Αλφαριθμητικά (Strings)
 
-- private static final int gravity = 3;
+- **Έλεγχος Ισότητας:**
+  - Δεν χρησιμοποιούμε το `=` αλλά τη μέθοδο `equals()`.
+    ```java
+    if (string1.equals(string2)) {
+        // Τα strings είναι ίσα
+    }
+    ```
+  - Για αδιαφορία σε πεζά-κεφαλαία: `equalsIgnoreCase()`.
 
-## Αλφαριθμητικά
+- **Άλλες Χρήσιμες Μέθοδοι:**
+  - Μήκος αλφαριθμητικού:
+    ```java
+    int length = str1.length();
+    ```
+  - Αντικατάσταση χαρακτήρων:
+    ```java
+    String newString = str1.replace('g', 'f');
+    ```
 
-Έλεγχος ισότητας αλφαριθμητικών: όχι με το = αλλά με τη μέθοδο equals()
+#### Μετατροπές
 
-- π.χ. if (string1.equals(string2))
+- **Μετατροπή Άλλων Τύπων σε Αλφαριθμητικό:**
+  ```java
+  String str = String.valueOf(nonStringValue);
+  ```
 
-Αν δεν θέλουμε να λαμβάνονται υπόψη πεζά-κεφαλαία τότε κάνουμε χρήση της equalsIngnoreCase().
+- **Μετατροπή Αλφαριθμητικών σε Άλλους Τύπους:**
+  ```java
+  int intValue = Integer.parseInt(stringValue);
+  double doubleValue = Double.parseDouble(stringValue);
+  float floatValue = Float.parseFloat(stringValue);
+  ```
 
-Μέγεθος αλφαριθμητικού int i = str1.length()   
-Αντικατάσταση αλφαριθμητικού str1.replace('g','f')
+- **Παραδείγματα:**
+  ```java
+  String st1 = String.valueOf(22);
+  int i = Integer.parseInt("22");
+  double d = Double.parseDouble("22.2");
+  ```
 
-### Μετατροπές
+#### Διάβασμα Δεδομένων από την Κονσόλα
 
-Μετατροπή άλλων τύπων σε αλφαριθμητικό:   
-- μεταβλητή_string.valueOf(μη-αλφαριθμητική-τιμή)
+- **Εισαγωγή Δεδομένων:**
+  ```java
+  Scanner in = new Scanner(System.in);
+  System.out.print("Enter quantity: ");
+  int quantity = in.nextInt();
+  ```
 
-Μετατροπή αλφαριθμητικών σε άλλους τύπους:   
-- μεταβλητή_int = Integer.parseInt(αλφαριθμητικό);   
-- μεταβλητή_double = Double.parseDouble(αλφαριθμητικό);   
-- μεταβλητή_float = Float.parseFloat(αλφαριθμητικό);   
+- **Διάφοροι Τύποι Δεδομένων:**
+  ```java
+  int x = in.nextInt();
+  double y = in.nextDouble();
+  String s = in.nextLine();
+  ```
 
-πχ
-- String st1 = String.valueOf(22);   
-- int i = Integer.parseInt("22");   
-- double d = Double.parseDouble("22.2");   
+- **Μετατροπές από String σε Άλλους Τύπους:**
+  ```java
+  int x = Integer.parseInt(in.nextLine());
+  double y = Double.parseDouble(in.nextLine());
+  String s = in.nextLine();
+  ```
 
-## Διάβασμα δεδομένων από την κονσόλα
+#### Πρόσθετα Σημεία
 
-Scanner in = new Scanner(System.in);    
-System.out.print("Enter quantity ");    
-int quantity = in.nextInt();    
+- Η αρχή της "απόκρυψης πληροφοριών" (information hiding) εξασφαλίζει καλύτερη δομή της εφαρμογής.
+  - Τα πεδία πρέπει να είναι `private`, και η πρόσβαση σε αυτά να γίνεται μέσω μεθόδων `public` αν απαιτείται.
 
-### Διάφοροι τύποι
+- **Παραδείγματα για τη χρήση κλάσεων βιβλιοθήκης και String:**
+  - Εύρεση χαρακτήρων:
+    ```java
+    int index = str1.indexOf('e');
+    ```
+  - Υποαλφαριθμητικά:
+    ```java
+    String subStr = str1.substring(5, 10);
+    ```
 
-int x = in.nextInt();   
-double y = in.nextDouble();   
-String s = in.nextLine();   
 
-int x = Integer.parseInt(in.nextLine());   
-double y = Double.parseDouble(in.nextLine());   
-String s = in.nextLine();   
