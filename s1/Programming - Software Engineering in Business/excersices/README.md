@@ -63,3 +63,12 @@ Through these examples, we learned to:
 - Apply wrapper classes for collections and automatic type conversion (autoboxing/unboxing).   
 - Organize code into smaller, purpose-specific methods for improved functionality management.   
 - These techniques and concepts strengthen the ability to write organized, scalable, and efficient code in Java.   
+
+
+## [Week 5](./week5)
+
+Βιβλιοθήκες - Αλφαριθμητικά - Μετατροπές - Διάβασμα δεδομένων
+
+## [Week 6](./week6)
+
+Κληρονομικότητα, Πολυμορφισμός & Υποσκέλιση
