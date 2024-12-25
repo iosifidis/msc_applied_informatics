@@ -155,7 +155,7 @@ hadoop jar social.jar Social <input_path> <output_path>
 - `<output_path>`: Ο κατάλογος όπου θα αποθηκευτούν τα αποτελέσματα (π.χ., output).
 
 
-### Python (αρχεία [map.py(map.py) και [reduce.py](reduce.py))
+### Python (αρχεία [map.py](map.py) και [reduce.py](reduce.py))
 
 1. Εκτέλεση τοπικά με χρήση pipes:
 
