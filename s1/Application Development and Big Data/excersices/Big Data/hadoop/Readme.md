@@ -103,3 +103,15 @@ hadoop jar hadoop-streaming-*.jar \
 -mapper map.py -reducer reduce.py \
 -input input -output output
 ```
+
+---
+
+## Βίντεο
+
+1. [Hadoop In 5 Minutes | What Is Hadoop? | Introduction To Hadoop | Hadoop Explained](https://www.youtube.com/watch?v=aReuLtY0YMI){:target="_blank"}   
+
+---
+
+## Παραδείγματα
+
+1. [Hadoop examples](https://github.com/naver/hadoop/tree/master/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples):target="_blank"}   
