@@ -2,7 +2,7 @@
 
 ---
 
-## Τι Είναι το Hadoop MapReduce
+## Τι Είναι το [Hadoop](https://hadoop.apache.org/) MapReduce
 Το **Hadoop MapReduce** είναι ένα προγραμματιστικό μοντέλο και πλαίσιο που χρησιμοποιείται για την επεξεργασία μεγάλων δεδομένων σε κατανεμημένα συστήματα. Χωρίζεται σε δύο φάσεις:  
 1. **Map**: Μετατρέπει τα δεδομένα εισόδου σε ζεύγη κλειδιού-τιμής.  
 2. **Reduce**: Συνδυάζει τα ζεύγη με το ίδιο κλειδί για παραγωγή της τελικής εξόδου.
@@ -108,10 +108,10 @@ hadoop jar hadoop-streaming-*.jar \
 
 ## Βίντεο
 
-1. [Hadoop In 5 Minutes | What Is Hadoop? | Introduction To Hadoop | Hadoop Explained](https://www.youtube.com/watch?v=aReuLtY0YMI){:target="_blank"}   
+1. [Hadoop In 5 Minutes | What Is Hadoop? | Introduction To Hadoop | Hadoop Explained](https://www.youtube.com/watch?v=aReuLtY0YMI)  
 
 ---
 
 ## Παραδείγματα
 
-1. [Hadoop examples](https://github.com/naver/hadoop/tree/master/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples):target="_blank"}   
+1. [Hadoop examples](https://github.com/naver/hadoop/tree/master/hadoop-mapreduce-project/hadoop-mapreduce-examples/src/main/java/org/apache/hadoop/examples)
