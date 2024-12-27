@@ -60,7 +60,10 @@ number.map(lambda x: x + 2).collect()  # Επιστρέφει [3, 4, 5, 3]
 
 **Παράδειγμα 2**: Χρήση intermediate RDD
 ```
+// Τρόπος 1 action μαζί με transformation
 myrdd1 = number.map(lambda x: x + 2)
+
+// Τρόπος 2 Δημιουργία rdd από transformation και action πάνω στο rdd
 myrdd1.collect()  # Επιστρέφει [3, 4, 5, 3]
 ```
 
@@ -97,8 +100,8 @@ words.count()  # Επιστρέφει τον αριθμό των λέξεων
 1. Κατεβάστε και τοποθετήστε το dataset:
 ```
 import os
-os.system('wget https://pkgstore.datahub.io/machine-learning/adult/adult_csv/data/c8c87915d76926896a93604761460f22/adult_csv.csv')
-os.system('mv adult_csv.csv /tmp/')
+os.system('wget https://pkgstore.datahub.io/machine-learning/adult/adult_csv/data/c8c87915d76926896a93604761460f22/adult_csv.csv') # Λήψη dataset
+os.system('mv adult_csv.csv /tmp/') # Μεταφορά στο tmp
 ```
 
 2. Φορτώστε το CSV ως DataFrame:
@@ -126,12 +129,12 @@ otherdf = dataframe_csv.select('age')
 otherdf.show()  # Εμφανίζει τη στήλη age
 ```
 
-**Μοναδικές ηλικίες**
+**Επιλογή μοναδικών ηλικιών**
 ```
 dataframe_csv.select('age').distinct().show()
 ```
 
-**Συνάθροιση και ταξινόμηση**
+**Συνάθροιση και ταξινόμηση ανά ηλικιακή ομάδα**
 ```
 dataframe_csv.groupBy("age").count().orderBy("count", ascending=False).show()
 ```
