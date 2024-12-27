@@ -24,6 +24,8 @@
 - **Λήψη αρχείου από το HDFS:** `hdfs dfs -get [όνομα_αρχείου]`
 - **Λήψη φακέλου από το HDFS:** `hdfs dfs -get [όνομα_φακέλου] [προορισμός]`
 - **Μεταφόρτωση αρχείου στο HDFS:** `hdfs dfs -put [όνομα_αρχείου]`
+- **Φέρνω από το HDFS τον φάκελο input στο τοπικό σύστημα και τον αποθηκεύω στον φάκελο /tmp:** `hdfs dfs -get input /tmp/`
+
 
 ---
 
@@ -50,6 +52,10 @@
   ```bash
   curl -i -X PUT "http://localhost:9870/webhdfs/v1/tmp/firewall_rules.sh?op=create&user.name=bigdata"
   ```
+- **Αποστολή δεδομένων σε Datanode:**
+  ```bash
+  curl -i -X PUT 'http://bigdata-virtualbox:9864/webhdfs/v1/tmp/firewall_rules.sh?op=CREATE&user.name=bigdata&namenoderpcaddress=master:9000&createflag=&createparent=true&overwrite=false' -H 'Content-Type: application/octet-stream' -T 'firewall_rules.sh'
+  ```
 
 ---
 
@@ -68,7 +74,16 @@
     'Rate': 24.2,
     'Days': 2
   }]
-  df = spark.createDataFrame(data)   # Create DF
+```
+
+- **Δημιουργία dataframe:**
+```
+df = spark.createDataFrame(data)
+```
+
+- **Εμφάνιση περιεχομένων DataFrame:**
+  ```python
+  df.show(truncate=False)
   ```
 - **Αποθήκευση DataFrame:**
   ```python
@@ -77,6 +92,16 @@
 - **Ανάγνωση DataFrame από HDFS:**
   ```python
   dfhdfs = spark.read.format('json').load('hdfs://localhost:9000/user/bigdata/json-example')
+  ```
+- **Δημιουργία νέας στήλης με υπολογισμό:**
+  ```python
+  newdf = dfhdfs.withColumn("Total", dfhdfs.Days*dfhdfs.Rate)
+  ```
+- **Δημιουργία νέας στήλης με παράθεση συμβολοσειρών:**
+  ```python
+  from pyspark.sql.functions import concat_ws
+  newdf = newdf.withColumn("Type", concat_ws(" ", "Brand", "Model"))
+  newdf.show()
   ```
 
 ---
@@ -87,15 +112,28 @@
   ```python
   parTempData = sc.textFile("hdfs://localhost:9000/user/bigdata/temps.txt")
   ```
+- **Φέρνω τα δεδομένα στον driver:**
+  ```python
+  parTempData.collect()
+  ```
 - **Μετατροπή Φαρενάιτ σε Κελσίου:**
   ```python
   def FtoC(fahrenheit):
       celsius = (fahrenheit-32)*5/9
       return celsius
   ```
-- **Φιλτράρισμα δεδομένων:**
+- **Μετατροπή θερμοκρασιών:**
+  ```python
+  celsiusTemps = parTempData.map(lambda x: float(x)).map(FtoC)
+  ```
+- **Παίρνω την πρώτη θερμοκρασία:**
+  ```python
+  celsiusTemps.first()
+  ```
+- **Φιλτράρισμα θερμοκρασιών >= 13°C:**
   ```python
   filteredTemps = celsiusTemps.filter(lambda temp: temp >= 13)
+  filteredTemps.collect()
   ```
 
 ---
