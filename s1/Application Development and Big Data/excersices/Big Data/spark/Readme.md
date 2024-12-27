@@ -237,6 +237,12 @@ predictions.show()
 
 ---
 
+## Επεξήγηση εντολών
+
+Δείτε στο αρχείο [Εντολές](Commands.md)
+
+---
+
 ## Πηγές
 
 - [Apache Spark Official Documentation](https://spark.apache.org/docs/latest/)   
