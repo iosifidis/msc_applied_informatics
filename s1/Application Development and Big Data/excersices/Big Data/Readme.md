@@ -36,3 +36,8 @@
 ## 5. Διαχείριση Πόρων και Εκτέλεση Εφαρμογών
 
 Για περισσότερες πληροφορίες, μπορείτε να δείτε στον [φάκελο](applicationexecution).
+
+
+## Βίντεο
+
+- [Big Data Hadoop Full Course](https://youtube.com/playlist?list=PL6UwySlcwEYJ2hFuGIvr4VEHUAfl-GCNT&si=x0AHO0iRBkTioCps)   
