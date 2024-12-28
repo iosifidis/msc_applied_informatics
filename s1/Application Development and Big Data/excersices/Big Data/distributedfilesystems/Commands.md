@@ -62,7 +62,7 @@
 ## 6. PySpark Εντολές
 - **Εκκίνηση PySpark:** `pyspark`
 - **Δημιουργία DataFrame:**
-```python
+   ```python
   data = [{
     'Brand': 'Toyota',
     'Model': 'Corolla',
@@ -74,12 +74,12 @@
     'Rate': 24.2,
     'Days': 2
   }]
-```
+   ```
 
 - **Δημιουργία dataframe:**
-```
-df = spark.createDataFrame(data)
-```
+   ```
+   df = spark.createDataFrame(data)
+   ```
 
 - **Εμφάνιση περιεχομένων DataFrame:**
   ```python
