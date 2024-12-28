@@ -170,3 +170,10 @@ hadoop jar hadoop-streaming-*.jar -files map.py,reduce.py \
 -mapper map.py -reducer reduce.py -input input -output output
 ```
 
+---
+
+## Βίντεο
+
+- [Map Reduce explained with example | System Design](https://youtu.be/cHGaQz0E7AU?si=SgxstdGOPUJ6uAe9)   
+- [What is MapReduce?](https://youtu.be/43fqzaSH0CQ?si=Uiap4a7NqmJtkl71)  
+- [MapReduce - Computerphile](https://youtu.be/cvhKoniK5Uo?si=TtEH5GCAO_IyDRIh)   

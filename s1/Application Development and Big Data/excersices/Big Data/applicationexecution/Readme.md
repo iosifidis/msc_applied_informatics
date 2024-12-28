@@ -49,10 +49,20 @@
 ## SparkSession
 - Απαραίτητο για την αρχικοποίηση εφαρμογών Spark.
 - Παρέχει APIs για αλληλεπίδραση με το cluster.
+- Δημιουργία μέσω της μεθόδου getOrCreate: sc = SparkContext.getOrCreate()
 
 ## Διασωλήνωση και Shuffles
 - **Διασωλήνωση (pipelining)**: Συνδυασμός λειτουργιών σε ένα στάδιο, χωρίς ενδιάμεση αποθήκευση.
 - **Shuffles**: Επανακατανομή δεδομένων μεταξύ κόμβων, απαραίτητη για σύνθετες λειτουργίες.
+
+---
+
+## Βίντεο
+
+- [YARN Tutorial | YARN Architecture | Hadoop Tutorial For Beginners | YARN In Hadoop | Simplilearn](https://youtu.be/KqaPMCMHH4g?si=2ku4dqU-Z3XTrsQB)    
+- [What is Hadoop Yarn? | Hadoop Yarn Tutorial | Hadoop Yarn Architecture | COSO IT](https://youtu.be/ZFbkNY6Xn94?si=gOXqgcu-t4RTsMC6)   
+- [Hadoop Yarn Tutorial | Hadoop Yarn Architecture | Hadoop Tutorial For Beginners | Edureka](https://youtu.be/2poZMI7it74?si=YyisFLpEgP_WxIrF)   
+- [Mastering Resource Management with Hadoop YARN](https://youtu.be/d6i0vqJ6wA0?si=mip1kQu1ItbI9kWQ)   
 
 ---
 

@@ -88,3 +88,14 @@
 
 ### Ομοσπονδία HDFS:
 - Επιτρέπει την ύπαρξη πολλαπλών NameNodes για βελτίωση επεκτασιμότητας.
+
+---
+
+## Βίντεο
+
+- [What Is HDFS And How It Works? | Hadoop Distributed File System (HDFS) Architecture | Simplilearn](https://youtu.be/vEp8oNMiQb8?si=wb_jdhnMqTznmWU7)   
+- [What is HDFS | Hadoop Distributed File System (HDFS) Introduction | Hadoop Training | Edureka](https://youtu.be/GJYEsEEfjvk?si=6UrrVhN1WlBcUf9K)    
+- [Big Data & Hadoop Tutorials](https://youtube.com/playlist?list=PLr0GuAb3MR-wEDZwetSvzvc-CKVSGruhq&si=wrf4uSrMR4lgnyNx)    
+- [HDFS Daemons NameNode and DataNode Explained](https://youtu.be/MzopboXUeW4?si=-G6cuomzvsMDu7RW)   
+- [Secondary NameNode](https://youtu.be/m8S8JHSPJl4?si=quvwaITXzKlpf5aj)   
+
