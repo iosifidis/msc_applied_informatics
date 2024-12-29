@@ -48,12 +48,19 @@
 **Μέτρηση**:
 - Χρήση μετρικής "Coupling Between Objects" (CBO): Μετρά τον αριθμό των εξαρτήσεων μεταξύ κλάσεων.
 
+**Δύο σημαντικές έννοιες στην Τεχνολογία Λογισμικού είναι**:
+- η **σύζεξη (coupling)**. Αναφέρεται στο βαθμό εξάρτησης μεταξύ δύο συστατακών
+- η **συνεκτικότητα (cohesion)**. Αναφέρεται στο βαθμό εσωτερικής λειτουργικής συνάφειας μεταξύ των τμημάτων ενός συστατικού
+
 ### 2.3 Αρχή Μοναδικής Αρμοδιότητας (Single Responsibility Principle - SRP)
 **Ορισμός**: Μία κλάση πρέπει να έχει μόνο έναν λόγο να αλλάξει.
 
 **Πλεονεκτήματα**:
 - Αποφυγή σύζευξης αρμοδιοτήτων.  
 - Μικρότερη πολυπλοκότητα μέσω διαχωρισμού αρμοδιοτήτων σε διαφορετικές κλάσεις.  
+
+**Μέτρηση**:
+- Μετρική "Lack of Cohesion between methods" (LCOM): Ποσοτικοποίηση του βαθμού συνεκτικότητας μιας κλάσης
 
 ### 2.4 Αρχή Ανοιχτής-Κλειστής Σχεδίασης (Open-Closed Principle - OCP)
 **Ορισμός**: Οι οντότητες λογισμικού πρέπει να είναι ανοιχτές για επέκταση αλλά κλειστές για τροποποίηση.
@@ -63,6 +70,194 @@
 
 **Παραβίαση OCP**:
 - Τροποποίηση υπάρχοντος κώδικα αντί για επέκτασή του.
+
+#### 2.4.1 STRATEGY Design Pattern
+
+Το Strategy Design Pattern είναι ένα από τα πιο δημοφιλή συμπεριφορικά πρότυπα σχεδίασης (Behavioral Design Patterns) στην αντικειμενοστραφή προγραμματισμό. Χρησιμοποιείται για να επιτρέψει την επιλογή μιας συμπεριφοράς ενός αντικειμένου κατά τη διάρκεια της εκτέλεσης του προγράμματος, διαχωρίζοντας τον αλγόριθμο από την κλάση που τον χρησιμοποιεί.
+
+**Σκοπός**:
+Το Strategy Pattern παρέχει έναν τρόπο ορισμού μιας οικογένειας αλγορίθμων, την τοποθέτησή τους σε ξεχωριστές κλάσεις και την εναλλαγή τους δυναμικά ανάλογα με τις ανάγκες του προγράμματος.
+
+**Βασικά Συστατικά**:
+- Strategy Interface: Ορίζει μια κοινή διεπαφή για όλους τους αλγόριθμους που θα χρησιμοποιηθούν.   
+- Concrete Strategies: Υλοποιούν διαφορετικές εκδοχές του αλγορίθμου.   
+- Context: Είναι η κλάση που χρησιμοποιεί τις στρατηγικές. Το Context περιέχει μια αναφορά στη Strategy και εκτελεί τη στρατηγική μέσω αυτής.   
+
+**Δομή**:
+- Ο πελάτης (client) επιλέγει τη στρατηγική.   
+- Η στρατηγική εγχέεται στο Context (συνήθως μέσω constructor ή setter).   
+- Το Context χρησιμοποιεί την επιλεγμένη στρατηγική χωρίς να γνωρίζει την υλοποίησή της.  
+
+**Παράδειγμα με Java**:
+Έστω ότι φτιάχνουμε ένα πρόγραμμα υπολογισμού κόστους για διαφορετικές μεθόδους μεταφοράς (π.χ., Οδήγηση, Πτήση, Ποδήλατο).
+```
+// Step 1: Δημιουργία της Strategy Interface
+public interface TransportStrategy {
+    double calculateCost(double distance);
+}
+
+// Step 2: Υλοποίηση Concrete Strategies
+public class CarStrategy implements TransportStrategy {
+    @Override
+    public double calculateCost(double distance) {
+        return distance * 0.5; // Κόστος ανά χιλιόμετρο για οδήγηση
+    }
+}
+
+public class FlightStrategy implements TransportStrategy {
+    @Override
+    public double calculateCost(double distance) {
+        return distance * 1.2; // Κόστος ανά χιλιόμετρο για πτήση
+    }
+}
+
+public class BicycleStrategy implements TransportStrategy {
+    @Override
+    public double calculateCost(double distance) {
+        return 0; // Δωρεάν μεταφορά με ποδήλατο
+    }
+}
+
+// Step 3: Το Context
+public class TravelCostCalculator {
+    private TransportStrategy strategy;
+
+    public TravelCostCalculator(TransportStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public void setStrategy(TransportStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public double calculateCost(double distance) {
+        return strategy.calculateCost(distance);
+    }
+}
+
+// Step 4: Χρήση από τον Client
+public class Main {
+    public static void main(String[] args) {
+        TravelCostCalculator calculator = new TravelCostCalculator(new CarStrategy());
+        System.out.println("Car cost: " + calculator.calculateCost(100));
+
+        calculator.setStrategy(new FlightStrategy());
+        System.out.println("Flight cost: " + calculator.calculateCost(100));
+
+        calculator.setStrategy(new BicycleStrategy());
+        System.out.println("Bicycle cost: " + calculator.calculateCost(100));
+    }
+}
+```
+
+**Πλεονεκτήματα**:
+- Ανοιχτό για επεκτάσεις: Μπορείς να προσθέσεις νέες στρατηγικές χωρίς να αλλάξεις την υπάρχουσα υλοποίηση.   
+- Μείωση πολυπλοκότητας: Εξαλείφονται τα μεγάλα `if-else` ή `switch` statements.   
+- Ευελιξία: Οι στρατηγικές μπορούν να εναλλάσσονται δυναμικά κατά την εκτέλεση.   
+
+**Μειονεκτήματα**:
+- Αύξηση αριθμού κλάσεων: Προστίθενται περισσότερες κλάσεις για κάθε στρατηγική.   
+- Πρόσθετη πολυπλοκότητα: Εισάγεται εξάρτηση μεταξύ του Context και των στρατηγικών.
+
+Με το Strategy Pattern, η αρχή του "Open-Closed Principle" εφαρμόζεται άμεσα, διαχωρίζοντας τις ευθύνες και διατηρώντας το σύστημα ευέλικτο και επεκτάσιμο.
+
+#### 2.4.2 TEPLATE METHOD Design Pattern
+
+Το Template Method Design Pattern είναι ένα από τα συμπεριφορικά πρότυπα σχεδίασης (Behavioral Design Patterns) και χρησιμοποιείται για να ορίσει το σκελετό ενός αλγορίθμου σε μια υπερκλάση, αφήνοντας κάποιες λεπτομέρειες να υλοποιούνται από τις υποκλάσεις. Αυτό επιτρέπει την επαναχρησιμοποίηση κώδικα και τη δυνατότητα προσαρμογής συγκεκριμένων τμημάτων του αλγορίθμου.
+
+**Σκοπός**
+Το Template Method Pattern διασφαλίζει ότι η βασική ροή ενός αλγορίθμου παραμένει αναλλοίωτη, ενώ επιτρέπει στις υποκλάσεις να προσαρμόζουν ή να επεκτείνουν τμήματα του αλγορίθμου, όπου αυτό είναι απαραίτητο.
+
+**Βασικά Συστατικά**
+- Abstract Class: Περιέχει τη μέθοδο "πρότυπο" (template method) και συγκεκριμένες μεθόδους που καθορίζουν τη βασική ροή.   
+- Concrete Classes: Υλοποιούν τις αφηρημένες ή επεκτάσιμες μεθόδους της υπερκλάσης.
+
+**Δομή**
+- Ορίζεται ένα template method στην abstract class που περιέχει τη γενική ροή του αλγορίθμου.    
+- Μερικά βήματα της ροής είτε είναι υλοποιημένα στην υπερκλάση είτε ορίζονται ως abstract (ή protected) για υλοποίηση από τις υποκλάσεις.
+
+**Παράδειγμα με Java**
+Έστω ότι φτιάχνουμε ένα σύστημα παρασκευής ροφημάτων, όπως τσάι και καφές. Η διαδικασία έχει κάποια κοινά βήματα (π.χ., βράσιμο νερού), αλλά και βήματα που διαφέρουν ανάλογα με το ρόφημα.
+```
+// Step 1: Δημιουργία της Abstract Class
+public abstract class BeverageTemplate {
+
+    // Template Method - Καθορίζει τη βασική ροή
+    public final void prepareBeverage() {
+        boilWater();
+        brew();
+        pourInCup();
+        addCondiments();
+    }
+
+    // Concrete Method - Κοινή για όλα τα ροφήματα
+    private void boilWater() {
+        System.out.println("Boiling water...");
+    }
+
+    // Abstract Methods - Πρέπει να υλοποιηθούν από τις υποκλάσεις
+    protected abstract void brew();
+
+    protected abstract void addCondiments();
+
+    // Concrete Method - Κοινή για όλα τα ροφήματα
+    private void pourInCup() {
+        System.out.println("Pouring into cup...");
+    }
+}
+
+// Step 2: Υλοποίηση των Concrete Classes
+public class Tea extends BeverageTemplate {
+    @Override
+    protected void brew() {
+        System.out.println("Steeping the tea...");
+    }
+
+    @Override
+    protected void addCondiments() {
+        System.out.println("Adding lemon...");
+    }
+}
+
+public class Coffee extends BeverageTemplate {
+    @Override
+    protected void brew() {
+        System.out.println("Dripping coffee through filter...");
+    }
+
+    @Override
+    protected void addCondiments() {
+        System.out.println("Adding sugar and milk...");
+    }
+}
+
+// Step 3: Χρήση από τον Client
+public class Main {
+    public static void main(String[] args) {
+        BeverageTemplate tea = new Tea();
+        System.out.println("Preparing tea:");
+        tea.prepareBeverage();
+
+        System.out.println("\nPreparing coffee:");
+        BeverageTemplate coffee = new Coffee();
+        coffee.prepareBeverage();
+    }
+}
+```
+
+**Εκτέλεση του Κώδικα**
+Η μέθοδος `prepareBeverage()` παραμένει αμετάβλητη και εφαρμόζει την κοινή ροή. Οι υποκλάσεις `Tea` και `Coffee` υλοποιούν μόνο τα βήματα που διαφέρουν, δηλαδή τις μεθόδους `brew()` και `addCondiments()`.
+
+**Πλεονεκτήματα**:
+- Επαναχρησιμοποίηση Κώδικα: Κοινά βήματα του αλγορίθμου υλοποιούνται μία φορά στην υπερκλάση.   
+- Ευκολία Επέκτασης: Νέα υποκλάσεις μπορούν να προσθέσουν συμπεριφορά χωρίς να τροποποιήσουν την υπάρχουσα λογική.   
+- Σταθερή Ροή: Διασφαλίζει ότι η βασική ροή του αλγορίθμου παραμένει αμετάβλητη.
+
+**Μειονεκτήματα**:
+- Δυσκολία Συντήρησης: Αν οι αφηρημένες κλάσεις γίνουν πολύπλοκες, μπορεί να δυσκολέψουν την κατανόηση και τη συντήρηση.    
+- Ακατάλληλη για Απλούς Αλγορίθμους: Εισάγει περιττή πολυπλοκότητα όταν ο αλγόριθμος δεν απαιτεί επέκταση.
+
+Το Template Method Pattern εφαρμόζει την αρχή "Don't Repeat Yourself" (DRY), εξασφαλίζοντας τη σωστή δομή και οργάνωση του κώδικα, ενώ επιτρέπει την επέκταση όπου είναι απαραίτητη.
 
 ### 2.5 Αρχή Υποκατάστασης Liskov (Liskov Substitution Principle - LSP)
 **Ορισμός**: Οι παράγωγες κλάσεις πρέπει να μπορούν να αντικαταστήσουν τις βασικές χωρίς να επηρεάζεται η ορθή λειτουργία του συστήματος.
