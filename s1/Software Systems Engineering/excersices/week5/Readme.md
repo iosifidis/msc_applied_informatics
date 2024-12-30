@@ -18,6 +18,9 @@
 
 ### Είδη Ποσοτικοποίησης
 1. **Άμεση ποσοτικοποίηση** (π.χ., Γραμμές Κώδικα - LOC).    
+
+Βίντεο: [Lines of Code LoC](https://youtu.be/F-TGB_aUTyA?si=KAwxVcx8YySX8go0), 
+
 2. **Έμμεση ποσοτικοποίηση** (π.χ., Παραγωγικότητα = LOC/ημέρες προσπάθειας).   
 
 ## 3. Μετρικές σε Διάφορες Φάσεις Ανάπτυξης
@@ -39,6 +42,8 @@
      - N: Αριθμός κόμβων γράφου.   
      - P: Αριθμός συνεκτικών συνιστωσών (συνήθως 1).   
 
+Βίντεο: [Cyclomatic complexity and the impact on testing](https://youtu.be/9RvUj1Psqgk?si=mZRknlc2fmLZlNsV), [Cyclomatic Complexity Explained With Practical Examples](https://youtu.be/vmyS_j3Kh8g?si=i1BOsyaANT_ur3W-), [What is Cyclomatic Complexity in software development?](https://youtu.be/PDYmEtBSn60?si=7ieiKsdq_g_2Qxi3)
+
 2. **Weighted Method per Class 1 (WMPC1)**:
 
 Μετράει την πολυπλοκότητα μίας κλάσης, με βάση την πολυπλοκότητα των μεθόδων της. Ορίζεται ως ο μέσος όρος ή το άθροισμα των CC όλων της των μεθόδων.
@@ -55,6 +60,9 @@
 
 ### Μετρικές Κληρονομικότητας
 1. **Depth of Inheritance Tree (DIT):** Βάθος της κλάσης στην ιεραρχία.   
+
+Βίντεο: [DIT | Depth of the Inheritance Tree | Software Engineering](https://youtu.be/OTM24QMohkI?si=nNaAF4jSG9ssbpA0)
+
 2. **Number of Child Classes (NoCC):** Αριθμός κλάσεων που κληρονομούν από τη συγκεκριμένη.   
 
 ### Σύζευξη (Coupling)
@@ -73,6 +81,8 @@
 - Ευκολότερη συντήρηση   
 - Σαφέστερη Τεκμηρίωση   
 
+Βίντεο: [Coupling Between Classes - Intro to Java Programming](https://youtu.be/P3mVhTQl8F8?si=o53Zd18f9GWF2ygj), [Learn Java Programming - Coupling Tutorial](https://youtu.be/Eq5ReWFlc6w?si=BZ_oVVwB6RBYADf4)
+
 **Μετρικές:**
 
 1. **Coupling Factor (CF):** Σύζευξη σε επίπεδο συστήματος.   
@@ -84,7 +94,12 @@
   - Αριθμητής είναι ο αριθμός των μη κληρονομούμενων συζεύξεων.   
   - Παρονομαστής είναι ο μέγιστος αριθμός πιθανών συζεύξεων στο σύστημα.   
 
+Βίντεο: [Class Oriented Metrics|The MOOD Metrics Suite|Method Inheritance Factor|MIF|Coupling Factor|CF](https://youtu.be/aTYc-JFcL6A?si=hPYBUkBKwOUKwRRQ)
+
 2. **Coupling Between Objects (CBO):** Σύζευξη μεταξύ κλάσεων (CBO=FO+FI).   
+
+Βίντεο: [Coupling Between Object classes | CBO | Coupling in Software Engineering](https://youtu.be/w-Cg41nwjpw?si=PG5lb81gUzX5YwPq)
+
 3. **Fan Out (FO):** Αριθμός ακμών που φεύγουν από μία κλάση.   
 
 Μεγάλο Fan-Out => Η κλάση δεν είναι Αυτάρκης
@@ -103,6 +118,8 @@
 
 Η έλλειψη συνοχής αυξάνει την πολυπλοκότητα και την πιθανότητα εμφάνισης λαθών κατά την ανάπτυξη.
 
+Βίντεο: [Learn Java Programming - Cohesion Tutorial](https://youtu.be/IWSJD-7wkio?si=ToKQaCSvYata2dAG)
+
 **Μετρική:**
 
 1. **Lack of Cohesion of Methods (LCOM1):** Υπολογίζει αν οι μέθοδοι μιας κλάσης χρησιμοποιούν κοινά δεδομένα.
@@ -110,6 +127,10 @@
 
   - LCOM1 = 0, σημαίνει συνεκτική κλάση.   
   - LCOM1 > 0, σημαίνει ότι η κλάση πρέπει να ‘σπάσει’ σε δύο ή περισσότερες κλάσεις, καθότι οι μεταβλητές τους ανήκουν σε διαφορετικά σύνολα.   
+
+Βίντεο: [Lack of Cohesion in Methods | LCOM | Lack of Cohesion](https://youtu.be/D6rzMQKnFGg?si=_S0qjSwHk-H3vAJx)
+
+Βίντεο Σύζευξης-Συνοχής: [Coupling and Cohesion Explained](https://www.youtube.com/watch?v=7pdrZDqEPIw), [Coupling vs Cohesion Explained | QuiCap](https://youtu.be/TCMGU7-Ir_k?si=tmG_BGijozpg4pJf)
 
 ## 5. Αρχές Χαμηλής Σύζευξης και Συνοχής
 - **Χαμηλή Σύζευξη**: Μικρότερη δυνατή εξάρτηση μεταξύ συστατικών για ευκολότερη συντήρηση και τροποποιήσεις.   
@@ -122,7 +143,11 @@
 - Να έχει χαμηλή πολυπλοκότητα και σαφή σχολιασμό.   
 - Να ακολουθεί πρότυπα ποιότητας (π.χ., ISO 9126).   
 
----
 **Σημείωση:** Οι μετρικές πρέπει να επιλέγονται βάσει της ικανότητάς τους να προβλέπουν την ποιότητα σχεδίασης και να είναι ανεξάρτητες από τη γλώσσα προγραμματισμού.
 
+---
 
+## 7. Βίντεο 
+- [Object Oriented Metrics](https://youtu.be/FmPAEJkSRag?si=VgFzb-e_J5CL5X1i)   
+- [Object Oriented Metrics // Object Oriented Analysis and Design (ICS)](https://youtu.be/SWL7R_DtXbE?si=PrvxtgQnTVx4aj03)    
+- [Class Oriented Metrics | CK Metrics Suite | WMC DIT NOC CBO RFC LCOM](https://youtu.be/OSe-306xEUk?si=FlEwrwvgdTMK-ppL)
