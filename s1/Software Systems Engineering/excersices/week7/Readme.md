@@ -1,4 +1,4 @@
-# Σημειώσεις από τη Διάλεξη: Εισαγωγή στη Τεχνολογία Λογισμικού
+# Refactoring με το Σχέδιο Bridge
 
 ## Σχεδιαστικές Αποφάσεις
 
@@ -119,4 +119,4 @@ public class Main {
 
 ### ΕΞΗΣΗΣΗ Bridge   
 
-[Bride](Bridge.md)
+[Bride](bridge/Bridge.md)
