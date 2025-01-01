@@ -58,3 +58,14 @@
 - Την κατανόηση και αξιολόγηση ποιοτικών χαρακτηριστικών.   
 
 ## [Week 6](./week6): Διαδικασία Ανάλυσης Μετρικών Λογισμικού
+
+## [Week 7](./week7): Bridge Pattern
+
+## [Week 8](./week8): Composite Pattern
+
+## [Week 9](./week9): Τεχνικό χρέος
+
+## [Week 10](./week10): Βασικές Αρχές Σχεδίασης
+
+Βίντεο:   
+- [Design Patterns](https://youtube.com/playlist?list=PLlsmxlJgn1HJpa28yHzkBmUY-Ty71ZUGc&si=rJRhhpvW0qyuMTlJ)
