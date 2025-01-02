@@ -36,23 +36,12 @@
 
 Αναλυτικά:
 
-1. `Unirest.setTimeouts(0, 0)`:  
- - Διασφαλίζει ότι η HTTP κλήση δεν έχει χρονικά όρια.   
-
-2. `HttpResponse<String> response = Unirest.get(url).asString();`:   
- - Γίνεται αίτημα GET στο url.   
-
-4. `JSONObject json = new JSONObject(data)`:   
- - Μετατροπή της απόκρισης σε αντικείμενο JSONObject.   
-
-5. `JSONArray people = json.getJSONArray("data")`:   
- - Λήψη του πίνακα δεδομένων από το πεδίο "data".   
-
-6. `JSONObject person = (JSONObject) people.get(i)`:   
- - Πρόσβαση στο αντικείμενο που αντιστοιχεί στο index `i`.   
-
-7. Συνδυασμός των πεδίων `first_name` και `last_name`:
- - Επιστρέφεται το πλήρες όνομα της εγγραφής.
+1. `Unirest.setTimeouts(0, 0)`: Διασφαλίζει ότι η HTTP κλήση δεν έχει χρονικά όρια.    
+2. `HttpResponse<String> response = Unirest.get(url).asString();`: Γίνεται αίτημα GET στο url.   
+3. `JSONObject json = new JSONObject(data)`: Μετατροπή της απόκρισης σε αντικείμενο JSONObject.   
+4. `JSONArray people = json.getJSONArray("data")`: Λήψη του πίνακα δεδομένων από το πεδίο "data".   
+5. `JSONObject person = (JSONObject) people.get(i)`:  Πρόσβαση στο αντικείμενο που αντιστοιχεί στο index `i`.   
+6. Συνδυασμός των πεδίων `first_name` και `last_name`: Επιστρέφεται το πλήρες όνομα της εγγραφής.   
 
 Παράδειγμα JSON Απόκρισης:
 
@@ -88,17 +77,10 @@
 
 Αναλυτικά:
 
-1. `HttpResponse<String> response = Unirest.get(url).asString();`:   
-- Στέλνει αίτημα GET και παίρνει την απόκριση ως `String`.   
-
-2. `JSONObject json = new JSONObject(data)`:   
-- Μετατροπή της απόκρισης σε αντικείμενο `JSONObject`.  
-
-3. `json.get("per_page").toString()`:   
-- Παίρνει την τιμή του πεδίου `"per_page"` που δηλώνει τον αριθμό εγγραφών ανά σελίδα.   
-
-4. `Integer.parseInt(total)`:   
-- Μετατροπή της συμβολοσειράς `total` σε ακέραιο.   
+1. `HttpResponse<String> response = Unirest.get(url).asString();`: Στέλνει αίτημα GET και παίρνει την απόκριση ως `String`.   
+2. `JSONObject json = new JSONObject(data)`: Μετατροπή της απόκρισης σε αντικείμενο `JSONObject`.  
+3. `json.get("per_page").toString()`: Παίρνει την τιμή του πεδίου `"per_page"` που δηλώνει τον αριθμό εγγραφών ανά σελίδα.   
+4. `Integer.parseInt(total)`: Μετατροπή της συμβολοσειράς `total` σε ακέραιο.   
 
 Γιατί:
 

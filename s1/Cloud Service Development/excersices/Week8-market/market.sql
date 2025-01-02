@@ -24,20 +24,20 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Δομή πίνακα για τον πίνακα `products`
+-- Δομή πίνακα για τον πίνακα `product`
 --
 
-CREATE TABLE `products` (
+CREATE TABLE `product` (
   `code` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `price` int(11) NOT NULL
+  `timi` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Άδειασμα δεδομένων του πίνακα `products`
 --
 
-INSERT INTO `products` (`code`, `name`, `timi`) VALUES
+INSERT INTO `product` (`code`, `name`, `timi`) VALUES
 (1, 'Gala', 10),
 (2, 'Tiri', 20),
 (3, 'Krasi', 30),
@@ -50,7 +50,7 @@ INSERT INTO `products` (`code`, `name`, `timi`) VALUES
 --
 -- Ευρετήρια για πίνακα `products`
 --
-ALTER TABLE `products`
+ALTER TABLE `product`
   ADD PRIMARY KEY (`code`);
 COMMIT;
 

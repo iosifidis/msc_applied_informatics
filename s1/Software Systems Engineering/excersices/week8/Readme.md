@@ -2,7 +2,7 @@
 
 ## Composite pattern
 
-[Composite Pattern](Composite_Pattern)
+[Composite Pattern](Composite_Pattern)   
 [Refactoring Guru](https://refactoring.guru/design-patterns/composite)
 
 ### Βίντεο
