@@ -119,4 +119,4 @@ public class Main {
 
 ### ΕΞΗΣΗΣΗ Bridge   
 
-[Bride](bridge/Bridge.md)
+[Bride](bridge/)
