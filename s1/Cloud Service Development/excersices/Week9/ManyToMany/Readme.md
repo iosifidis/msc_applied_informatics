@@ -229,7 +229,7 @@ public class HelloServiceConfig implements CommandLineRunner {
 ### 8. Frontend
 
 Αποθηκεύσετε τον κώδικα σε ένα αρχείο HTML.
-```
+```html
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <html>
