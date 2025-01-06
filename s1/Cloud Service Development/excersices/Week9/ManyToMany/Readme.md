@@ -45,6 +45,9 @@
 Διαμορφώστε το αρχείο `application.properties` για τη χρήση της βάσης δεδομένων H2:
 
 ```properties
+springdoc.api-docs.path=/api
+springdoc.swagger.ui.path=/api-ui
+
 spring.datasource.url=jdbc:mysql://localhost/university
 spring.datasource.username=root
 spring.datasource.password=

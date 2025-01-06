@@ -51,6 +51,9 @@
 Ανοίξτε το αρχείο `src/main/resources/application.properties` και προσθέστε τις παρακάτω ρυθμίσεις:
 
 ```properties
+springdoc.api-docs.path=/api
+springdoc.swagger.ui.path=/api-ui
+
 spring.datasource.url=jdbc:mysql://localhost/university
 spring.datasource.username=root
 spring.datasource.password=

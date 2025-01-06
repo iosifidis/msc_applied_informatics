@@ -16,10 +16,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class MarketService {
 
-	 // Αυτόματη έγχυση της εξάρτησης για το repository της αγοράς (MarketRepository).
+	 // Αυτόματη έγχυση της εξάρτησης για το repository του προϊόντος (ProductRepository).
 	 @Autowired
 	 private ProductRepository productRepository;
 	 
+	// Αυτόματη έγχυση της εξάρτησης για το repository του πωλητή (SellerRepository).
 	 @Autowired
 	 private SellerRepository sellerRepository;
 	
