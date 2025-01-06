@@ -117,7 +117,44 @@ spring.jpa.show-sql=true
 
 ### 6. Διάγραμμα κλάσεων
 
-```
+```plaintext
++---------------------------------------+
+|   MarketController                    |
++---------------------------------------+
+| - marketService: MarketService        |
+|---------------------------------------|
+| + getAllProducts(): List<Product>     |
+| + getProductDetails(id: int): Product |
+| + addProduct(product: Product): void  |
+| + addSeller(seller: Seller): void     |
++---------------------------------------+
+                ▲
+                |
+                | Uses
+                |
++----------------------------------------+
+|   MarketService                        |
++----------------------------------------+
+| - productRepository: ProductRepository |
+| - sellerRepository: SellerRepository   |
+|----------------------------------------|
+| + getAllProducts(): List<Product>      |
+| + findProduct(name: String): Product   |
+| + addProduct(product: Product): void   |
+| + addSeller(seller: Seller): void      |
++----------------------------------------+
+            ▲
+            |
+            | Aggregates
+            |
++-------------------------------------+           +-------------------------------+
+| ProductRepository                   |           | SellerRepository              |
+|-------------------------------------|           |-------------------------------|
+| JpaRepository<Product, Integer>     |           | JpaRepository<Seller, String> |
+|-------------------------------------|           |-------------------------------|
+| + findByName(name: String): Product |           |                               |
++-------------------------------------+           +-------------------------------+
+
 +------------------------+
 |   Product              |
 +------------------------+
@@ -135,65 +172,82 @@ spring.jpa.show-sql=true
             |
             | @ManyToMany(mappedBy="products")
             ▼
-+----------------+
-|   Sale         |
-+----------------+
-| - code: int    |
-| - quantity: int|
-|----------------|
-| + getCode(): int|
-| + getQuantity(): int|
-| + getSeller(): Seller|
-| + setSeller(Seller): void|
++----------------------------+
+|   Sale                     |
++----------------------------+
+| - code: int                |
+| - quantity: int            |
+|----------------------------|
+| + getCode(): int           |
+| + getQuantity(): int       |
+| + getSeller(): Seller      |
+| + setSeller(Seller): void  |
 | + addProduct(Product): void|
-+----------------+
++----------------------------+
             ▲
             |
             | @ManyToOne
             ▼
-+----------------+
-|   Seller       |
-+----------------+
-| - name: String |
-|----------------|
-| + getName(): String|
-| + addSale(Sale): void|
++-------------------------+
+|   Seller                |
++-------------------------+
+| - name: String          |
+|-------------------------|
+| + getName(): String     |
+| + addSale(Sale): void   |
 | + getSales(): List<Sale>|
-+----------------+
++-------------------------+
 
-+----------------+
-|   MarketService|
-+----------------+
-| - productRepository: ProductRepository|
-| - sellerRepository: SellerRepository  |
-|----------------|
-| + getProduct(n: int, a: String, l: int): Product|
-| + getAllProducts(): List<Product>|
-| + findProduct(pr: String): Product|
-| + addProduct(pr: Product): void|
-| + addSeller(s: Seller): void|
-+----------------+
-
-+----------------------+
-|   ProductRepository  |
-+----------------------+
-| JpaRepository<Product, Integer> |
-|----------------------|
-| + findByName(name: String): Product|
-+----------------------+
-
-+----------------------+
-|   SellerRepository   |
-+----------------------+
-| JpaRepository<Seller, String> |
-+----------------------+
-
-+-----------------------+
-|   MarketServiceConfig |
-+-----------------------+
-| - ms: MarketService   |
-|-----------------------|
++----------------------------+
+|   MarketServiceConfig      |
++----------------------------+
+| - ms: MarketService        |
+|----------------------------|
 | + run(String... args): void|
-+-----------------------+
++----------------------------+
+                ▲
+                |
+                | Uses
+                |
++------------------+
+|   MarketService  |
++------------------+
 ```
+
+#### Επεξήγηση του Διαγράμματος
+
+1. Κλάση `Product`
+- Αντιπροσωπεύει ένα προϊόν.  
+- Συσχετίζεται με την κλάση `Sale` μέσω μιας σχέσης `@ManyToMany`.   
+- Περιλαμβάνει πεδία όπως `code`, `name`, και `price`.
+
+2. Κλάση `Sale`
+- Αντιπροσωπεύει μια πώληση.   
+- Συνδέεται με πολλαπλά προϊόντα μέσω της σχέσης `@ManyToMany`.   
+- Συνδέεται με έναν πωλητή μέσω της σχέσης `@ManyToOne`.   
+
+3. Κλάση `Seller`
+- Αντιπροσωπεύει έναν πωλητή.   
+- Συνδέεται με πολλαπλές πωλήσεις μέσω της σχέσης @OneToMany.
+
+4. Κλάση `MarketController`
+- Το MarketController είναι η βασική κλάση που επικοινωνεί με τον πελάτη μέσω endpoints.
+- Περιλαμβάνει λειτουργίες όπως `getAllProducts`, `getProductDetails`, `addProduct`, και `addSeller`.
+
+5. Κλάση `MarketService`
+- Παρέχει λειτουργικότητα για τη διαχείριση προϊόντων και πωλητών.   
+- Χρησιμοποιεί τα repositories `ProductRepository` και `SellerRepository`.
+
+6. Κλάσεις `Repositories`
+- Παρέχουν βασικές λειτουργίες CRUD μέσω του `JpaRepository`.
+
+7. Κλάση `MarketServiceConfig`
+- Αρχικοποιεί δεδομένα κατά την εκκίνηση της εφαρμογής μέσω της μεθόδου `run`.
+
+#### Χρήσιμες Σχέσεις
+- `@ManyToMany`: Τα προϊόντα και οι πωλήσεις σχετίζονται πολλαπλά.   
+- `@OneToMany`: Οι πωλητές σχετίζονται με πολλαπλές πωλήσεις.   
+- `@ManyToOne`: Κάθε πώληση συνδέεται με έναν μόνο πωλητή.   
+- Χρήση (Uses): Υποδεικνύει ότι μια κλάση χρησιμοποιεί μια άλλη (π.χ., το MarketController χρησιμοποιεί το MarketService).   
+- Ανασύνθεση (Aggregates): Δείχνει ότι μια κλάση περιέχει άλλη ως εξάρτηση (π.χ., το MarketService περιέχει τα repositories).
 
