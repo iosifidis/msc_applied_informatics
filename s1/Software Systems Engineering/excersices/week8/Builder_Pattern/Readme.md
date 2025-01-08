@@ -128,6 +128,7 @@ public class Main {
 # Περιεχόμενα
 
 * [Patern](Patern)   
+* [Builder Pattern](Builder_Pattern.md)   
 * [Παραδείγματα](Examples)
 
 # Βίντεο
