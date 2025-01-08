@@ -61,7 +61,7 @@
 
 ## [Week 7](./week7): Bridge Pattern
 
-## [Week 8](./week8): Composite Pattern
+## [Week 8](./week8): Composite Pattern, Abstract Factory Pattern, Builder Pattern
 
 ## [Week 9](./week9): Τεχνικό χρέος
 
