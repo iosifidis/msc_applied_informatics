@@ -13,37 +13,49 @@ This repository houses a comprehensive collection of resources and materials tai
 ### s1: Semester 1
 
 ### Application Development and Big Data
-Contains assignments related to application development and big data analysis.  
-- **Languages Used:** Python, JavaScript, HTML, CSS  
-- **Key Files:**   
-  - Python scripts (`.py`)  
-  - Web development files (`index.html`, `script.js`, `styles.css`)  
-  - Data files (`.csv`)  
+
+Contains assignments related to application development and big data analysis.
+
+- **Languages Used:** Python, JavaScript, HTML, CSS
+- **Key Files:**
+  - Python scripts (`.py`)
+  - Web development files (`index.html`, `script.js`, `styles.css`)
+  - Data files (`.csv`)
 
 ### [Cloud Service Development](./s1/Cloud%20Service%20Development/)
-Contains excersises related to cloud service development.  
-- **Languages Used:** Java, PHP  
-- **Key Files:**   
-  - Source code (`src`)  
-  - Eclipse Projects (`.zip`)   
+
+Contains excersises related to cloud service development.
+
+- **Languages Used:** Java, PHP
+- **Key Files:**
+  - Source code (`src`)
+  - Eclipse Projects (`.zip`)
   - Walkthrough files (`docx`, `pdf`)
 
 ### [Programming - Software Engineering in Business](./s1/Programming%20-%20Software%20Engineering%20in%20Business)
+
 Assignments that involve programming and software technology applications in business.
-- **Languages Used:** Java  
-- **Key Files:**  
-  - Source code (`src`)  
+
+- **Languages Used:** Java
+- **Key Files:**
+  - Source code (`src`)
   - Assignment documents (`.pdf`, `.iml`)
 
 ### [Software Systems Engineering](./s1/Software%20Systems%20Engineering)
-Covers assignments related to software systems technology.  
-- **Languages Used:** Various  
-- **Key Files:**  
+
+Covers assignments related to software systems technology.
+
+- **Languages Used:** Various
+- **Key Files:**
   - Reports and analysis documents (`.pdf`, `.csv`, `.xlsx`)
 
 ## Conclusion
 
 This repository is an invaluable resource for students enrolled in the M.Sc. in Applied Informatics program, offering a structured and detailed compilation of academic work and projects across various courses in the curriculum.
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=iosifidis/msc_applied_informatics&type=Date)](https://star-history.com/#iosifidis/msc_applied_informatics&Date)
 
 ## GitHub Stats
 
