@@ -72,8 +72,10 @@ public class Refrigerator extends Container {
 
 ```
 public class Ship {
-    //
+    
+    // Το αμπάρι του πλοίου. Δείχνει σε ένα αντικείμενο container (αρχή υποκατάστασης, λαμβάνει και τους δυο τύπους)
     private ArrayList<Container> containers = new ArrayList<>();
+    
     private int capacity;
 
     public Ship(int capacity) {
