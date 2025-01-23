@@ -30,7 +30,7 @@ public abstract class Container {
 **Υλοποίηση Συγκεκριμένων Κλάσεων**
 Δημιουργήστε κλάσεις που κληρονομούν την **abstract** (προσθέτω το **extends Container**). Υλιποιήστε και την αφηρημένη (abstract) μέθοδο με **@Override**:
 
-@Override
+@Override   
     public double calculateCharge() {
 
 Θα είναι:
@@ -49,7 +49,9 @@ public class Bulk extends Container {
         return 10 * weight;
     }
 }
----------------------------------------------------
+```
+
+```
 public class Refrigerator extends Container {
     private double power;
 
