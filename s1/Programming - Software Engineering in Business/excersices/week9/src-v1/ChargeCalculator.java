@@ -62,5 +62,7 @@ public class ChargeCalculator extends JFrame {
 
 		
 	}
+	
+	
 
 }
