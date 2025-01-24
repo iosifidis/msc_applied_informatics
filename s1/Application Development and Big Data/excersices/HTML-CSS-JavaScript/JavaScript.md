@@ -216,6 +216,18 @@ testArguments(3, 4, 5, 6, 7);
      const elements = document.getElementsByClassName('myClass');
      console.log(elements[0]);
      ```
+   - **`getElementsByName(name)`**: Επιστρέφει μια Συλλογή NodeList στοιχείων με ένα δεδομένο χαρακτηριστικό όνομα στο έγγραφο.
+     ```html
+     <body>
+        <input type="hidden" name="up" />
+        <input type="hidden" name="down" />
+     </body>
+     ```
+     
+     ```javascript
+     const up_names = document.getElementsByName("up");
+     console.log(up_names[0].tagName); // displays "INPUT"
+     ```
    - **`getElementsByTagName(tagName)`**: Επιστρέφει μια ζωντανή συλλογή στοιχείων με το συγκεκριμένο tag.
      ```javascript
      const paragraphs = document.getElementsByTagName('p');
