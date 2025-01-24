@@ -180,6 +180,124 @@ testArguments(3, 4, 5, 6, 7);
 
 ---
 
+# Περίληψη του Document Object Model (DOM)
+
+## Τι είναι το DOM;
+Το Document Object Model (DOM) είναι μία ανεξάρτητη από γλώσσα και πλατφόρμα διεπαφή προγραμματισμού εφαρμογών (API) για την αλληλεπίδραση με αντικείμενα σε έγγραφα HTML, XML και SVG. Αναπαριστά ένα έγγραφο ως δέντρο κόμβων που μπορεί να τροποποιηθεί προγραμματιστικά.
+
+## Βασικά Αντικείμενα στο DOM
+### 1. **Window Object**
+   - Αναπαριστά το παράθυρο του browser.
+   - Περιέχει ιδιότητες και μεθόδους όπως:
+     - **`document`**: Πρόσβαση στο περιεχόμενο του εγγράφου.
+     - **`history`**: Πρόσβαση στο ιστορικό του browser.
+     - **`location`**: Διαχείριση του URL.
+     - **`navigator`**: Πληροφορίες για τον browser.
+     - **`localStorage`/`sessionStorage`**: Διαχείριση τοπικής ή συνεδριακής αποθήκευσης.
+     - **`innerHeight`/`innerWidth`**: Διαστάσεις του περιεχομένου του παραθύρου.
+
+   Παράδειγμα:
+   ```javascript
+   console.log(window.innerWidth); // Επιστρέφει το πλάτος του παραθύρου.
+   ```
+
+### 2. **Document Object**
+   - Αναπαριστά το φορτωμένο έγγραφο.
+   - Παρέχει μεθόδους για πρόσβαση, δημιουργία και τροποποίηση στοιχείων στο DOM.
+
+#### Συνηθισμένες Μέθοδοι Πρόσβασης
+   - **`getElementById(id)`**: Επιστρέφει ένα στοιχείο με το συγκεκριμένο ID.
+     ```javascript
+     const element = document.getElementById('myElement');
+     console.log(element.textContent);
+     ```
+   - **`getElementsByClassName(className)`**: Επιστρέφει μια ζωντανή συλλογή στοιχείων με την συγκεκριμένη κλάση.
+     ```javascript
+     const elements = document.getElementsByClassName('myClass');
+     console.log(elements[0]);
+     ```
+   - **`getElementsByTagName(tagName)`**: Επιστρέφει μια ζωντανή συλλογή στοιχείων με το συγκεκριμένο tag.
+     ```javascript
+     const paragraphs = document.getElementsByTagName('p');
+     console.log(paragraphs.length);
+     ```
+   - **`querySelector(selector)`**: Επιστρέφει το πρώτο στοιχείο που ταιριάζει στον CSS selector.
+     ```javascript
+     const firstDiv = document.querySelector('div');
+     console.log(firstDiv);
+     ```
+   - **`querySelectorAll(selector)`**: Επιστρέφει όλα τα στοιχεία που ταιριάζουν στον CSS selector.
+     ```javascript
+     const allDivs = document.querySelectorAll('div');
+     console.log(allDivs.length);
+     ```
+
+#### Τροποποίηση Περιεχομένου
+   - **`innerHTML`**: Επιστρέφει ή θέτει το HTML περιεχόμενο ενός στοιχείου.
+     ```javascript
+     element.innerHTML = '<b>Ενημερωμένο Περιεχόμενο</b>';
+     ```
+   - **`textContent`**: Επιστρέφει ή θέτει το κείμενο ενός στοιχείου.
+     ```javascript
+     element.textContent = 'Νέο Κείμενο';
+     ```
+   - **`appendChild(node)`**: Προσθήκη παιδικού κόμβου.
+     ```javascript
+     const newElement = document.createElement('div');
+     document.body.appendChild(newElement);
+     ```
+   - **`removeChild(node)`**: Αφαίρεση παιδικού κόμβου.
+
+### 3. **Διαχείριση Συμβάντων (Event Handling)**
+Τα συμβάντα αντιπροσωπεύουν ενέργειες χρηστών. Οι ακροατές συμβάντων (event listeners) χρησιμοποιούνται για να αντιδράσουν σε αυτά.
+   - **`addEventListener(type, listener)`**: Προσθήκη ακροατή συμβάντος.
+     ```javascript
+     button.addEventListener('click', () => {
+       alert('Το κουμπί πατήθηκε!');
+     });
+     ```
+   - **`removeEventListener(type, listener)`**: Αφαίρεση ακροατή συμβάντος.
+
+### 4. **Διαχείριση CSS**
+   - **`style`**: Τροποποίηση ενσωματωμένων στυλ.
+     ```javascript
+     element.style.backgroundColor = 'blue';
+     ```
+   - **`classList`**: Διαχείριση κλάσεων.
+     ```javascript
+     element.classList.add('new-class');
+     element.classList.remove('old-class');
+     element.classList.toggle('active');
+     ```
+   - **`getComputedStyle(element)`**: Ανάκτηση εφαρμοσμένων στυλ.
+
+### 5. **Διαχείριση Attributes**
+   - **`getAttribute(attr)`**: Επιστρέφει την τιμή ενός attribute.
+     ```javascript
+     console.log(element.getAttribute('src'));
+     ```
+   - **`setAttribute(attr, value)`**: Θέτει ένα attribute.
+     ```javascript
+     element.setAttribute('alt', 'Νέα περιγραφή');
+     ```
+   - **`removeAttribute(attr)`**: Αφαιρεί ένα attribute.
+
+### 6. **Animation**
+   - Χρησιμοποιήστε **`requestAnimationFrame()`** για ομαλές κινήσεις.
+     ```javascript
+     function animate() {
+       element.style.left = parseInt(element.style.left || 0) + 1 + 'px';
+       requestAnimationFrame(animate);
+     }
+     requestAnimationFrame(animate);
+     ```
+
+## Σημειώσεις Ασφαλείας
+- Προσοχή με τη χρήση του **`innerHTML`** για αποφυγή επιθέσεων XSS.
+- Προτιμήστε το **`textContent`** για εισαγωγή απλού κειμένου.
+
+---
+
 ## Χρήσιμες Πηγές
 - [Eloquent JavaScript](https://eloquentjavascript.net/)  
 - [Exploring ES6](https://exploringjs.com/es6/)   
