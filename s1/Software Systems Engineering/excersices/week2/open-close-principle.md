@@ -140,3 +140,9 @@ public class Student implements Quantifiable {
 - Η χρήση αφαιρέσεων και πολυμορφισμού αποτελεί το "κλειδί" για την υλοποίηση της αρχής.   
 - Ο κατάλληλος σχεδιασμός διασφαλίζει την επεκτασιμότητα και τη σταθερότητα των μονάδων λογισμικού.   
 - Η συμμόρφωση με την αρχή συμβάλλει στη μείωση του κόστους συντήρησης και του χρόνου ανάπτυξης.
+
+---
+
+## Βίντεο
+- [Solid Open Closed Principle Example](https://youtu.be/j9G-1TF9KkQ?si=b-Z06UO_MOOW3Gd7)   
+- [Open/Closed Principle Explained - SOLID Design Principles](https://youtu.be/-ptMtJAdj40?si=YZ8185uOo2K0NP3t)    

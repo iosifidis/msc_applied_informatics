@@ -66,6 +66,8 @@
 **Μέτρηση**:
 - Μετρική "Lack of Cohesion between methods" (LCOM): Ποσοτικοποίηση του βαθμού συνεκτικότητας μιας κλάσης
 
+Βίντεο: [Low Level Design 105 | Single Responsibility Principle in SOLID | 2022 | System Design](https://youtu.be/-T0H--a8WnY?si=TBn52u8vB3S-7MP2)
+
 ### 2.4 Αρχή Ανοιχτής-Κλειστής Σχεδίασης (Open-Closed Principle - OCP)
 **Ορισμός**: Οι οντότητες λογισμικού πρέπει να είναι ανοιχτές για επέκταση αλλά κλειστές για τροποποίηση.
 
@@ -74,6 +76,11 @@
 
 **Παραβίαση OCP**:
 - Τροποποίηση υπάρχοντος κώδικα αντί για επέκτασή του.
+
+#### Βίντεο
+- [Solid Open Closed Principle Example](https://youtu.be/j9G-1TF9KkQ?si=b-Z06UO_MOOW3Gd7)   
+- [Open/Closed Principle Explained - SOLID Design Principles](https://youtu.be/-ptMtJAdj40?si=YZ8185uOo2K0NP3t)    
+- [Understanding the Open Closed Principle](https://youtu.be/Ryhy7333mqQ?si=8X_z8FW0LZek_koD)   
 
 #### 2.4.1 STRATEGY Design Pattern
 
@@ -164,6 +171,8 @@ public class Main {
 - Πρόσθετη πολυπλοκότητα: Εισάγεται εξάρτηση μεταξύ του Context και των στρατηγικών.
 
 Με το Strategy Pattern, η αρχή του "Open-Closed Principle" εφαρμόζεται άμεσα, διαχωρίζοντας τις ευθύνες και διατηρώντας το σύστημα ευέλικτο και επεκτάσιμο.
+
+Βίντεο: [The Strategy Pattern Explained and Implemented in Java | Behavioral Design Patterns | Geekific](https://youtu.be/Nrwj3gZiuJU?si=14a6_R2KtY9WniTH)
 
 #### 2.4.2 TEPLATE METHOD Design Pattern
 
@@ -263,6 +272,8 @@ public class Main {
 
 Το Template Method Pattern εφαρμόζει την αρχή "Don't Repeat Yourself" (DRY), εξασφαλίζοντας τη σωστή δομή και οργάνωση του κώδικα, ενώ επιτρέπει την επέκταση όπου είναι απαραίτητη.
 
+Βίντεο: [The Template Method Pattern Explained Implemented in Java | Behavioral Design Patterns | Geekific](https://youtu.be/cGoVDzHvD4A?si=EU4VdGE25r1-1TT8), [Template Method - Design Patterns in 5 minutes](https://youtu.be/6y_j4TqxDQc?si=69cLzBwSiyEF_qQA)
+
 ### 2.5 Αρχή Υποκατάστασης Liskov (Liskov Substitution Principle - LSP)
 **Ορισμός**: Οι παράγωγες κλάσεις πρέπει να μπορούν να αντικαταστήσουν τις βασικές χωρίς να επηρεάζεται η ορθή λειτουργία του συστήματος.
 
@@ -280,6 +291,8 @@ public class Main {
 **Λύση**:
 - Σχεδιασμός με βάση τις αναλλοίωτες συνθήκες και τη συμβατότητα με τη βασική κλάση.
 
+Βίντεο: [Liskov Substitution Principle Explained - SOLID Design Principles](https://youtu.be/dJQMqNOC4Pc?si=n1DQURfq21aA4qIF), [Understanding the Liskov Substitution Principle](https://youtu.be/Mmy1EUKC_iE?si=2qsMLhQkkfuWCw4e), [Low Level Design 107 | Liskov Substitution Principle | 2022 | System Design](https://youtu.be/HbGDobtxzWk?si=Z4DZ06X97GGJ4pOt)
+
 ### 2.6 Αρχή Αντιστροφής Εξαρτήσεων (Dependency Inversion Principle - DIP)
 **Ορισμός**:
 - Οι μονάδες υψηλού επιπέδου δεν πρέπει να εξαρτώνται από μονάδες χαμηλού επιπέδου.  
@@ -291,6 +304,8 @@ public class Main {
 
 **Βελτιωμένη διαστρωμάτωση**:   
 Η βελτιωμένη διαστρωμάτωση επιτυγχάνεται με τη χρήση της Αρχή Αντιστροφής Εξαρτήσεων, καθώς αποσυνδέει τις υλοποιήσεις από τη λογική του συστήματος, ενισχύοντας την ευελιξία και τη συντηρησιμότητα. Αντί οι ανώτερες τάξεις να εξαρτώνται άμεσα από συγκεκριμένες υλοποιήσεις, εξαρτώνται από αφαιρετικές συμβάσεις που καθορίζουν τη συμπεριφορά. Αυτό επιτρέπει την αντικατάσταση εξαρτήσεων με ελάχιστες αλλαγές στον κώδικα, διευκολύνει τη δοκιμασία μονάδων (unit testing) με χρήση mock αντικειμένων και μειώνει τη σύζευξη, προσδίδοντας μεγαλύτερη ανεξαρτησία στα στρώματα του συστήματος.
+
+Βίντεο: [Dependency Inversion Principle Explained - SOLID Design Principles](https://youtu.be/9oHY5TllWaU?si=G0mDej2vvRuzO36R), [Low Level Design 109 | Dependency Inversion Principle | 2022 | System Design](https://youtu.be/_CQuOfIqaGE?si=OBPDXY3QOj_DU0e5), [Dependency Inversion: What, Why & How? | By Example](https://youtu.be/-3Z9L6sIAMM?si=t8r1bqBsh_0xmj3-)
 
 ### 2.7 Αρχή Διαχωρισμού Διασυνδέσεων (Interface Segregation Principle - ISP)
 **Ορισμός**: Πολλές εξειδικευμένες διασυνδέσεις είναι προτιμότερες από μία γενική.
