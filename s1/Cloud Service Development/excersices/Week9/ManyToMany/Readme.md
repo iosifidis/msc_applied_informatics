@@ -33,10 +33,10 @@
 	</dependency>
     
     <dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
-	</dependency>
+		    <groupId>org.springdoc</groupId>
+		    <artifactId>springdoc-openapi-ui</artifactId>
+		    <version>1.6.15</version>
+		</dependency>
 </dependencies>
 ```
 
@@ -55,6 +55,12 @@ spring.datasource.driver-class-name=org.gjt.mm.mysql.Driver
 spring.jpa.hibernate.ddl-auto=create
 spring.jpa.show-sql=true
 ```
+
+URL Swagger:
+
+[http://localhost:8080/swagger-ui/index.html]](http://localhost:8080/swagger-ui/index.html)
+
+Στο Swagger, εμφανίζονται τα διαθέσιμα endpoints με περιγραφές και δυνατότητα εκτέλεσης HTTP αιτημάτων.
 
 ### 4. Δημιουργία Οντοτήτων (Entities)
 

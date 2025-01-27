@@ -56,12 +56,18 @@ spring.jpa.show-sql=true
 	</dependency>
     
     <dependency>
-			<groupId>org.postgresql</groupId>
-			<artifactId>postgresql</artifactId>
-			<scope>runtime</scope>
+		    <groupId>org.springdoc</groupId>
+		    <artifactId>springdoc-openapi-ui</artifactId>
+		    <version>1.6.15</version>
 	</dependency>
 </dependencies>
 ```
+
+URL Swagger:
+
+[http://localhost:8080/swagger-ui/index.html]](http://localhost:8080/swagger-ui/index.html)
+
+Στο Swagger, εμφανίζονται τα διαθέσιμα endpoints με περιγραφές και δυνατότητα εκτέλεσης HTTP αιτημάτων.
 
 ---
 
