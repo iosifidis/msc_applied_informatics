@@ -327,6 +327,12 @@ public class Main {
 - Αποφυγή εξαναγκασμού πελατών να εξαρτώνται από μεθόδους που δεν χρησιμοποιούν.  
 - Μείωση περιττής πολυπλοκότητας μέσω του διαχωρισμού των διασυνδέσεων.  
 
+Βίντεο:
+- [Low Level Design 108 | Interface Segregation Principle | 2022 | System Design](https://youtu.be/-E-E6pd-psU?si=SAjG5YyT095d0Uuz)   
+- [Interface Segregation Principle EXPLAINED SIMPLY | SOLID Principles #4](https://youtu.be/h5tIblPJo8k?si=mjx0OwC5GOYo6KVb)   
+- [The Interface Segregation Principle Code Example](https://youtu.be/gExP_HLRh1I?si=zlsLQZGo-Jd22q0h)
+- [Interface Segregation Explained - SOLID Principles E4](https://youtu.be/O6Z1xBWrepk?si=VSdR8cszhqffSnct)
+
 #### 2.7.1 Διαχωρισμός μέσω Αποστολής Μηνυμάτων (Delegation)
 
 Ο Διαχωρισμός μέσω Αποστολής Μηνυμάτων (Delegation) είναι ένα πρότυπο σχεδίασης που σχετίζεται με την ανάθεση συγκεκριμένων ευθυνών από ένα αντικείμενο σε ένα άλλο, αντί να προσπαθεί να τα χειριστεί όλα μόνο του. Πρόκειται για έναν μηχανισμό που επιτρέπει την επαναχρησιμοποίηση της συμπεριφοράς ενός αντικειμένου από άλλα αντικείμενα, χωρίς την ανάγκη κληρονομικότητας.
@@ -378,6 +384,9 @@ public class Main {
 Στο παραπάνω παράδειγμα, το `TextEditor` δεν υλοποιεί τη λειτουργία εκτύπωσης αλλά αναθέτει την εργασία στο `Printer`. Αυτό ενισχύει την επαναχρησιμοποίηση και την ευελιξία.
 
 Η αντιπροσώπευση μέσω αποστολής μηνυμάτων είναι ιδιαίτερα χρήσιμη σε περιπτώσεις όπου θέλουμε να διατηρήσουμε την αρχή "Single Responsibility" ή να μειώσουμε την πολυπλοκότητα της κληρονομικότητας.
+
+Βίντεο:
+- [How Delegates Work in Java](https://youtu.be/JWVjmyo6e5Y?si=MhpEvyZt0R63KGIY)
 
 #### 2.7.2 Διαχωρισμός μέσω Πολλαπλής Κληρονομικότητας
 
