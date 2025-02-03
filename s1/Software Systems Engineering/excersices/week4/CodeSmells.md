@@ -19,6 +19,9 @@
 **Αναδόμηση**:
 - **Extract Method**: Δημιουργία νέων μεθόδων που περιέχουν μέρη της αρχικής για καλύτερη οργάνωση.
 
+**Βίντεο**:
+- [Refactoring - 04 - Code Smells - Long Method](https://youtu.be/vLAhefKxIDY?si=lq3IlhdiPy0_TQI2)
+
 ---
 
 ### 2.2 Feature Envy (Εξάρτηση από Ξένη Κλάση)
@@ -27,6 +30,10 @@
 
 **Αναδόμηση**:
 - **Move Method**: Μεταφορά της μεθόδου στην κλάση που "ζηλεύει".
+
+**Βίντεο**:
+- [Codemanship's Code Smell Of The Week - Feature Envy](https://youtu.be/08odrj2pbCA?si=2dgW5WQB4YcJRlUE)    
+- [Tennis Refactoring Kata Part 7 - Feature Envy & Conclusion](https://youtu.be/alc3GKl09d4?si=WlF-LzNvlPwnn5bR)
 
 ---
 
@@ -37,6 +44,9 @@
 **Αναδόμηση**:
 - **Extract Class**: Δημιουργία νέας κλάσης που διαχειρίζεται μέρος των ευθυνών.
 
+**Βίντεο**:
+- [Refactoring - 05 - Code Smells - Large Class](https://youtu.be/o6Z2gWNx1QY?si=PLpXUEZMYZt5fQFw)
+
 ---
 
 ### 2.4 Duplicated Code (Επαναλαμβανόμενος Κώδικας)
@@ -44,7 +54,10 @@
 - Ίδια κομμάτια κώδικα εμφανίζονται σε περισσότερα από ένα σημεία.
 
 **Αναδόμηση**:
-- **Pull Up Method**: Ενοποίηση επαναλαμβανόμενων δομών σε μία κοινή μέθοδο ή κλάση.
+- **Pull Up Method**: Ενοποίηση επαναλαμβανόμενων δομών σε μία κοινή μέθοδο ή κλάση (πχ όταν έχουμε κληρονομικότητα, η μέθοδος ανεβαίνει στην υπερκλάση).
+
+**Βίντεο**:
+- [Refactoring duplicate code](https://youtu.be/yFkVDAaaXZo?si=TZZMGmZThMWg7u9r)
 
 ---
 
@@ -55,6 +68,10 @@
 **Αναδόμηση**:
 - **Replace Conditional with Polymorphism**: Αντικατάσταση των συνθηκών με κλάσεις που υλοποιούν συγκεκριμένες συμπεριφορές μέσω πολυμορφισμού.
 
+**Βίντεο**:
+- [Refactor Conditional To Polymorphism](https://youtu.be/YEPaGWYkL74?si=UntH_YYk4l-G7b4E)   
+- [Tennis Refactoring Kata Part 4 (Java) - Replace Conditional with Polymorphism](https://youtu.be/5tzuN-qjHc0?si=VUIhXQcLFOcFpLiB)
+
 ---
 
 ### 2.6 Refused Bequest (Απορριπτόμενη Κληρονομικότητα)
@@ -63,6 +80,9 @@
 
 **Αναδόμηση**:
 - **Replace Inheritance with Delegation**: Χρήση σύνθεσης αντί για κληρονομικότητα. Προτιμήστε "Composition over Inheritance".
+
+**Βίντεο**:
+- [Code Smell Series: Refused Bequest (FIXED! Do This Instead!)](https://youtu.be/ZRPFP-0p0m8?si=0Io2dsnxLZUI4O2d)
 
 ---
 
