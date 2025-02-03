@@ -149,3 +149,8 @@ class Dog extends Animal {
     }
 }
 ```
+
+**Βίντεο:**   
+- [Abstract Class In Java Tutorial #79](https://www.youtube.com/watch?v=52frlN8webg)   
+- [Abstract Classes and Methods in Java Explained in 7 Minutes](https://www.youtube.com/watch?v=HvPlEJ3LHgE)    
+- [Java abstraction 👻](https://www.youtube.com/watch?v=Lvnb83qt57g)
