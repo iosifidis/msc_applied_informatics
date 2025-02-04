@@ -190,4 +190,5 @@ class Scene implements SceneComponent {
 - [Composite Design Pattern: Easy Guide For Beginners](https://youtu.be/ZCNQ7xsed58?si=OpGrQTdxaXYuRJ0Y)   
 - [Composite Design Pattern](https://youtu.be/2HUnoKyC9l0?si=bznqfOlE5GDVVgXC)   
 - [The Composite Design Pattern](https://youtu.be/pzQDdeeNcUU?si=oLsh2h0zrya2enb5)  
-- [Composite Pattern – Design Patterns (ep 14)](https://youtu.be/EWDmWbJ4wRA?si=K5F9SQy5oX0SINF0)
+- [Composite Pattern – Design Patterns (ep 14)](https://youtu.be/EWDmWbJ4wRA?si=K5F9SQy5oX0SINF0)   
+- [Composite - Design Patterns in 5 minutes](https://youtu.be/OMylR5rnOBw?si=hPKoX0o0EqGdOKI4)
