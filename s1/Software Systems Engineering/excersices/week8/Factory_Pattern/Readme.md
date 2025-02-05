@@ -118,6 +118,17 @@
 
 ---
 
+## Βίντεο
+
+- [The Factory Method Pattern Explained and Implemented in Java | Creational Design Patterns | Geekific](https://youtu.be/EdFq_JIThqM?si=f3fOeBvN2tcfNflZ)   
+- [The Abstract Factory Pattern Explained and Implemented | Creational Design Patterns | Geekific](https://youtu.be/QNpwWkdFvgQ?si=0nbi1CjA7xrowxcc)   
+- [Factory Method Pattern – Design Patterns (ep 4)](https://youtu.be/EcFVTgRHJLM?si=-QIOpGNd6LcQnteJ)   
+- [Abstract Factory Pattern – Design Patterns (ep 5)](https://youtu.be/v-GiuMmsXj4?si=nMyGB1KyzqOqpPBk)   
+- [How to use Factory Method Design Pattern to design a course website like Udacity, Edx, Coursera...](https://youtu.be/s3Wr5_tsODs?si=1Y8z0l7sdksin7lj)   
+- [Factory Design Pattern in detail | Interview Question](https://youtu.be/D5d1f9Lcmv4?si=vjFm15Rt9YX7e4gq)  
+
+---
+
 ## Δείτε περισσότερα:
 
 1. [Furniture Pattern](Pattern)   
