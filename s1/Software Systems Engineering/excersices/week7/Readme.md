@@ -117,14 +117,6 @@ public class Main {
 - [Bridge - Design Patterns in 5 minutes](https://youtu.be/Q3R0zZfXit0?si=wu-jL0cB0TZv_EEo)   
 - [Bridge Design Pattern in detail | Interview Question (Structural Design Pattern)](https://youtu.be/7pvhfHN1zY0?si=TPpp_h3pY5od6utk)    
 
-### Περισσότερες πληροφορίες
-
-|No|Name|Sourse|
-|---|---|---|
-|1.|[Dive into Design Patterns](https://github.com/abbos0123/Computer-Science-Books/blob/main/Design-Patterns/Dive%20into%20Design%20Patterns.pdf)|```page 162```|
-|2.|[Elements of Reusable Object-Oriented Software](https://github.com/abbos0123/Computer-Science-Books/blob/main/Design-Patterns/Elements%20of%20Resusable%20Object-Oriented%20Software.pdf)|```page 151```|
-|3.|[Design Patterns - Bridge Pattern](https://github.com/abbos0123/Computer-Science-Books/blob/main/Design-Patterns/Practice/Structural-Design-Patterns/Bridge/Design%20Patterns%20-%20Bridge%20Pattern.pdf)|```www.tutorialspoint.com```|
-
 ### ΕΞΗΣΗΣΗ Bridge   
 
 [Bride](bridge/)
