@@ -253,5 +253,6 @@ predictions.show()
 
 - [Apache Spark in 100 Seconds](https://www.youtube.com/watch?v=IELMSD2kdmk)   
 - [What exactly is Apache Spark? | Big Data Tools](https://www.youtube.com/watch?v=ymtq8yjmD9I)    
-- [The ONLY PySpark Tutorial You Will Ever Need.](https://www.youtube.com/watch?v=cZS5xYYIPzk)
+- [The ONLY PySpark Tutorial You Will Ever Need.](https://www.youtube.com/watch?v=cZS5xYYIPzk)    
+- [Apache Spark - Computerphile](https://youtu.be/tDVPcqGpEnM?si=nMYudrF4WyhD9XrG)
 
