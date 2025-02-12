@@ -1,0 +1,18 @@
+invoice_no,customer_id,gender,age,category,quantity,price,payment_method,invoice_date,shopping_mall
+I138842,C241288,Female,28,Clothing,4,1530.42,Credit Card,25/01/2025,Kanyon
+I317332,C111565,Male,21,Shoes,4,1830.512,Debit Card,25/01/2025,Forum Istanbul
+I127812,C266599,Male,20,Clothing,3,330.082,Cash,25/01/2025,Metrocity
+I173722,C988172,Female,66,Shoes,5,3030.852,Credit Card,25/01/2025,Metropol AVM
+I337062,C189062,Female,53,Books,4,63.62,Cash,25/01/2025,Kanyon
+I227862,C657782,Female,28,Clothing,6,1530.42,Credit Card,25/01/2025,Forum Istanbul
+I121062,C151172,Female,49,Cosmetics,2,45.662,Cash,25/01/2025,Istinye Park
+I293122,C176062,Female,32,Clothing,3,640.162,Credit Card,25/01/2025,Mall of Istanbul
+I293452,C159622,Male,69,Clothing,4,940.242,Credit Card,25/01/2025,Metrocity
+I326952,C283312,Female,60,Clothing,3,630.162,Credit Card,25/01/2025,Kanyon
+I306382,C240262,Female,36,Food & Beverage,3,16.762,Cash,25/01/2025,Metrocity
+I139272,C191782,Female,29,Books,2,19.172,Credit Card,25/01/2025,Emaar Square Mall
+I640582,C225302,Female,67,Toys,3,183.392,Debit Card,25/01/2025,Metrocity
+I179822,C312812,Male,25,Clothing,4,640.162,Cash,25/01/2025,Cevahir AVM
+I336192,C555422,Female,67,Clothing,3,640.162,Credit Card,25/01/2025,Kanyon
+I688782,C362282,Male,24,Shoes,7,3040.852,Credit Card,25/01/2025,Viaport Outlet
+I294672,C300762,Male,65,Books,3,37.302,Debit Card,25/01/2025,Metrocity
