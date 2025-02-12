@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif; /* Επιλογή γραμματοσειράς */
+    margin: 0; /* Αφαίρεση περιθωρίων */
+    padding: 20px; /* Περιθώριο για καλύτερη εμφάνιση */
+    background-color: #f4f4f9; /* Χρώμα φόντου */
+}
+
+.container {
+    max-width: 1200px; /* Μέγιστο πλάτος του περιεχομένου */
+    margin: 0 auto; /* Κεντράρισμα του περιεχομένου */
+    padding: 20px; /* Περιθώριο για καλύτερη εμφάνιση */
+}
+
+h1 {
+    text-align: center;  /* Κείμενο στο κέντρο */
+}
+
+table {
+    width: 100%; /* Πίνακας να πιάνει το 100% του διαθέσιμου χώρου */
+    max-width: 100%; /* Αποφυγή εξόδου από το περιβάλλον */
+    border-collapse: collapse; /* Αφαίρεση των διαχωριστικών γραμμών */
+    margin-bottom: 20px; /* Απόσταση από άλλα στοιχεία */
+}
+
+
+th, td {
+    padding: 10px; /* Περιθώριο για καλύτερη εμφάνιση */
+    text-align: center; /* Κείμενο στο κέντρο */
+    border: 1px solid #ddd;  /* Προσθήκη περιγράμματος */
+}
+
+th {
+    background-color: #f2f2f2; /* Χρώμα φόντου */
+}
+
+/* Νέα κλάση για σταθερή κεφαλίδα */
+.fixed-header {
+    position: sticky;
+    top: 0;
+    background-color: #f2f2f2;
+    z-index: 1;
+}
+
+button {
+    background-color: #0015d5; /* Χρώμα κουμπιού */
+    color: white; /* Χρώμα κειμένου */
+    padding: 10px 15px; /* Περιθώριο εσωτερικά */
+    border: none; /* Αφαίρεση περιγράμματος */
+    border-radius: 12px; /* Στρογγυλεμένες άκρες */
+    cursor: pointer; /* Εφέ κέρσορα */
+    margin: 10px; /* Απόσταση από άλλα στοιχεία */
+}
+
+button:hover {
+    background-color: #45a049; /* Χρώμα κουμπιού όταν περνάει το ποντίκι */
+}
+
+/* Στυλ για το modal window */ 
+
+.modal {
+    display: none; /* Αρχικά κρυμμένο */
+    position: fixed; /* Σταθερή θέση */
+    z-index: 1;  /* Επικάλυψη όλων των άλλων στοιχείων */
+    left: 0;
+    top: 0;
+    width: 100%; /* Πλήρες πλάτος */
+    height: 100%; /* Πλήρες ύψος */
+    overflow: auto; /* Εμφάνιση scrollbars αν χρειαστεί */
+    background-color: rgba(0,0,0,0.4); /* Αδιαφάνεια */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Χρώμα φόντου */
+    margin: 15% auto; /* Κεντράρισμα */
+    padding: 20px; /* Περιθώριο */
+    border: 1px solid #888; /* Περιγράμματα */
+    width: 80%; /* Πλάτος */
+    max-width: 600px; /* Μέγιστο πλάτος */
+    border-radius: 5px; /* Στρογγυλεμένες άκρες */
+    position: relative; /* Σχετική θέση */
+}
+.modal-buttons {
+  display: flex; 
+  justify-content: center; 
+  gap: 10px; 
+}
+
+.close {
+    color: #aaa; /* Χρώμα κειμένου */
+    position: absolute; /* Απόλυτη θέση */
+    top: 10px; /* Απόσταση από το πάνω μέρος */
+    right: 20px; /* Απόσταση από το δεξί μέρος */
+    font-size: 28px; /* Μέγεθος γραμματοσειράς */
+    font-weight: bold; /* Έντονη γραμματοσειρά */
+    cursor: pointer; /* Εφέ κέρσορα */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Χρώμα κειμένου όταν περνάει το ποντίκι */
+    text-decoration: none; /* Αφαίρεση υπογράμμισης */
+    cursor: pointer; /* Εφέ κέρσορα */
+}
+
+/* Στυλ για τη φόρμα στο modal */
+#transactionForm input, #transactionForm select{
+    display: block;
+    margin-bottom: 10px;
+    width: calc(100% - 10px);
+    padding: 5px;
+    border-radius: 5px;
+    border:1px solid #ddd;
+   
+}
+
+#transactionForm label{
+   display: block;
+   margin-bottom: 5px;
+   text-align: left;
+}
+
+/* Για οθόνες μεγαλύτερες από 768px (π.χ. tablet ή desktop) */
+@media (min-width: 768px) {
+    #transactionsTable input {
+        width: 150px;
+    }
+}
+
+/* Για οθόνες μικρότερες από 768px (π.χ. smartphones) */
+@media (max-width: 767px) {
+    #transactionsTable input {
+        width: 100%; /* Τα πεδία θα έχουν πλάτος 100% της οθόνης */
+        height: 40px; /* Αυξάνεται το ύψος για να είναι πιο ευανάγνωστα */
+    }
+
+    #transactionsTable td {
+        padding: 10px; /* Μικραίνει το padding για να κερδίσουμε χώρο */
+    }
+}
+
+/* Για πολύ μικρές οθόνες (π.χ. κινητά με πολύ μικρές αναλύσεις) */
+@media (max-width: 480px) {
+    #transactionsTable input {
+        width: 100%;
+        font-size: 14px; /* Μειώνεται το μέγεθος της γραμματοσειράς */
+    }
+
+    #transactionsTable td {
+        font-size: 12px; /* Μειώνεται το μέγεθος του κειμένου στον πίνακα */
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ευστάθιος Ιωσηφίδης - mai25017</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Διαχείριση Συναλλαγών Εμπορικών Κέντρων Τουρκίας</h1>
+
+        <!-- Κουμπί για εισαγωγή αρχείου -->
+        <button id="fileInputBtn">Εισαγωγή Αρχείου CSV</button>
+        <input type="file" id="fileInput" accept=".csv" style="display:none;">
+
+        
+        <!-- Πίνακας -->
+        
+            <table id="transactionsTable">
+                <thead class="fixed-header">
+                    <tr>
+                        <th>Αριθμός Τιμολογίου</th>
+                        <th>ID Πελάτη</th>
+                        <th>Φύλο</th>
+                        <th>Ηλικία</th>
+                        <th>Κατηγορία</th>
+                        <th>Ποσότητα</th>
+                        <th>Τιμή</th>
+                        <th>Μέθοδος Πληρωμής</th>
+                        <th>Ημερομηνία Τιμολογίου</th>
+                        <th>Εμπορικό Κέντρο</th>
+                        <th>Ενέργειες</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Δεδομένα του πίνακα -->
+                </tbody>
+            </table>
+       
+        
+        <!-- Κουμπιά για ενέργειες -->
+        <button id="addTransactionBtn">Προσθήκη Συναλλαγής</button>
+        <button id="exportCsvBtn">Λήψη CSV</button>
+    </div>
+
+   
+    <!-- Modal Window -->
+    <div id="transactionModal" class="modal">
+        <div class="modal-content">
+            <span class="close">×</span>
+            <h2>Επεξεργασία Συναλλαγής</h2>
+            <form id="transactionForm">
+              <!-- Τα πεδία εισαγωγής θα δημιουργηθούν δυναμικά από την javascript-->
+            </form>
+             <div class="modal-buttons">
+                <button id="modalSaveBtn">Αποθήκευση</button>
+                <button id="modalCancelBtn">Άκυρο</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
