@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Πολυωνυμική Εξίσωση</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Πολυωνυμική Εξίσωση</h1>
+        <div class="input-row">
+            <input type="text" id="number1" oninput="validateInput(this), updateEquation()" placeholder="0.00">
+            <span>X² +</span>
+            <input type="text" id="number2" oninput="validateInput(this), updateEquation()" placeholder="0.00">
+            <span>X +</span>
+            <input type="text" id="number3" oninput="validateInput(this), updateEquation()" placeholder="0.00">
+            <span>=</span>
+            <input type="text" id="number4" oninput="validateInput(this), updateEquation()" placeholder="0.00">
+        </div>
+        <div id="equation" class="equation"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>	
