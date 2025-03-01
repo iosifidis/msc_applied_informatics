@@ -6,4 +6,4 @@
 
 ## 2. Centralized DBMS review
 
-Δείτε περισσότερα στον [σύνδεσμο εδώ](1nd_lecture.md)
+Δείτε περισσότερα στον [σύνδεσμο εδώ](2nd_lecture.md)
