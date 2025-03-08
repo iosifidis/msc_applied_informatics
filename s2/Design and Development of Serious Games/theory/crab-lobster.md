@@ -349,6 +349,8 @@ private void checkNextLevel()
 }
 ```
 
+Μήνυμα νίκης
+
 ```
 private void winMessage()
 {
@@ -357,5 +359,116 @@ private void winMessage()
     bg.setColor(Color.RED);
     bg.setFont(font.deriveFont(48));
     bg.drawString("WINNER", 200, 250);
+}
+```
+
+
+### Αλλαγή εικόνων σε πίνακα
+
+```
+private static final int NUM_OF_IMAGES = 2;
+
+private GreenfootImage[] images;
+private int currentImage;
+…
+public Crab()
+{
+    images = new GreenfootImage[NUM_OF_IMAGES];
+    for(int i=0; i<images.length; i++)
+    images[i] = new GreenfootImage("crab"+i+".png");
+    currentImage = 0;
+    setImage(images[currentImage]);
+    wormsEaten = 0;
+}
+```
+
+```
+public void switchImage()
+{
+    currentImage = (currentImage+1)%NUM_OF_IMAGES;
+    setImage(images[currentImage]);
+}
+```
+
+```
+public void act()
+{
+    …
+    switchImage();
+}
+```
+
+### Εικόνα gif
+
+```
+public class Bear extends Actor
+{
+    private GifImage gif;
+    …
+    public Bear()
+    {
+        gif = new GifImage("bear.gif");
+        ...
+    }
+    
+    public void act()
+    {
+        …
+        setImage(gif.getCurrentImage());
+    }
+```
+
+### Εικόνες για δεξιά και για αριστερά σε ένα πίνακα
+
+```
+public class Hero extends Actor
+{
+    private static final int NUM_OF_IMAGES = 6;
+    private static final int IMAGES_PER_DIRECTION = 3;
+    private GreenfootImage[] images;
+    private int currentImage;
+    …
+    public Hero()
+    {
+        images = new GreenfootImage[NUM_OF_IMAGES];
+        for(int i=0; i<images.length; i++)
+        images[i] = new GreenfootImage("hero"+i+".png");
+        currentImage = 0;
+        setImage(images[currentImage]);
+        ...
+    }
+    public void act()
+    {
+        …
+        checkKeys();
+    }
+```
+
+```
+public void animate(int first, int last)
+{
+    if (currentImage < first || currentImage >= last)
+    {
+        currentImage = first;
+    }
+    else
+    {
+        currentImage++;
+    }
+    setImage(images[currentImage]);
+}
+```
+
+```
+private void checkKeys()
+{
+    if (Greenfoot.isKeyDown("right"))
+    {
+        animate(0,2);
+    }
+    if (Greenfoot.isKeyDown("left"))
+    {
+        animate(3,5);
+    }
 }
 ```
