@@ -2,8 +2,6 @@
 
 Welcome to the repository for the Master's in Applied Informatics, specializing in Software Development and Cloud program at the University of Macedonia.
 
-![University of Macedonia Logo](https://mai.uom.gr/files4users/images/UOM_og_image.png)
-
 ## About
 
 This repository houses a comprehensive collection of resources and materials tailored for the Master's program in Applied Informatics at the University of Macedonia. It functions as a centralized hub for academic materials, facilitating progress tracking, peer collaboration, and knowledge sharing within the academic community.
@@ -48,6 +46,38 @@ Covers assignments related to software systems technology.
 - **Languages Used:** Various
 - **Key Files:**
   - Reports and analysis documents (`.pdf`, `.csv`, `.xlsx`)
+  
+---
+
+### s2: Semester 2
+  
+### [Artificial Intelligence Methods and Tools](./s2/Artificial%20Intelligence%20Methods%20and%20Tools)
+Includes assignments focused on artificial intelligence methodologies and tools.
+- **Languages Used:** Python, MiniZinc   
+- **Key Files:**   
+  - Reports (`report.docx`)   
+  - AI models and scripts (`stacking.mzn`)   
+  - Data files (`.csv`)   
+
+### [Data Management and Analytics in the Cloud](./s2/Data%20Management%20and%20Analytics%20in%20the%20Cloud)
+Comprises assignments that cover data management and cloud analytics.   
+- **Languages Used:** Java, Shell scripting, SQL, JavaScript   
+- **Key Files:**   
+  - Source code (`src`, `pom.xml`, `script_mai24002`)   
+  - Reports (`.docx`, `.pdf`, `hw3.pdf`)   
+  - Data files (`.csv`, `.xlsx`, `.gpkg`)   
+  - Scripts and queries (`import_data.sh`, `mongo_queries.js`, `sql_queries.txt`)   
+
+### [Design and Development of Serious Purpose Games](./s2/Design%20and%20Development%20of%20Serious%20Games)
+Projects related to the design and development of serious games.   
+- **Languages Used:** Java   
+- **Key Files:**   
+  - Source code (`.java`)   
+  - Project configuration and assets (`project.greenfoot`, `images`, `sounds`)   
+  - Documentation (`README.md`, `README.TXT`)    
+
+### [Electronic Governance Systems](./s2/Electronic%20Governance%20Systems)
+Assignments related to Electronic Governance Systems.
 
 ## Conclusion
 
