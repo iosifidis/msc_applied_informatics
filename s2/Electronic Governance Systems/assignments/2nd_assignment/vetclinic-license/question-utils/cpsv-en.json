@@ -1,0 +1,137 @@
+{
+    "PublicService": {
+        "name": "License for Establishment and Operation of Private Animal Clinics",
+        "evidence": [
+            {
+                "id": 1,
+                "evs": [
+                    {
+                        "id": "ev0001",
+                        "type": "Evidence",
+                        "name": "Technical study of the building complex",
+                        "description": "A technical study is required for the building complex of the unit under establishment."
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "evs": [
+                    {
+                        "id": "ev0002",
+                        "type": "Evidence",
+                        "name": "Approval for establishing a private clinic",
+                        "description": "License for establishing a private clinic"
+                    },
+                    {
+                        "id": "ev0006",
+                        "type": "Evidence",
+                        "name": "Required books",
+                        "description": "The books mentioned in the relevant requirement are provided for inspection (inspections, etc.)"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "evs": [
+                    {
+                        "id": "ev0003",
+                        "type": "Evidence",
+                        "name": "Topographic diagram of the facilities",
+                        "description": "Topographic diagram at a 1:50 scale for the facilities and the plot."
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "evs": [
+                    {
+                        "id": "ev0004",
+                        "type": "Evidence",
+                        "name": "Veterinary practice license",
+                        "description": "Veterinary practice license from GEOTEE."
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "evs": [
+                    {
+                        "id": "ev0005",
+                        "type": "Evidence",
+                        "name": "Descriptive report of the store's equipment",
+                        "description": "Descriptive report of the store's equipment"
+                    }
+                ]
+            },
+            {
+                "id": 7,
+                "evs": [
+                    {
+                        "id": "ev0007",
+                        "type": "Evidence",
+                        "name": "Certificate of suitability for X-ray machine",
+                        "description": "Certificate of suitability for an X-ray machine, issued by the Greek Atomic Energy Commission"
+                    }
+                ]
+            },
+            {
+                "id": 8,
+                "evs": [
+                    {
+                        "id": "ev0008",
+                        "type": "Evidence",
+                        "name": "Company's Articles of Association and any amendments, with corresponding Official Government Gazette publications",
+                        "description": "Company's Articles of Association and any amendments, with corresponding Official Government Gazette publications or certificates of registration in the companies' books at the Court of First Instance of the company's registered office"
+                    },
+                    {
+                        "id": "ev0009",
+                        "type": "Evidence",
+                        "name": "Certificate of Corporate Changes issued for LLCs, OEs, and EEs",
+                        "description": "Certificate of Corporate Changes issued for LLCs, OEs, and EEs by the Court of First Instance of the company's registered office and for SAs by the Development Directorate of the Region where the company is based"
+                    },
+                    {
+                        "id": "ev0010",
+                        "type": "Evidence",
+                        "name": "Legalization document for submitting the announcement on behalf of the legal entity",
+                        "description": "Submission of legalization documents for the announcement on behalf of the legal entity"
+                    },
+                    {
+                        "id": "ev0012",
+                        "type": "Evidence",
+                        "name": "Unified Certificate of Judicial Solvency (ex officio)",
+                        "description": "Certificate of non-declaration of bankruptcy of the legal entity."
+                    }
+                ]
+            },
+            {
+                "id": 9,
+                "evs": [
+                    {
+                        "id": "ev0011",
+                        "type": "Evidence",
+                        "name": "Criminal record certificate (ex officio)",
+                        "description": "Criminal record certificate of the administrative and scientific responsible person."
+                    }
+                ]
+            }
+        ],
+        "criterion_requirements": [
+            {
+                "id": "cr0001",
+                "name": "Compliance with urban planning and health requirements"
+            },
+            {
+                "id": "cr0002",
+                "name": "Ensuring the legality and suitability of the equipment"
+            },
+            {
+                "id": "cr0003",
+                "name": "Completeness of technical and building structure"
+            },
+            {
+                "id": "cr0004",
+                "name": "Ensuring identification and professional license"
+            }
+        ]
+    }
+}

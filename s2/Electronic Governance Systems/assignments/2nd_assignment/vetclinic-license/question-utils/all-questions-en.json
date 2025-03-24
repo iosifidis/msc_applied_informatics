@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "question": "Do you have a technical study regarding the building complex of the unit under establishment?",
+        "options": ["Yes", "No"]
+    },
+    {
+        "id": 1,
+        "question": "Do you have approval for establishing a private clinic?",
+        "options": ["Yes", "No"]
+    },
+    {
+        "id": 2,
+        "question": "Do you have a topographic diagram of the facilities and the plot at a 1:50 scale?",
+        "options": ["Yes", "No"]
+    }, 
+    {
+        "id": 3,
+        "question": "Do you possess the required legalization documents and a veterinary practice license from GEOTEE?",
+        "options": ["Yes", "No"]
+    },
+    {
+        "id": 4,
+        "question": "Do you have the descriptive report of the store's equipment?",
+        "options": ["Yes", "No"]
+    },
+    {
+        "id": 5,
+        "question": "Does your clinic have an X-ray machine?",
+        "options": ["Yes", "No"]
+    },   
+    {
+        "id": 6,
+        "question": "Are you a natural or legal person?",
+        "options": ["Natural", "Legal"]
+    }
+]

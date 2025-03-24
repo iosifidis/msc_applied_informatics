@@ -1,0 +1,78 @@
+[
+    {
+      "id": 0,
+      "question": "How much does it cost to issue a license for the establishment and operation of a private animal clinic?",
+      "answer": "The cost for issuing the establishment and operation license is 30 euros."
+    },
+    {
+      "id": 1,
+      "question": "What is the estimated processing time for the procedure?",
+      "answer": "The estimated processing time for issuing the license is 50 days."
+    },
+    {
+      "id": 2,
+      "question": "Is the license issuance process available digitally?",
+      "answer": "You can find information about the process on the EUGO portal (https://eugo.gov.gr/services/630041/) and on myKEPlive (https://www.gov.gr/ipiresies/polites-kai-kathemerinoteta/ex-apostaseos-exuperetese-politon/exuperetese-me-telediaskepse-apo-kentro-exupereteses-politon-kep). The application submission is done either in person or by mail to the competent service."
+    },
+    {
+      "id": 3,
+      "question": "Where should the application be submitted?",
+      "answer": "The application can be submitted in person to the competent Agricultural Economy and Veterinary Directorate (DAOK) of the respective Regional Unit or via KEP-EKE."
+    },
+    {
+      "id": 4,
+      "question": "What if I don't have TAXISnet credentials?",
+      "answer": "Having TAXISnet credentials is necessary for authentication and submission of the application, if digital submission is selected (where available)."
+    },
+    {
+      "id": 5,
+      "question": "Who is the responsible body for issuing the license?",
+      "answer": "The responsible body is the Ministry of Rural Development and Food, through the Agricultural Economy and Veterinary Directorate (DAOK) of the respective Regional Unit."
+    },
+    {
+      "id": 6,
+      "question": "What documents are required for issuing the license?",
+      "answer": "The required documents include: application / sworn statement, technical study (for establishment), establishment approval (for operation), topographic diagram, veterinary work permit, equipment report, books (for certification), certificate (if there is an X-ray machine), statute (if a legal entity), power of attorney (if needed), criminal record copy (ex officio) and certificate of non-declaration of bankruptcy (ex officio)."
+    },
+    {
+      "id": 7,
+      "question": "What happens if my clinic is located in an area not allowed by urban planning regulations?",
+      "answer": "For establishment approval, the private small and large animal clinic must be located outside the city center and at least 100 meters away from certain sensitive locations (kindergartens, schools, etc.)."
+    },
+    {
+      "id": 8,
+      "question": "What obligations do I have as a private animal clinic veterinarian?",
+      "answer": "As a veterinarian in a private animal clinic, you must comply with the obligations outlined in Article 5 of Decree 463/1978 and ensure that at least one veterinarian is staffed."
+    },
+    {
+      "id": 9,
+      "question": "What are my obligations regarding the books I must keep?",
+      "answer": "Private clinics in operation must keep the following books, duly certified and numbered: (a) Inspection book, (b) Book of recorded contagious diseases requiring mandatory declaration, (c) Book of performed preventive vaccinations against contagious diseases requiring mandatory declaration, recorded by vaccine type, (d) Book of performed disinfections."
+    },
+    {
+      "id": 10,
+      "question": "Are there restrictions on granting the license if I have been convicted of criminal acts?",
+      "answer": "The license is not granted to those who have been convicted of criminal offenses that involve the forfeiture of positions and titles or prohibition of practicing a profession, as well as to those convicted under the criminal provisions of Law 4139/2013."
+    },
+    {
+      "id": 11,
+      "question": "What should the technical study for establishment include?",
+      "answer": "The technical study must describe in detail the building structure of the unit to be established, ensuring that the requirements of Decree 463/1978 are met."
+    },
+    {
+      "id": 12,
+      "question": "What documents are required if I am a legal entity?",
+      "answer": "If you are a legal entity, you will need the company's statute and any amendments, as well as a certificate of corporate changes."
+    },
+    {
+      "id": 13,
+      "question": "When is the site inspection carried out?",
+      "answer": "The site inspection is carried out by the Tripartite Committee after the submission of the application for establishment approval and aims to determine whether the site meets the necessary requirements."
+    },
+    {
+      "id": 14,
+      "question": "What happens if I don't receive an answer for my application within 50 days?",
+      "answer": "If the 50-day deadline passes without response, the approval is deemed to have been tacitly granted. You can request a confirmation of the tacit approval from the competent authorities."
+    }
+  ]
+  
