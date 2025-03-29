@@ -152,5 +152,8 @@ solve satisfy;
 
 ---
 
+**Βίντεο:**   
+[An Introduction To Constraint Programming - Jacob Allen](https://www.youtube.com/watch?v=1FJy-ubE7UE)
+
 **📌 Άσκηση για τους φοιτητές:**  
 Υλοποιήστε το πρόβλημα του **χρονοπρογραμματισμού εργασιών** σε **MiniZinc** και βρείτε τη βέλτιστη λύση.
