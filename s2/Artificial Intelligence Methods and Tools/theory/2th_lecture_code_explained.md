@@ -58,7 +58,118 @@ solve maximize working_day;
 
 ---
 
-# ΛΥΣΗ 3 Συχνότητες
+# ΠΡΟΒΛΗΜΑ
+
+Οι διαθέσιμες συχνότητες τις οποίες μπορεί να αναθέσει η εταιρεία σε 4 γειτονικούς σταθμούς A, B, Γ και Δ, είναι από 900Mhz μέχρι και 960Mhz με βήμα αύξησης τα 10Mhz (900,910, κλπ). Η ανάθεση των συχνοτήτων γίνεται με αύξουσα σειρά, δηλαδή ο Α έχει μικρότερη συχνότητα από τον Β, ο Β από τον Γ κοκ, στους τέσσερις σταθμούς πρέπει να ανατεθούν διαφορετικές συχνότητες και όλες οι αποστάσεις μεταξύ των συχνοτήτων πρέπει να είναι διαφορετικές, δηλαδή η διαφορά μεταξύ οποιονδήποτε δύο των συχνοτήτων να είναι διαφορετική. Να μοντελοποιήσετε και να λύσετε το πρόβλημα, ως πρόβλημα ικανοποίησης περιορισμών και να δημιουργήσετε το αντίστοιχο πρόγραμμα σε MiniZinc.
+
+## ΛΥΣΗ 2
+
+```
+set of int: RANGE =
+    {freq | freq in 900..960 where freq mod 10 = 0 };
+set of int: STATIONS = 1..4;
+
+array[STATIONS] of var RANGE: alloc;
+array[int] of var int: diffs =
+    [abs(alloc[i]-alloc[j]) | i,j in STATIONS where i < j];
+
+include "alldifferent.mzn";
+constraint alldifferent(alloc);
+constraint alldifferent(diffs);
+constraint alloc[1] < alloc[2]
+    /\ alloc[2] < alloc[3]
+    /\ alloc[3] < alloc[4];
+
+solve satisfy;
+```
+
+### Ανάλυση Κώδικα:
+
+1. **Δήλωση συνόλων και πινάκων:**
+
+    ```minizinc
+    set of int: RANGE = {freq | freq in 900..960 where freq mod 10 = 0 };
+    ```
+
+    Δηλώνει ένα σύνολο ακεραίων με το όνομα `RANGE`. Αυτό το σύνολο περιέχει όλους τους ακέραιους αριθμούς από το 900 έως το 960 που είναι πολλαπλάσια του 10 (δηλαδή, 900, 910, 920, ..., 960).
+
+    ```minizinc
+    set of int: STATIONS = 1..4;
+    ```
+
+    Δηλώνει ένα σύνολο ακεραίων με το όνομα `STATIONS`, το οποίο περιέχει τους αριθμούς από το 1 έως το 4.
+
+2. **Δήλωση πινάκων μεταβλητών:**
+
+    ```minizinc
+    array[STATIONS] of var RANGE: alloc;
+    ```
+
+    Δηλώνει έναν πίνακα μεταβλητών με το όνομα `alloc`, ο οποίος έχει μήκος ίσο με το μέγεθος του συνόλου `STATIONS` (δηλαδή, 4). Κάθε στοιχείο του πίνακα `alloc` είναι μια μεταβλητή που μπορεί να πάρει τιμές από το σύνολο `RANGE`.
+
+    ```minizinc
+    array[int] of var int: diffs = [abs(alloc[i]-alloc[j]) | i,j in STATIONS where i < j];
+    ```
+
+    Δηλώνει έναν πίνακα μεταβλητών με το όνομα `diffs`, ο οποίος περιέχει τις απόλυτες διαφορές μεταξύ των στοιχείων του πίνακα `alloc`. Για κάθε ζεύγος `(i, j)` όπου `i < j`, υπολογίζεται η απόλυτη διαφορά `abs(alloc[i] - alloc[j])`.
+
+3. **Εισαγωγή βιβλιοθήκης και περιορισμοί:**
+
+    ```minizinc
+    include "alldifferent.mzn";
+    ```
+
+    Εισάγει τη βιβλιοθήκη `alldifferent.mzn`, η οποία παρέχει τη συνάρτηση `alldifferent` που εξασφαλίζει ότι όλες οι τιμές σε έναν πίνακα είναι διαφορετικές.
+
+    ```minizinc
+    constraint alldifferent(alloc);
+    ```
+
+    Εφαρμόζει τον περιορισμό `alldifferent` στον πίνακα `alloc`, δηλαδή όλες οι τιμές στον πίνακα `alloc` πρέπει να είναι διαφορετικές.
+
+    ```minizinc
+    constraint alldifferent(diffs);
+    ```
+
+    Εφαρμόζει τον περιορισμό `alldifferent` στον πίνακα `diffs`, δηλαδή όλες οι τιμές στον πίνακα `diffs` πρέπει να είναι διαφορετικές.
+
+    ```minizinc
+    constraint alloc[1] < alloc[2]
+    /\ alloc[2] < alloc[3]
+    /\ alloc[3] < alloc[4];
+    ```
+
+    Εφαρμόζει περιορισμούς για τη σειρά των τιμών στον πίνακα `alloc`. Οι τιμές πρέπει να είναι σε αύξουσα σειρά: `alloc[1] < alloc[2] < alloc[3] < alloc[4]`.
+
+4. **Επίλυση του προβλήματος:**
+
+    ```minizinc
+    solve satisfy;
+    ```
+
+    Δηλώνει ότι το πρόβλημα είναι ένα πρόβλημα ικανοποίησης περιορισμών (satisfaction problem), δηλαδή ζητάμε να βρεθεί μια λύση που ικανοποιεί όλους τους περιορισμούς.
+
+Συνοψίζοντας, ο κώδικας αυτός δημιουργεί έναν πίνακα `alloc` με τέσσερις διαφορετικές τιμές από το σύνολο `RANGE`, οι οποίες πρέπει να είναι σε αύξουσα σειρά. Επιπλέον, οι απόλυτες διαφορές μεταξύ των τιμών του `alloc` πρέπει να είναι διαφορετικές. Το πρόβλημα επιλύεται ως πρόβλημα ικανοποίησης περιορισμών.
+
+## ΛΥΣΗ 3
+
+```
+set of int: RANGE =
+    {freq | freq in 900..960 where freq mod 10 = 0 };
+set of int: STATIONS = 1..4;
+
+array[STATIONS] of var RANGE: alloc;
+array[int] of var int: diffs =
+    [abs(alloc[i]-alloc[j]) | i,j in STATIONS where i < j];
+
+include "alldifferent.mzn";
+constraint alldifferent(alloc);
+constraint alldifferent(diffs);
+constraint forall(i,j in STATIONS where j = i + 1)
+    (alloc[i] < alloc[j]);
+
+solve satisfy;
+```
 
 ### Ανάλυση Κώδικα:
 
