@@ -93,6 +93,12 @@
   ```plaintext
   GET https://example.gr/καθηγητές?name=Γιάννης&dep=Εφαρμοσμένη Πληροφορική
   ```  
+- Λήψη σε μορφή JSON ή XML:   
+  ```
+  GET https://example.gr/καθηγητές.json?name=‘Γιάννης’&dep=‘Εφαρμοσμένη Πληροφορική’
+  και
+  GET https://example.gr/καθηγητές.xml?name=‘Γιάννης’&dep=‘Εφαρμοσμένη Πληροφορική’
+  ```   
 
 ---
 
