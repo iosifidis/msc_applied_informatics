@@ -183,3 +183,23 @@ start = [7, 13, 0, 21, 12, 7, 0, 17];
 end = [12, 17, 7, 22, 21, 13, 7, 25];
 makespan = 25;
 ```
+
+### Αντικατάσταση των disjunctive περιορισμών με cumulative.
+
+```minizinc
+duration = [5,4,7,1,9,6,7,8];
+resource = [3,4,2,5,1,2,3,3];
+
+%% machines
+m = 2;
+capacity = [7,8];
+
+%% Job Allocation
+allocated_to = [{1,4,5,7}, {2,3,6,8}];
+
+constraint forall(m in MACHINES)
+    (cumulative([start[i]| i in allocated_to[m]],
+                [duration[i] | i in allocated_to[m]],
+                [resource[i] | i in allocated_to[m]],
+                capacity[m]) );
+```
