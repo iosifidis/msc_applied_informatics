@@ -25,3 +25,15 @@
 Δείτε περισσότερα για [SSD και In-Memory Βάσεις Δεδομένων](5th_lecture.md)   
 
 Δείτε περισσότερα για [Redis Data Types - Cheat Sheet](5th_Redis.md)   
+
+Δείτε περισσότερα για [Redis Data Types](5th_Redis_Data_Types.md)   
+
+Δείτε περισσότερα για [Redis Data Types Use Cases](5th_Redis_Data_Types_usecases.md)   
+
+Δείτε περισσότερα για [Redis Data Types - Big O Notation](5th_lecture_Redis_Big_O_Notation.md)   
+
+## 6. DOCUMENT DATABASES - MongoDB
+
+Δείτε περισσότερα για [ΕΙΣΑΓΩΓΗ ΣΤΙΣ DOCUMENT DATABASES](6th_lecture.md)   
+
+Δείτε περισσότερα για [MongoDB](6th_lecture_MongoDB.md)   
