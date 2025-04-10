@@ -24,7 +24,7 @@
 
 Δείτε περισσότερα για [SSD και In-Memory Βάσεις Δεδομένων](5th_lecture.md)   
 
-Δείτε περισσότερα για [Redis Data Types - Cheat Sheet](5th_Redis.md)   
+Δείτε περισσότερα για [Redis Data Types - Cheat Sheet](5th_Redis_Cheat_Sheet.md)   
 
 Δείτε περισσότερα για [Redis Data Types](5th_Redis_Data_Types.md)   
 
