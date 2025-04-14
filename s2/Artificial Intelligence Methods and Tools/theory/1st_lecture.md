@@ -153,3 +153,21 @@ solve satisfy;
 🔹 Οι **αλγόριθμοι αναζήτησης** και **ευρετικοί μηχανισμοί** μπορούν να βελτιώσουν την απόδοση.  
 🔹 Η **διάδοση περιορισμών** και ο **έλεγχος συνέπειας** μειώνουν τον χώρο αναζήτησης.  
 🔹 Ο **προγραμματισμός με περιορισμούς (CP)** αποτελεί μια σύγχρονη και αποδοτική προσέγγιση.
+
+---
+
+# **Βίντεο:**  
+
+## Constraint Satisfaction Problems
+
+[Constraint Satisfaction Problems (CSPs) 1 - Overview | Stanford CS221: AI (Autumn 2021)](https://youtu.be/-IO4fPO0rxk?si=5zDCdeyP3Be2w8Sf)    
+[Constraint Satisfaction Problems (CSPs) 2 - Definitions | Stanford CS221: AI (Autumn 2021)](https://youtu.be/uj5wCcHsSlA?si=Q8RegQn_4bwqKsZ7)   
+[Constraint Satisfaction Problems (CSPs) 3 - Examples | Stanford CS221: AI (Autumn 2021)](https://youtu.be/Tu6BiZhMDCc?si=SbWPYCUwQ35JC0FD)   
+[Constraint Satisfaction Problems (CSPs) 4 - Dynamic Ordering | Stanford CS221: AI (Autumn 2021)](https://youtu.be/Lyu8VzbIe_A?si=0CHVDFw9ufvcs_hp)   
+[Constraint Satisfaction Problems (CSPs) 5 - Arc Consistency | Stanford CS221: AI (Autumn 2021)](https://youtu.be/5rlIYGJdPy4?si=z6W8KPZrQzxbaeee)   
+[Constraint Satisfaction Problems (CSPs) 6 - Beam Search | Stanford CS221: AI (Autumn 2021)](https://youtu.be/XuWMeIHGkus?si=TBfDbJLlggGCA9Y3)   
+[Constraint Satisfaction Problems (CSPs) 7 - Local Search | Stanford CS221: AI (Autumn 2021)](https://youtu.be/VwZKPlK6jUg?si=egX0blcyHzv0YC09)   
+[An Introduction To Constraint Programming - Jacob Allen](https://www.youtube.com/watch?v=1FJy-ubE7UE)    
+[Combinatorial Explosion](https://youtu.be/T0KYF-hvr0A?si=cgAXq4wdGgyG7XOq)   
+[Hill Climbing Search](https://youtu.be/VoUotaCmDk4?si=iakOKoK6NdkWAR0E)   
+[Min-Conflicts Algorithm for AI Class 2011](https://youtu.be/n0si9JVZMQ0?si=9fIKB3XX3UX97zf9)   

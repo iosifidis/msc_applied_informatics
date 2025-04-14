@@ -1,0 +1,22 @@
+{
+    "openFiles": [
+        "serverAlloc.mzn",
+        "server_set0.dzn",
+        "server_set1.dzn",
+        "server_set2.dzn",
+        "server_set3.dzn",
+        "server_set4.dzn"
+    ],
+    "openTab": 5,
+    "projectFiles": [
+        "serverAlloc.mzn",
+        "server_set0.dzn",
+        "server_set1.dzn",
+        "server_set2.dzn",
+        "server_set3.dzn",
+        "server_set4.dzn"
+    ],
+    "selectedBuiltinConfigId": "org.gecode.gecode",
+    "selectedBuiltinConfigVersion": "6.3.0",
+    "version": 106
+}
