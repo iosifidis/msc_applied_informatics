@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="applicationInfo" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Web Modeler" exporterVersion="6ad2448" modeler:executionPlatform="Camunda Cloud" modeler:executionPlatformVersion="8.7.0">
+  <decision id="checkEligibility" name="ΕΛΕΓΧΟΣ ΒΑΣΙΚΩΝ ΠΡΟΫΠΟΘΕΣΕΩΝ">
+    <informationRequirement id="InformationRequirement_17c7mzm">
+      <requiredInput href="#applicationinfo" />
+    </informationRequirement>
+    <decisionTable id="DecisionTable_0ml68wv" hitPolicy="FIRST">
+      <input id="Input_1" label="ΕΓΚΡΙΣΗ ΤΜΗΜΑΤΟΣ;">
+        <inputExpression id="InputExpression_1" typeRef="boolean">
+          <text>applicationInfo.hasDeptApproval</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1unux34" label="ΥΠΟΒΛΗΘΗΚΕ ΑΠΟ ΜΕΛΟΣ ΔΕΠ;">
+        <inputExpression id="LiteralExpression_0dnpu11" typeRef="boolean">
+          <text>applicationInfo.isUoMStaff</text>
+        </inputExpression>
+      </input>
+      <output id="Output_1" label="ΕΙΝΑΙ ΕΝΤΑΞΕΙ;" name="isEligible" typeRef="boolean" />
+      <rule id="DecisionRule_0iwhgy0">
+        <inputEntry id="UnaryTests_1ute9bo">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0praxdd">
+          <text>true</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0bk6x4t">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0icyyo4">
+        <inputEntry id="UnaryTests_10grdaa">
+          <text>-</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0x8bk0l">
+          <text>-</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1vga5a9">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <inputData id="applicationinfo" name="ΠΛΗΡΟΦΟΡΙΕΣ ΑΙΤΗΣΗΣ" />
+  <decision id="determineapprovedamount" name="ΚΑΘΟΡΙΣΜΟΣ ΕΓΚΕΚΡΙΜΕΝΟΥ ΠΟΣΟΥ">
+    <informationRequirement id="InformationRequirement_08m3qpf">
+      <requiredInput href="#applicationinfo" />
+    </informationRequirement>
+    <informationRequirement id="InformationRequirement_18lg45y">
+      <requiredDecision href="#checkEligibility" />
+    </informationRequirement>
+    <authorityRequirement id="AuthorityRequirement_0wu9hpo">
+      <requiredAuthority href="#KnowledgeSource_0ypgsjm" />
+    </authorityRequirement>
+    <decisionTable id="DecisionTable_1ksxrp0">
+      <input id="InputClause_15dxrwx" label="ΗΤΑΝ ΕΝΤΑΞΕΙ;">
+        <inputExpression id="LiteralExpression_01t8pbw" typeRef="boolean">
+          <text>resultOfDecision('checkEligibility').isEligible</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_04hy000" label="ΔΙΑΡΚΕΙΑ (ΗΜΕΡΕΣ)">
+        <inputExpression id="LiteralExpression_0w7465w" typeRef="number">
+          <text>applicationInfo.durationDays</text>
+        </inputExpression>
+      </input>
+      <output id="OutputClause_0ajytus" label="ΕΓΚΡΙΘΗΚΕ" name="approved" typeRef="boolean" />
+      <output id="OutputClause_13pmze8" label="ΕΓΚΕΚΡΙΜΕΝΟ ΠΟΣΟ" name="approvedAmount" typeRef="number" />
+      <rule id="DecisionRule_16xqwnp">
+        <inputEntry id="UnaryTests_0fv0ems">
+          <text>false</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xykp1d">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_01914hy">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qxmh05">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_00zlhzw">
+        <inputEntry id="UnaryTests_1v8soen">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_000rv07">
+          <text>&lt;= 2</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17ui2gj">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_02g8355">
+          <text>4000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_007jzht">
+        <inputEntry id="UnaryTests_149u3a7">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ldwe8e">
+          <text>&gt;= 3 and &lt;= 5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0m57e04">
+          <text>true</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_162ooh0">
+          <text>7000</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_11sjiun">
+        <inputEntry id="UnaryTests_1gu9yn1">
+          <text>true</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pddrvo">
+          <text>&gt; 5</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_09vva5f">
+          <text>false</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_13m7hx5">
+          <text>0</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <knowledgeSource id="KnowledgeSource_0ypgsjm" name="ΑΠΟΦΑΣΗ ΣΥΜΒΟΥΛΙΟΥ ΔΙΟΙΚΗΣΗΣ ΠΑΜΑΚ. ΑΡ. ΠΡΩΤ 6082/24" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="checkEligibility">
+        <dc:Bounds height="80" width="180" x="270" y="220" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_086w4mq" dmnElementRef="applicationinfo">
+        <dc:Bounds height="45" width="125" x="517" y="397" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_1quheag" dmnElementRef="InformationRequirement_17c7mzm">
+        <di:waypoint x="580" y="397" />
+        <di:waypoint x="360" y="320" />
+        <di:waypoint x="360" y="300" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1itn48t" dmnElementRef="InformationRequirement_08m3qpf">
+        <di:waypoint x="580" y="397" />
+        <di:waypoint x="550" y="180" />
+        <di:waypoint x="550" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_1eh95be" dmnElementRef="InformationRequirement_18lg45y">
+        <di:waypoint x="360" y="220" />
+        <di:waypoint x="490" y="180" />
+        <di:waypoint x="490" y="160" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNShape id="DMNShape_1r52j2w" dmnElementRef="determineapprovedamount">
+        <dc:Bounds height="80" width="180" x="430" y="80" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_1cmxxpr" dmnElementRef="KnowledgeSource_0ypgsjm">
+        <dc:Bounds height="63" width="100" x="200" y="89" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_0jipd4j" dmnElementRef="AuthorityRequirement_0wu9hpo">
+        <di:waypoint x="300" y="121" />
+        <di:waypoint x="430" y="120" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
