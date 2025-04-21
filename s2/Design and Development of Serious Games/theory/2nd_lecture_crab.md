@@ -107,6 +107,20 @@ public void act() {
    
 ### **4. Αλλαγή εικόνας για εφέ κίνησης `public void switchImage()`**  
 ```java
+public Crab()
+{
+    image1 = new GreenfootImage("crab.png");
+    image2 = new GreenfootImage("crab2.png");
+    setImage(image1);
+    wormsEaten = 0;
+}
+
+public void act()
+{
+    …
+    switchImage();
+}
+
 public void switchImage() {
     if (getImage() == image1) {
         setImage(image2);
