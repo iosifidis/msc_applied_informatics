@@ -1,6 +1,8 @@
-# Ολοκληρωμένες Μεθόδοι από το Newton's Lab Project
+# Μεθόδοι από το Newton's Lab Project
 
-## **Κλάση Space (World)**
+---
+
+# **Κλάση Space (World)**
 
 ### **1. Δημιουργία Ηλιακού Συστήματος**
 ```java
@@ -48,7 +50,7 @@ private void removeAllObjects() {
 
 ---
 
-## **Κλάση Body (SmoothMover)**
+# **Κλάση Body (SmoothMover)**
 
 ## **1. Κατασκευαστές**
 ```java
@@ -154,7 +156,7 @@ public double getMass() {
 
 ---
 
-## **Κλάση SmoothMover**
+# **Κλάση SmoothMover**
 
 ## **1. Κατασκευαστές**
 ```java
@@ -263,9 +265,7 @@ public void accelerate(double factor) {
 
 ---
 
-## **Κλάση Vector**
-
-# Κλάση Vector - Ολοκληρωμένες Μεθόδοι
+# **Κλάση Vector**
 
 ## **1. Κατασκευαστές**
 ```java
