@@ -110,7 +110,24 @@ private void applyGravity(Body other) {
 
 ## **Κλάση SmoothMover**
 
-### **1. Κίνηση με Διάνυσμα**
+## **1. Κατασκευαστές**
+```java
+public SmoothMover() {
+    this(new Vector());
+}
+```
+**Επεξήγηση:** Δημιουργεί έναν SmoothMover με ουδέτερο διάνυσμα κίνησης (μηδενικό μήκος).
+
+```java
+public SmoothMover(Vector movement) {
+    this.movement = movement;
+}
+```
+**Επεξήγηση:** Δημιουργεί έναν SmoothMover με συγκεκριμένο διάνυσμα κίνησης.
+
+---
+
+## **2. Μέθοδοι Κίνησης**
 ```java
 public void move() {
     exactX = exactX + movement.getX();
@@ -118,46 +135,190 @@ public void move() {
     super.setLocation((int) exactX, (int) exactY);
 }
 ```
-**Επεξήγηση:** Μετακινεί τον χαρακτήρα με βάση το διάνυσμα κίνησης, χρησιμοποιώντας ακριβείς (double) συντεταγμένες για ομαλή κίνηση.
+**Επεξήγηση:** Μετακινεί τον χαρακτήρα βάσει του διανύσματος κίνησης, χρησιμοποιώντας ακριβείς (double) συντεταγμένες.
+
+```java
+public void setLocation(double x, double y) {
+    exactX = x;
+    exactY = y;
+    super.setLocation((int) x, (int) y);
+}
+```
+**Επεξήγηση:** Ορίζει τη θέση χρησιμοποιώντας ακριβείς συντεταγμένες (double).
+
+```java
+public void setLocation(int x, int y) {
+    exactX = x;
+    exactY = y;
+    super.setLocation(x, y);
+}
+```
+**Επεξήγηση:** Ορίζει τη θέση με ακέραιες συντεταγμένες, συγχρονίζοντας και τις ακριβείς τιμές.
 
 ---
 
-### **2. Προσθήκη Δύναμης**
+## **3. Μέθοδοι Πρόσβασης**
+```java
+public double getExactX() {
+    return exactX;
+}
+```
+**Επεξήγηση:** Επιστρέφει την ακριβή x συντεταγμένη (double).
+
+```java
+public double getExactY() {
+    return exactY;
+}
+```
+**Επεξήγηση:** Επιστρέφει την ακριβή y συντεταγμένη (double).
+
+```java
+public Vector getMovement() {
+    return movement;
+}
+```
+**Επεξήγηση:** Επιστρέφει το τρέχον διάνυσμα κίνησης.
+
+```java
+public double getSpeed() {
+    return movement.getLength();
+}
+```
+**Επεξήγηση:** Επιστρέφει το μέτρο της ταχύτητας (μήκος διανύσματος).
+
+---
+
+## **4. Μέθοδοι Τροποποίησης Κίνησης**
 ```java
 public void addForce(Vector force) {
     movement.add(force);
 }
 ```
-**Επεξήγηση:** Προσθέτει μια νέα δύναμη στο διάνυσμα κίνησης του χαρακτήρα.
+**Επεξήγηση:** Προσθέτει μια δύναμη (διάνυσμα) στο τρέχον διάνυσμα κίνησης.
+
+```java
+public void accelerate(double factor) {
+    movement.scale(factor);
+    if (movement.getLength() < 0.15) {
+        movement.setNeutral();
+    }
+}
+```
+**Επεξήγηση:** Επιταχύνει ή επιβραδύνει την κίνηση κατά ένα παράγοντα. Αν η ταχύτητα γίνει πολύ μικρή, μηδενίζεται.
+
+---
+
+### **Σημειώσεις**
+- Η κλάση `SmoothMover` παρέχει ομαλή κίνηση χρησιμοποιώντας ακριβείς (double) συντεταγμένες, σε αντίθεση με την τυπική ακέραια κίνηση του Greenfoot.   
+- Το διάνυσμα κίνησης (`Vector movement`) καθορίζει την κατεύθυνση και την ταχύτητα της κίνησης.   
+- Οι μέθοδοι `setLocation()` διασφαλίζουν συγχρονισμό μεταξύ ακέραιων και ακριβών συντεταγμένων.   
+- Η μέθοδος `accelerate()` επιτρέπει εύκολη εφαρμογή επιτάχυνσης/επιβράδυνσης.   
+- Οι μέθοδοι `getExactX()` και `getExactY()` χρησιμοποιούνται για ακριβείς υπολογισμούς θέσης.   
+- Η σταθερά `GRAVITY` στην κλάση `Body` καθορίζει την ένταση της βαρυτικής έλξης.   
 
 ---
 
 ## **Κλάση Vector**
 
-### **1. Δημιουργία Διανύσματος**
+# Κλάση Vector - Ολοκληρωμένες Μεθόδοι
+
+## **1. Κατασκευαστές**
+```java
+public Vector() {
+    // Default constructor creates neutral vector (0,0)
+}
+```
+**Επεξήγηση:** Δημιουργεί ουδέτερο διάνυσμα (μήκος 0).
+
 ```java
 public Vector(int direction, double length) {
-    this.direction = direction;
     this.length = length;
+    this.direction = direction;
     updateCartesian();
 }
 ```
-**Επεξήγηση:** Δημιουργεί ένα διάνυσμα με κατεύθυνση (μοίρες) και μήκος, και ενημερώνει τις καρτεσιανές συντεταγμένες.
+**Επεξήγηση:** Δημιουργεί διάνυσμα από πολικές συντεταγμένες (κατεύθυνση σε μοίρες και μήκος).
+
+```java
+public Vector(double dx, double dy) {
+    this.dx = dx;
+    this.dy = dy;
+    updatePolar();
+}
+```
+**Επεξήγηση:** Δημιουργεί διάνυσμα από καρτεσιανές συντεταγμένες (x,y).
 
 ---
 
-### **2. Αλλαγή Μήκους**
+## **2. Μέθοδοι Πρόσβασης**
+```java
+public double getX() {
+    return dx;
+}
+```
+**Επεξήγηση:** Επιστρέφει την x συνιστώσα του διανύσματος.
+
+```java
+public double getY() {
+    return dy;
+}
+```
+**Επεξήγηση:** Επιστρέφει την y συνιστώσα του διανύσματος.
+
+```java
+public int getDirection() {
+    return direction;
+}
+```
+**Επεξήγηση:** Επιστρέφει την κατεύθυνση του διανύσματος σε μοίρες (0° = EAST).
+
+```java
+public double getLength() {
+    return length;
+}
+```
+**Επεξήγηση:** Επιστρέφει το μήκος του διανύσματος.
+
+---
+
+## **3. Μέθοδοι Τροποποίησης**
+```java
+public void setDirection(int direction) {
+    this.direction = direction;
+    updateCartesian();
+}
+```
+**Επεξήγηση:** Αλλάζει την κατεύθυνση διατηρώντας το μήκος.
+
 ```java
 public void setLength(double length) {
     this.length = length;
     updateCartesian();
 }
 ```
-**Επεξήγηση:** Ορίζει το μήκος του διανύσματος και ενημερώνει τις καρτεσιανές συντεταγμένες.
+**Επεξήγηση:** Αλλάζει το μήκος διατηρώντας την κατεύθυνση.
+
+```java
+public void scale(double factor) {
+    length = length * factor;
+    updateCartesian();
+}
+```
+**Επεξήγηση:** Κλιμακώνει το διάνυσμα κατά ένα παράγοντα (factor > 1 μεγέθυνση, factor < 1 σμίκρυνση).
+
+```java
+public void setNeutral() {
+    dx = 0.0;
+    dy = 0.0;
+    length = 0.0;
+    direction = 0;
+}
+```
+**Επεξήγηση:** Μηδενίζει το διάνυσμα.
 
 ---
 
-### **3. Πρόσθεση Διανυσμάτων**
+## **4. Πράξεις Διανυσμάτων**
 ```java
 public void add(Vector other) {
     dx += other.dx;
@@ -165,11 +326,54 @@ public void add(Vector other) {
     updatePolar();
 }
 ```
-**Επεξήγηση:** Προσθέτει ένα άλλο διάνυσμα στο τρέχον και ενημερώνει τις πολικές συντεταγμένες.
+**Επεξήγηση:** Προσθέτει ένα άλλο διάνυσμα στο τρέχον.
+
+```java
+public void revertHorizontal() {
+    dx = -dx;
+    updatePolar();
+}
+```
+**Επεξήγηση:** Αντιστρέφει την οριζόντια συνιστώσα.
+
+```java
+public void revertVertical() {
+    dy = -dy;
+    updatePolar();
+}
+```
+**Επεξήγηση:** Αντιστρέφει την κατακόρυφη συνιστώσα.
+
+---
+
+## **5. Βοηθητικές Μέθοδοι**
+```java
+private void updatePolar() {
+    this.direction = (int) Math.toDegrees(Math.atan2(dy, dx));
+    this.length = Math.sqrt(dx*dx+dy*dy);
+}
+```
+**Επεξήγηση:** Ενημερώνει τις πολικές συντεταγμένες από τις καρτεσιανές.
+
+```java
+private void updateCartesian() {
+    dx = length * Math.cos(Math.toRadians(direction));
+    dy = length * Math.sin(Math.toRadians(direction));   
+}
+```
+**Επεξήγηση:** Ενημερώνει τις καρτεσιανές συντεταγμένες από τις πολικές.
 
 ---
 
 ### **Σημειώσεις**
+- Η κλάση `Vector` μπορεί να αναπαραστήσει και να χειριστεί διανύσματα και στις δύο μορφές (πολική και καρτεσιανή).
+- Οι μέθοδοι `updatePolar()` και `updateCartesian()` διασφαλίζουν τη συνοχή των συντεταγμένων.
+- Όλες οι πράξεις διατηρούν την ακεραιότητα του διανύσματος.
+- Η κατεύθυνση μετράται σε μοίρες (0° = EAST, 90° = NORTH, 180° = WEST, 270° = SOUTH).
+
+---
+
+### **Γενικές Σημειώσεις**
 - Οι κλάσεις `Body`, `SmoothMover` και `Vector` συνεργάζονται για να υλοποιήσουν μια προσομοίωση του Ηλιακού Συστήματος με βαρυτικές αλληλεπιδράσεις.
-- Η σταθερά `GRAVITY` στην κλάση `Body` καθορίζει την ένταση της βαρυτικής έλξης.
-- Οι μέθοδοι `getExactX()` και `getExactY()` χρησιμοποιούνται για ακριβείς υπολογισμούς θέσης.
+
+
