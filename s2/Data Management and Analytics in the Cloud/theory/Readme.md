@@ -34,6 +34,10 @@
 
 ## 6. DOCUMENT DATABASES - MongoDB
 
-Δείτε περισσότερα για [ΕΙΣΑΓΩΓΗ ΣΤΙΣ DOCUMENT DATABASES](6th_lecture.md)   
+Δείτε περισσότερα για [Εισαγωγή στις Document databases](6th_lecture.md)   
 
 Δείτε περισσότερα για [MongoDB](6th_lecture_MongoDB.md)   
+
+## 7. Column Stores & Cassandra
+
+Δείτε περισσότερα για [Column Stores & Cassandra](7th_lecture.md)   
