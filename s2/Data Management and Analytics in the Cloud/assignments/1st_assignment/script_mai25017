@@ -1,0 +1,113 @@
+Script started on 2025-04-06 13:49:47+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="81" LINES="35"]
+]0;iosifidis@fedora:~/Redis]666;vte.shell.postexec=0\]666;vte.shell.precmd!\]7;file://fedora/home/iosifidis/Redis\[?2004h]133;D;0\]133;A\[32miosifidis@fedora[0m:[32m~/Redis[0m$[0m ]133;B\docker start my-redis 
+[?2004l]133;C\]666;vte.shell.preexec!\my-redis
+]0;iosifidis@fedora:~/Redis]666;vte.shell.postexec=0\]666;vte.shell.precmd!\]7;file://fedora/home/iosifidis/Redis\[?2004h]133;D;0\]133;A\[32miosifidis@fedora[0m:[32m~/Redis[0m$[0m ]133;B\python3 final.py 
+[?2004l]133;C\]666;vte.shell.preexec!\=== Short URL Service ===
+
+1. Create short URL
+2. Get original URL
+3. Show statistics
+4. Exit
+Choose an option (1-4): 1
+Enter username: iosifidis
+Enter long URL: https://eiosifidis.blogspot.com/
+Created new short URL: http://my.com/bj9siy
+
+1. Create short URL
+2. Get original URL
+3. Show statistics
+4. Exit
+Choose an option (1-4): 1
+Enter username: efstathios
+Enter long URL: https://www.youtube.com/watch?v=qk5bd7lHwj8
+Created new short URL: http://my.com/nx3zs2
+
+1. Create short URL
+2. Get original URL
+3. Show statistics
+4. Exit
+Choose an option (1-4): 1
+Enter username: youtuber
+Enter long URL: https://www.youtube.com/watch?v=Xxh7TIYCbv4
+Created new short URL: http://my.com/zb1tjg
+
+1. Create short URL
+2. Get original URL
+3. Show statistics
+4. Exit
+Choose an option (1-4): 2
+Enter short code: http://my.com/nx3zs2
+
+Original URL: https://www.youtube.com/watch?v=qk5bd7lHwj8
+
+1. Create short URL
+2. Get original URL
+3. Show statistics
+4. Exit
+Choose an option (1-4): zb  2
+Enter short code: http://my.com/nx2 3zs2
+
+Original URL: https://www.youtube.com/watch?v=qk5bd7lHwj8
+
+1. Create short URL
+2. Get original URL
+3. Show statistics
+4. Exit
+Choose an option (1-4): 2
+Enter short code: http://my.com/zb1tjg
+
+Original URL: https://www.youtube.com/watch?v=Xxh7TIYCbv4
+
+1. Create short URL
+2. Get original URL
+3. Show statistics
+4. Exit
+Choose an option (1-4): 3
+
+=== General Statistics ===
+Total users: 3
+Total URLs: 3
+Average clicks per URL: 1.00
+
+=== User Statistics ===
+
+User: efstathios
+  URLs created: 1
+  Total clicks: 2
+  Average clicks: 2.00
+
+User: youtuber
+  URLs created: 1
+  Total clicks: 1
+  Average clicks: 1.00
+
+User: iosifidis
+  URLs created: 1
+  Total clicks: 0
+  Average clicks: 0.00
+
+1. Create short URL
+2. Get original URL
+3. Show statistics
+4. Exit
+Choose an option (1-4): 4
+Exiting...
+]0;iosifidis@fedora:~/Redis]666;vte.shell.postexec=0\]666;vte.shell.precmd!\]7;file://fedora/home/iosifidis/Redis\[?2004h]133;D;0\]133;A\[32miosifidis@fedora[0m:[32m~/Redis[0m$[0m ]133;B\docker exec -it my-redis redis-cli
+[?2004l]133;C\]666;vte.shell.preexec!\127.0.0.1:6379> [0K127.0.0.1:6379> K[17C[0K127.0.0.1:6379> KE[18C[0K127.0.0.1:6379> KEY[19C[0K127.0.0.1:6379> KEYS[20C[0K127.0.0.1:6379> KEYS [0;90;49mpattern[0m[21C[0K127.0.0.1:6379> KEYS *[0;90;49m pattern[0m[22C[0K127.0.0.1:6379> KEYS *[22C
+ 1) "url:bj9siy"
+ 2) "long_url:https://www.youtube.com/watch?v=Xxh7TIYCbv4"
+ 3) "url:zb1tjg"
+ 4) "user:efstathios:count"
+ 5) "user:efstathios:urls"
+ 6) "url:nx3zs2"
+ 7) "user:youtuber:urls"
+ 8) "user:iosifidis:urls"
+ 9) "user:youtuber:count"
+10) "long_url:https://eiosifidis.blogspot.com/"
+11) "user:iosifidis:count"
+12) "long_url:https://www.youtube.com/watch?v=qk5bd7lHwj8"
+127.0.0.1:6379> [0K127.0.0.1:6379> e[17C[0K127.0.0.1:6379> ex[18C[0K127.0.0.1:6379> exi[19C[0K127.0.0.1:6379> exit[20C[0K127.0.0.1:6379> exit[20C
+]0;iosifidis@fedora:~/Redis]666;vte.shell.postexec=0\]666;vte.shell.precmd!\]7;file://fedora/home/iosifidis/Redis\[?2004h]133;D;0\]133;A\[32miosifidis@fedora[0m:[32m~/Redis[0m$[0m ]133;B\[?2004l
+exit
+
+Script done on 2025-04-06 13:51:55+03:00 [COMMAND_EXIT_CODE="0"]

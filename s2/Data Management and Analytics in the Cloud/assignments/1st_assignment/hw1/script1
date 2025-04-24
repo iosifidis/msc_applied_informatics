@@ -1,0 +1,27 @@
+Script started on 2023-04-20 10:51:37+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="121" LINES="24"]
+[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ [7mΕπίδειξη χρήσης της βιβλιοθήκης jedis για χρήση του Redis Server από java κώδικα[27m^C[?2004l[?2004h[?2004l
+[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ [7mΟ κώδικας υποθέτει ότι ήδη τρέχει ο Redis Server στον localhost[27m^C[?2004l[?2004h[?2004l
+[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ ls
+[?2004l[0m[01;31mjedis-5.0.0-alpha1.jar[0m  script1  testJedis.java  timelog1  tinyURL.java
+[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ [7mΟρίζουμε το CLASSPATH για να κάνουμε τη ζωή μας εύκολη...[27m
+^C[?2004l[?2004h[?2004l
+[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ [7mexport CLASSPATH='.:jedis-5.0.0-alpha1.jar'[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexport CLASSPATH='.:jedis-5.0.0-alpha1.jar'
+[?2004l[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ javac testJedis.java 
+[?2004l[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ java testJedis 
+[?2004lType a key:
+name
+Type a value:
+Georgios
+Type a key:
+name
+The value is Georgios
+[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ [7mΑς ελέγξουμε τα περιεχόμενα του Redis Server μέσω του redis-cli[27m^C[?2004l[?2004h[?2004l
+[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ [7mΕπειδή ο Redis Server "τρέχει"μέσα στον docker container "redis-stack" συνδέομαι ως εξής:[27m^C[?2004l[?2004h[?2004l
+[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ [7mdocker exec -it redis-stack redis-cli[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker exec -it redis-stack redis-cli
+[?2004l127.0.0.1:6379> [0K127.0.0.1:6379> g[17C[0K127.0.0.1:6379> ge[18C[0K127.0.0.1:6379> get[0;90;49m key[0m[19C[0K127.0.0.1:6379> get [0;90;49mkey[0m[20C[0K127.0.0.1:6379> get n[0;90;49m [0m[21C[0K127.0.0.1:6379> get na[0;90;49m [0m[22C[0K127.0.0.1:6379> get nam[0;90;49m [0m[23C[0K127.0.0.1:6379> get name[0;90;49m [0m[24C[0K127.0.0.1:6379> get name[24C
+"Georgios"
+127.0.0.1:6379> [0K127.0.0.1:6379> e[17C[0K127.0.0.1:6379> ex[18C[0K127.0.0.1:6379> exi[19C[0K127.0.0.1:6379> exit[20C[0K127.0.0.1:6379> exit[20C
+[?2004h]0;dbtech@debian: ~/hw1[01;32mdbtech@debian[00m:[01;34m~/hw1[00m$ [?2004l
+exit
+
+Script done on 2023-04-20 10:52:56+03:00 [COMMAND_EXIT_CODE="0"]
