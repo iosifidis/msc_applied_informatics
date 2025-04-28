@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=GameOverWorld
+comment0.text=\n\ Represents\ the\ Game\ Over\ screen\ shown\ when\ the\ player\ runs\ out\ of\ lives.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=GameOverWorld()
+comment1.text=\n\ Constructs\ the\ Game\ Over\ screen\ world.\n\ Initializes\ background\ and\ displays\ final\ score.\n
+comment2.params=
+comment2.target=void\ showFinalScore()
+comment2.text=\n\ Displays\ the\ player's\ final\ score\ on\ the\ victory\ screen.\n\ Positioned\ at\ horizontal\ center,\ 50px\ from\ bottom.\n
+comment3.params=
+comment3.target=void\ act()
+comment3.text=\n\ Optional\:\ Act\ method\ for\ handling\ clicks\ on\ the\ Game\ Over\ screen.\n
+numComments=4

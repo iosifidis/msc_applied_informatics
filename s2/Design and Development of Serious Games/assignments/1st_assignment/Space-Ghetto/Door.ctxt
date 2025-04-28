@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Door
+comment0.text=\n\ A\ door\ actor\ that\ transitions\ between\ levels\ when\ the\ player\ has\ the\ key.\n\ Requires\ GameData.currentLevelKeyFound\ to\ be\ true\ for\ interaction.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=Door()
+comment1.text=\n\ Constructor\ -\ initializes\ the\ door\ as\ closed.\n\ \n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Main\ game\ loop\ -\ checks\ door\ state\ and\ player\ interaction.\n\ \n
+numComments=3

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Tutorial
+comment0.text=\n\ The\ Tutorial\ button\ in\ the\ game's\ menu\ system.\n\ \n\ Handles\:\n\ -\ Visual\ representation\ of\ the\ tutorial\ button\n\ -\ Click\ detection\ and\ response\n\ -\ Transition\ to\ the\ TutorialWorld\n\ \n\ Extends\ the\ Buttons\ class\ for\ common\ button\ functionality.\n\n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=Tutorial()
+comment1.text=\n\ Creates\ a\ Tutorial\ button\ with\ the\ specified\ button\ image.\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Main\ game\ loop\ -\ handles\ button\ click\ detection\ and\ response.\n\ \n\ When\ clicked\:\n\ 1.\ Transitions\ to\ TutorialWorld\n\ 2.\ Menu\ world\ cleanup\ is\ handled\ automatically\ by\ Greenfoot\n\ \n\ Note\:\ No\ manual\ cleanup\ of\ Menu\ world\ is\ needed\ as\:\n\ -\ Greenfoot\ automatically\ calls\ stopped()\ during\ world\ transitions\n\ -\ Menu\ world\ likely\ has\ no\ resources\ needing\ cleanup\n
+numComments=3

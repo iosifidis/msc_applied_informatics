@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Back
+comment0.text=\n\ Back\ button\ class\ that\ returns\ to\ the\ main\ menu\ when\ clicked.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=Back()
+comment1.text=\n\ Constructor\ for\ Back\ button\ -\ sets\ the\ initial\ button\ image\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ method\ -\ checks\ for\ mouse\ clicks\ and\ handles\ button\ press\n
+numComments=3

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Key
+comment0.text=\n\ Represents\ a\ Key\ object\ that\ the\ Player\ must\ collect\ to\ unlock\ the\ next\ door.\n\ Interacts\ with\ the\ Player\ to\ be\ collected.\n\n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=Key()
+comment1.text=\n\ Creates\ a\ new\ Key\ with\ default\ image.\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ -\ Checks\ if\ the\ Key\ is\ collected\ by\ the\ Player.\n
+comment3.params=
+comment3.target=void\ checkIfCollected()
+comment3.text=\n\ Checks\ if\ the\ key\ is\ touching\ the\ Player.\n\ If\ so,\ mark\ the\ key\ as\ found\ in\ GameData\ and\ remove\ this\ key\ object.\n
+numComments=4

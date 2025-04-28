@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=TutorialWorld
+comment0.text=\n\ The\ tutorial\ screen\ world\ that\ displays\ game\ instructions\ and\ controls.\n\ \n\ Features\:\n\ -\ Full-screen\ tutorial\ background\ image\n\ -\ Back\ button\ to\ return\ to\ main\ menu\n\ -\ Standard\ 960x540\ resolution\ (matches\ game\ worlds)\n\ \n\ Usage\:\n\ -\ Accessed\ from\ the\ main\ menu\ via\ Tutorial\ button\n\ -\ Provides\ players\ with\ game\ instructions\n\ -\ Returns\ to\ menu\ when\ back\ button\ is\ clicked\n\n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=TutorialWorld()
+comment1.text=\n\ Constructs\ the\ TutorialWorld\ with\ default\ settings.\n\ Initializes\:\n\ -\ World\ dimensions\ (960x540)\n\ -\ Tutorial\ background\ image\n\ -\ Back\ button\ navigation\n
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\n
+numComments=3

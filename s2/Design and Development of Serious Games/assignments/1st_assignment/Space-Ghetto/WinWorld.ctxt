@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=WinWorld
+comment0.text=\n\ The\ victory\ screen\ displayed\ when\ the\ player\ completes\ the\ game.\n\ Shows\ the\ player's\ final\ score\ and\ provides\ navigation\ options.\n\ \n\ Features\:\n\ -\ Victory\ background\ image\n\ -\ Final\ score\ display\n\ -\ Consistent\ 960x540\ resolution\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=WinWorld()
+comment1.text=\n\ Constructs\ the\ victory\ screen\ world.\n\ Initializes\:\n\ -\ World\ dimensions\ matching\ game\ resolution\n\ -\ Victory\ background\ image\n\ -\ Final\ score\ display\ from\ GameData\n
+comment2.params=
+comment2.target=void\ showFinalScore()
+comment2.text=\n\ Displays\ the\ player's\ final\ score\ on\ the\ victory\ screen.\n\ Positioned\ at\ horizontal\ center,\ 50px\ from\ bottom.\n
+numComments=3

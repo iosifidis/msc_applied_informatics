@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Menu
+comment0.text=\n\ The\ main\ menu\ world\ that\ appears\ when\ the\ game\ starts.\n\ Provides\ navigation\ options\ to\ start\ the\ game\ or\ view\ tutorials.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=Menu()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Menu.\n\ \n
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\n\ Prepares\ the\ world\ by\ creating\ and\ adding\ all\ initial\ menu\ objects.\n\ This\ includes\:\n\ -\ Play\ button\ (starts\ the\ game)\n\ -\ Tutorial\ button\ (shows\ instructions)\n\ \n\ Objects\ are\ added\ at\ specific\ pixel\ coordinates\ for\ proper\ layout.\n
+numComments=3

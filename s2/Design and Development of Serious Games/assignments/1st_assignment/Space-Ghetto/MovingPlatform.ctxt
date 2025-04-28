@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=MovingPlatform
+comment0.text=\n\ A\ horizontally\ moving\ platform\ that\ travels\ between\ two\ set\ boundaries.\n\ Inherits\ from\ Platform\ to\ provide\ collision\ detection\ for\ other\ actors.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=imageFileName\ minXBound\ maxXBound\ initialDirection
+comment1.target=MovingPlatform(java.lang.String,\ int,\ int,\ int)
+comment1.text=\n\ Creates\ a\ new\ MovingPlatform\ with\ specified\ parameters.\n\ \n\ @param\ imageFileName\ The\ image\ file\ to\ use\ for\ this\ platform\n\ @param\ minXBound\ The\ left\ boundary\ x-coordinate\n\ @param\ maxXBound\ The\ right\ boundary\ x-coordinate\n\ @param\ initialDirection\ Starting\ direction\ (1\ for\ right,\ -1\ for\ left)\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Main\ game\ loop\ -\ handles\ platform\ movement\ each\ frame.\n
+comment3.params=
+comment3.target=void\ movePlatform()
+comment3.text=\n\ Moves\ the\ platform\ horizontally\ and\ handles\ boundary\ checks.\n\ Adjusts\ position\ precisely\ when\ reaching\ boundaries\ to\ prevent\ overshooting.\n
+comment4.params=
+comment4.target=int\ getHorizontalSpeed()
+comment4.text=\n\ Returns\ the\ current\ horizontal\ speed\ (including\ direction)\ of\ the\ platform.\n\ This\ method\ is\ used\ by\ Actors\ standing\ on\ this\ platform\ to\ move\ along.\n
+numComments=5

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=GameData
+comment0.text=\n\ Central\ static\ class\ for\ managing\ persistent\ game\ state\ across\ levels.\n\ \n\ Stores\ and\ manages\ global\ game\ data\ including\:\n\ -\ Player\ lives\n\ -\ Game\ score\n\ -\ Level-specific\ progress\ (keys\ found)\n\ \n\ All\ members\ are\ static\ to\ maintain\ state\ between\ world\ transitions.\n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=void\ reset()
+comment1.text=\n\ Resets\ all\ persistent\ game\ data\ to\ initial\ values.\n\ Call\ when\ starting\ a\ new\ game\ session.\n
+comment2.params=
+comment2.target=void\ resetLevelSpecificData()
+comment2.text=\n\ Resets\ level-specific\ data\ while\ maintaining\ persistent\ stats.\n\ Call\ when\ transitioning\ to\ a\ new\ level.\n
+comment3.params=
+comment3.target=GameData()
+comment3.text=\n\ Empty\ constructor\ -\ no\ instantiation\ needed\ for\ static\ utility\ class.\n
+numComments=4

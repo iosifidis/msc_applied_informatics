@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Platform
+comment0.text=\n\ Main\ game\ loop\ for\ platform\ behavior.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=void\ act()
+numComments=2

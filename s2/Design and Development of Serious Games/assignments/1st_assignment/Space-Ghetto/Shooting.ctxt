@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Shooting
+comment0.text=\n\ Abstract\ base\ class\ for\ all\ projectile\ types\ in\ the\ game.\n\ Provides\ common\ collision\ detection\ and\ cleanup\ functionality.\n\ \n\ Responsibilities\:\n\ -\ Handles\ wall/world\ boundary\ collision\ detection\n\ -\ Provides\ automatic\ projectile\ cleanup\n\ -\ Serves\ as\ foundation\ for\ directional\ projectiles\n\ \n\ Note\:\ Concrete\ implementations\ (LeftShoot/RightShoot)\ handle\ their\ own\:\n\ -\ Movement\ logic\n\ -\ Specific\ collision\ responses\n\ -\ Visual\ representations\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=boolean\ checkAndRemoveIfHitsWallOrEdge()
+comment1.text=\n\ Checks\ for\ and\ handles\ collisions\ with\ walls/platforms\ or\ world\ edges.\n\ \n\ @return\ true\ if\ projectile\ was\ removed,\ false\ if\ still\ active\n\ \n\ Behavior\:\n\ 1.\ Checks\ for\ Platform\ collisions\ (walls)\n\ 2.\ Checks\ for\ world\ boundary\ proximity\n\ 3.\ Automatically\ removes\ projectile\ on\ collision\n\ 4.\ Uses\ 5-pixel\ buffer\ zone\ at\ world\ edges\n
+numComments=2

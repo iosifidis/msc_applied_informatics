@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Lifes
+comment0.text=\n\ Displays\ the\ player's\ current\ lives\ and\ score\ on\ screen\ as\ a\ HUD\ (Heads-Up\ Display).\n\ Continuously\ updates\ to\ reflect\ the\ current\ game\ state\ from\ GameData.\n\ Automatically\ triggers\ game\ over\ when\ lives\ reach\ zero.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\n\ Main\ game\ loop\ -\ updates\ the\ HUD\ display\ every\ frame\ and\ checks\ for\ game\ over\ condition.\n
+numComments=2

@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=LeftShoot
+comment0.text=\n\ Bullet\ that\ moves\ to\ the\ left.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=LeftShoot()
+comment1.text=\n\ Creates\ a\ new\ left-moving\ projectile.\n\ Sets\ the\ appropriate\ image\ and\ plays\ firing\ sound.\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Main\ game\ loop\ -\ handles\ movement\ and\ collision\ detection.\n
+comment3.params=
+comment3.target=void\ checkHit()
+comment3.text=\n\ Checks\ for\ collisions\ with\ Enemies\ or\ Walls.\n
+numComments=4

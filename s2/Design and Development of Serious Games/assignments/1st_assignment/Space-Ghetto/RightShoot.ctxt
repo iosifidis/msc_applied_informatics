@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=RightShoot
+comment0.text=\n\ A\ projectile\ that\ travels\ rightward,\ damaging\ enemies\ on\ contact.\n\ Inherits\ core\ projectile\ behavior\ from\ Shooting\ superclass.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=RightShoot()
+comment1.text=\n\ Creates\ a\ right-moving\ projectile\ with\ visual\ and\ audio\ effects.\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Main\ game\ loop\ -\ handles\ movement\ and\ collision\ detection.\n\ Executes\ in\ fixed\ order\:\ move\ first,\ then\ check\ collisions.\n
+comment3.params=
+comment3.target=void\ checkHit()
+comment3.text=\n\ Checks\ for\ and\ handles\ collisions\ with\ game\ objects.\n\ Priority\:\n\ 1.\ Monster\ collisions\ (immediate\ damage)\n\ 2.\ Wall/world\ boundary\ collisions\ (cleanup)\n
+numComments=4

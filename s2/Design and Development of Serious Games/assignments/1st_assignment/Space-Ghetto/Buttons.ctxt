@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Buttons
+comment0.text=\n\ A\ base\ class\ for\ interactive\ button\ elements\ in\ a\ Greenfoot\ game.\n\ \n\ Provides\ the\ foundation\ for\ clickable\ UI\ buttons,\ handling\ core\ button\ functionality.\n\ Derived\ classes\ should\ implement\ specific\ behaviors\ (e.g.,\ menu\ navigation,\ game\ actions).\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=void\ act()
+comment1.text=\n\ Act\ -\ do\ whatever\ the\ Buttons\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
+numComments=2

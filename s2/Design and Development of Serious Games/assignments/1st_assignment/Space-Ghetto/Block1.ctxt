@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Block1
+comment0.text=\n\ A\ platform\ block\ (Tile)\ used\ in\ level\ design,\ with\ a\ specific\ image.\n\ Inherits\ from\ the\ Platform\ class,\ likely\ representing\ a\ static\ or\ interactive\n\ game\ element\ that\ characters\ can\ stand\ on\ or\ interact\ with.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=Block1()
+comment1.text=\n\ Constructor\ for\ Block1\ -\ initializes\ the\ block\ with\ its\ specific\ tile\ image.\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Act\ method\ -\ called\ every\ frame\ to\ perform\ game\ logic.\n\ Currently\ empty\ as\ this\ block\ may\ not\ need\ per-frame\ behavior.\n\ Can\ be\ overridden\ to\ add\ functionality\ like\ movement,\ collisions,\ or\ effects.\n
+numComments=3

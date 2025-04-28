@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=MyWorld
+comment0.text=\n\ The\ first\ level\ world\ of\ the\ game.\n\ Contains\ all\ level\ design\ elements\ including\ platforms,\ enemies,\ and\ the\ player.\n\ Features\ background\ music\ and\ manages\ game\ state\ when\ world\ starts/stops.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=MyWorld()
+comment1.text=\n\ Constructor\ for\ MyWorld\ -\ initializes\ the\ level\ layout.\n\ Sets\ world\ dimensions,\ background\ image,\ and\ calls\ prepare()\ to\ populate\ the\ world.\n
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\n\ Prepares\ the\ world\ by\ adding\ all\ game\ objects\ at\ their\ initial\ positions.\n\ Includes\:\n\ -\ Player\ character\n\ -\ Platform\ blocks\ (static\ and\ moving)\n\ -\ Enemies\ (monsters)\n\ -\ Level\ exit\ door\n\ -\ HUD\ elements\n
+comment3.params=
+comment3.target=void\ started()
+comment3.text=\n\ Called\ when\ world\ becomes\ active.\n\ Starts\ playing\ background\ music\ in\ loop\ at\ reduced\ volume.\n
+comment4.params=
+comment4.target=void\ stopped()
+comment4.text=\n\ Called\ when\ world\ becomes\ inactive.\n\ Stops\ background\ music\ when\ leaving\ this\ world.\n
+numComments=5

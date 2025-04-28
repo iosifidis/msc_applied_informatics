@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=MyWorld2
+comment0.text=\n\ The\ second\ level\ world\ of\ the\ game.\n\ Features\ more\ complex\ platforming\ challenges\ and\ enemies\ than\ MyWorld.\n\ Manages\ level-specific\ data\ reset\ and\ background\ music.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=MyWorld2()
+comment1.text=\n\ Constructor\ for\ MyWorld2\ -\ initializes\ the\ second\ level.\n\ Sets\ world\ dimensions,\ background\ image,\ and\ prepares\ level\ objects.\n
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\n\ Populates\ the\ world\ with\ all\ game\ objects\ at\ their\ initial\ positions.\n\ Includes\:\n\ -\ Player\ start\ position\n\ -\ Platform\ layout\ (static\ and\ moving)\n\ -\ Enemies\ with\ varying\ point\ values\n\ -\ Level\ exit\ door\n\ -\ HUD\ display\n
+comment3.params=
+comment3.target=void\ started()
+comment3.text=\n\ Called\ when\ world\ becomes\ active.\n\ Starts\ playing\ background\ music\ in\ loop\ at\ 50%\ volume.\n
+comment4.params=
+comment4.target=void\ stopped()
+comment4.text=\n\ Called\ when\ world\ becomes\ inactive.\n\ Stops\ background\ music\ when\ leaving\ this\ world.\n
+numComments=5

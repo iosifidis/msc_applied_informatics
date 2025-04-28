@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=Enemy
+comment0.text=\n\ Super\ class\ for\ enemy\ entities\ in\ the\ game.\n\ Provides\ core\ functionality\ that\ all\ enemy\ types\ should\ inherit.\ \n\ @author\ Efstathios\ Iosifidis\n\ @version\ 0.1\n
+comment1.params=
+comment1.target=void\ act()
+numComments=2

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Play
+comment0.text=\n\ The\ Play\ button\ in\ the\ game's\ menu\ system.\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=Play()
+comment1.text=\n\ Constructor\ for\ Play\ button.\n\ Sets\ the\ visual\ appearance\ of\ the\ button.\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ Main\ game\ loop\ -\ handles\ button\ click\ detection\ and\ response.\n\ \n\ When\ clicked\:\n\ 1.\ Resets\ all\ game\ data\ via\ GameData.reset()\n\ 2.\ Transitions\ to\ MyWorld\ (Level\ 1)\n\ \n\ Note\:\ The\ Menu\ world's\ stopped()\ method\ is\ automatically\ called\ by\ Greenfoot\n\ during\ world\ transition,\ so\ no\ manual\ call\ is\ needed.\n
+numComments=3

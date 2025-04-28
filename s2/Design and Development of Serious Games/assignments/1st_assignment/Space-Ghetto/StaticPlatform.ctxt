@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=StaticPlatform
+comment0.text=\n\ A\ non-moving\ platform\ that\ provides\ solid\ ground\ for\ actors\ to\ stand\ on.\n\ Inherits\ from\ Platform\ class\ to\ share\ common\ platform\ behavior.\n\ \n\ Features\:\n\ -\ Immovable\ solid\ surface\n\ -\ Basic\ collision\ detection\ (inherited\ from\ Platform)\n\ -\ Simple\ static\ visual\ representation\n\ \n\ Usage\:\n\ -\ Place\ in\ world\ to\ create\ walkable\ surfaces\n\ -\ Player\ and\ enemies\ can\ land\ on\ these\ platforms\n\ -\ No\ special\ behavior\ or\ movement\n\ \n\ @author\ Efstathios\ Iosifidis\ \n\ @version\ 0.1\n
+comment1.params=
+comment1.target=StaticPlatform()
+comment1.text=\n\ Creates\ a\ StaticPlatform\ with\ default\ platform\ image.\n\ The\ image\ "tile2lv1.png"\ will\ be\ used\ as\ the\ visual\ representation.\n
+comment2.params=
+comment2.target=void\ act()
+numComments=3
