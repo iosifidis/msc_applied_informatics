@@ -17,6 +17,7 @@ public class Monster extends Enemy
     private final boolean hasKey;   // Whether monster drops a key when killed
     private boolean isDead = false; // Current alive/dead state
     
+    
     // *** DAMAGE TO PLAYER ***
     private int damageValue = 1;          // Damage dealt to player per hit
     private int damageCooldownDuration = 60; // Frames between damage instances
@@ -357,12 +358,14 @@ public class Monster extends Enemy
      */
     public void die() {
     
-        if (isDead) {
-        return; // Αν είναι ήδη νεκρός, μην κάνεις τίποτα
+        if (isDead || getWorld() == null) {
+        return;
         }
     
-        isDead = true; // Σήμανε τον Monster ως νεκρό
+        // Set death flag FIRST to block concurrent interactions
+        isDead = true;
         
+        // -- Execute death effects --
         if (hasKey) {
             Key key = new Key();
             getWorld().addObject(key, getX(), getY());
@@ -370,7 +373,12 @@ public class Monster extends Enemy
     
         GameData.score += pointsValue;
         
-        getWorld().removeObject(this);
+        // Remove from world LAST (after all other operations)
+        try {
+            getWorld().removeObject(this);
+        } catch (IllegalStateException e) {
+        // Fail silently if world is transitioning
+        }
     }
     
     // *** INTERACTION WITH PLAYER ***
