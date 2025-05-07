@@ -214,6 +214,4 @@
 ## 📚 Extra Πηγές
 
 - [GeeksForGeeks - Clustering Guide](https://www.geeksforgeeks.org/)
-- [LazyProgrammer ML Compendium](https://lazyprogrammer.me/mlcompendium/)
-- [Spectral Clustering Intro](https://towardsdatascience.com/spectral-clustering-for-beginners-d08b7d25b4d8)
 - [DBSCAN vs OPTICS](https://www.atlantbh.com/clustering-algorithms-dbscan-vs-optics/)
