@@ -13,44 +13,54 @@
    }
    ```
 
-```javascript
-db.students.insertOne(
-  {
-    "name": "Γιάννης Παπαδόπουλος",
-    "age": 23,
-    "department": "Πληροφορική",
-    "grades": [7.5, 8.0, 9.2]
-  }
-);
-```
+   - ΑΠΑΝΤΗΣΗ:
+
+    ```javascript
+    db.students.insertOne(
+      {
+        "name": "Γιάννης Παπαδόπουλος",
+        "age": 23,
+        "department": "Πληροφορική",
+        "grades": [7.5, 8.0, 9.2]
+      }
+    );
+    ```
 
 2. **Αναζήτηση**:
    - Βρες όλους τους φοιτητές που σπουδάζουν "Πληροφορική".
 
-```javascript
-db.students.find({ "department": "Πληροφορική" });
-```
+   - ΑΠΑΝΤΗΣΗ:
+  
+    ```javascript
+    db.students.find({ "department": "Πληροφορική" });
+    ```
 
 3. **Προβολή συγκεκριμένων πεδίων**:
    - Εμφάνισε μόνο τα ονόματα και τις ηλικίες των φοιτητών, χωρίς το `_id`.
 
-```javascript
-db.students.find({}, { "name": 1, "age": 1, "_id": 0 });
-```
+   - ΑΠΑΝΤΗΣΗ:
+  
+    ```javascript
+    db.students.find({}, { "name": 1, "age": 1, "_id": 0 });
+    ```
 
 4. **Ταξινόμηση**:
    - Ταξινόμησε τους φοιτητές κατά ηλικία (φθίνουσα σειρά).
 
-```javascript
-db.students.find().sort({ "age": -1 }); // -1 για φθίνουσα, 1 για αύξουσα
-```
+   - ΑΠΑΝΤΗΣΗ:
+  
+    ```javascript
+    db.students.find().sort({ "age": -1 }); // -1 για φθίνουσα, 1 για αύξουσα
+    ```
 
 5. **Φιλτράρισμα**:
    - Βρες όσους έχουν βαθμό μεγαλύτερο του 8 σε τουλάχιστον ένα μάθημα.
 
-```javascript
-db.students.find({ "grades": { $gt: 8 } });
-```
+   - ΑΠΑΝΤΗΣΗ:
+  
+    ```javascript
+    db.students.find({ "grades": { $gt: 8 } });
+    ```
 
 ---
 
@@ -59,96 +69,104 @@ db.students.find({ "grades": { $gt: 8 } });
 6. **Ενημέρωση**:
    - Πρόσθεσε νέο μάθημα `"Databases"` στο πεδίο `courses` για τη φοιτήτρια με όνομα "Μαρία Νικολάου".
 
-```javascript
-db.students.updateOne(
-  { "name": "Μαρία Νικολάου" },
-  { $addToSet: { "courses": "Databases" } }
-);
-```
+   - ΑΠΑΝΤΗΣΗ:
+  
+    ```javascript
+    db.students.updateOne(
+      { "name": "Μαρία Νικολάου" },
+      { $addToSet: { "courses": "Databases" } }
+    );
+    ```
 
 7. **Αύξηση τιμής**:
    - Αυξήστε την ηλικία κατά 1 για όλους τους φοιτητές άνω των 25.
 
-```javascript
-db.students.updateMany(
-  { "age": { $gt: 25 } },
-  { $inc: { "age": 1 } }
-);
-```
+   - ΑΠΑΝΤΗΣΗ:
+  
+    ```javascript
+    db.students.updateMany(
+      { "age": { $gt: 25 } },
+      { $inc: { "age": 1 } }
+    );
+    ```
 
 8. **Διαγραφή**:
    - Διέγραψε όλους τους φοιτητές που έχουν μέσο όρο βαθμολογίας < 5.
 
+   - ΑΠΑΝΤΗΣΗ:
+
 *Σημείωση:* Η MongoDB δεν υποστηρίζει απευθείας υπολογισμό μέσου όρου μέσα σε ένα φίλτρο `deleteMany`. Αυτό απαιτεί συνδυασμό aggregation για την εύρεση των σχετικών `_id`'s και στη συνέχεια `deleteMany`.
 
 **Βήμα 1: Βρες τους `_id` των φοιτητών με μέσο όρο βαθμολογίας < 5.**
-```javascript
-let studentIdsToDelete = db.students.aggregate([
-  {
-    $addFields: {
-      averageGrade: { $avg: "$grades" }
-    }
-  },
-  {
-    $match: {
-      averageGrade: { $lt: 5 }
-    }
-  },
-  {
-    $project: { _id: 1 } // Μόνο το _id μας ενδιαφέρει
-  }
-]).map(doc => doc._id); // Εξάγει έναν πίνακα με τα _id
-printjson(studentIdsToDelete); // Για να δεις τα IDs
-```
+    ```javascript
+    let studentIdsToDelete = db.students.aggregate([
+      {
+        $addFields: {
+          averageGrade: { $avg: "$grades" }
+        }
+      },
+      {
+        $match: {
+          averageGrade: { $lt: 5 }
+        }
+      },
+      {
+        $project: { _id: 1 } // Μόνο το _id μας ενδιαφέρει
+      }
+    ]).map(doc => doc._id); // Εξάγει έναν πίνακα με τα _id
+    printjson(studentIdsToDelete); // Για να δεις τα IDs
+    ```
 
 **Βήμα 2: Διέγραψε τους φοιτητές χρησιμοποιώντας τα `_id` που βρέθηκαν.**
-```javascript
-if (studentIdsToDelete.length > 0) {
-  db.students.deleteMany({ "_id": { $in: studentIdsToDelete } });
-  print("Διαγράφηκαν " + studentIdsToDelete.length + " φοιτητές.");
-} else {
-  print("Δεν βρέθηκαν φοιτητές με μέσο όρο βαθμολογίας < 5 για διαγραφή.");
-}
-```
+    ```javascript
+    if (studentIdsToDelete.length > 0) {
+      db.students.deleteMany({ "_id": { $in: studentIdsToDelete } });
+      print("Διαγράφηκαν " + studentIdsToDelete.length + " φοιτητές.");
+    } else {
+      print("Δεν βρέθηκαν φοιτητές με μέσο όρο βαθμολογίας < 5 για διαγραφή.");
+    }
+    ```
 
 9. **Σύνθετη Αναζήτηση**:
    - Βρες όσους είναι στο Τμήμα "Ηλεκτρολόγων Μηχανικών" ή είναι κάτω των 21 ετών.
 
-```javascript
-db.students.find(
-  {
-    $or: [
-      { "department": "Ηλεκτρολόγων Μηχανικών" },
-      { "age": { $lt: 21 } }
-    ]
-  }
-);
-```
+    ```javascript
+    db.students.find(
+      {
+        $or: [
+          { "department": "Ηλεκτρολόγων Μηχανικών" },
+          { "age": { $lt: 21 } }
+        ]
+      }
+    );
+    ```
 
 10. **Εγγραφή μόνο αν δεν υπάρχει**:
    - Εισήγαγε έναν φοιτητή μόνο αν δεν υπάρχει άλλος με το ίδιο `AM` (Αριθμός Μητρώου).
 
+   - ΑΠΑΝΤΗΣΗ:
+   
 *Προϋπόθεση:* Για να λειτουργήσει αξιόπιστα αυτό, θα πρέπει να υπάρχει ένα **μοναδικό ευρετήριο (unique index)** στο πεδίο `AM`.
-```javascript
-// Βήμα 1: Δημιουργία μοναδικού ευρετηρίου στο πεδίο AM (μόνο μια φορά)
-db.students.createIndex({ "AM": 1 }, { unique: true });
+    ```javascript
+    // Βήμα 1: Δημιουργία μοναδικού ευρετηρίου στο πεδίο AM (μόνο μια φορά)
+    db.students.createIndex({ "AM": 1 }, { unique: true });
 
-// Βήμα 2: Εισαγωγή/Ενημέρωση με upsert και $setOnInsert
-// Αυτό θα εισάγει το έγγραφο μόνο αν δεν υπάρχει φοιτητής με AM: "2023001"
-// Αν υπάρχει, δεν θα γίνει τίποτα (δεν θα ενημερώσει ούτε θα εισάγει).
-db.students.updateOne(
-  { "AM": "2023001" }, // Κριτήριο αναζήτησης
-  {
-    $setOnInsert: { // Αυτά τα πεδία ορίζονται μόνο αν γίνει Εισαγωγή (Insert)
-      "name": "Νέος Φοιτητής Πληροφορικής",
-      "age": 20,
-      "department": "Πληροφορική",
-      "grades": [7.0, 7.0, 7.0]
-    }
-  },
-  { upsert: true } // Αν δεν βρεθεί έγγραφο, εισήγαγε το
-);
-```
+    // Βήμα 2: Εισαγωγή/Ενημέρωση με upsert και $setOnInsert
+    // Αυτό θα εισάγει το έγγραφο μόνο αν δεν υπάρχει φοιτητής με AM: "2023001"
+    // Αν υπάρχει, δεν θα γίνει τίποτα (δεν θα ενημερώσει ούτε θα εισάγει).
+    db.students.updateOne(
+      { "AM": "2023001" }, // Κριτήριο αναζήτησης
+      {
+        $setOnInsert: { // Αυτά τα πεδία ορίζονται μόνο αν γίνει Εισαγωγή (Insert)
+          "name": "Νέος Φοιτητής Πληροφορικής",
+          "age": 20,
+          "department": "Πληροφορική",
+          "grades": [7.0, 7.0, 7.0]
+        }
+      },
+      { upsert: true } // Αν δεν βρεθεί έγγραφο, εισήγαγε το
+    );
+    ```
 **Δοκιμή:**
 *   Την πρώτη φορά που θα το τρέξετε, θα εισαχθεί.
 *   Τη δεύτερη φορά, επειδή υπάρχει ήδη φοιτητής με AM "2023001" (Μαρία Νικολάου), το `updateOne` θα βρει το έγγραφο, αλλά το `$setOnInsert` δεν θα κάνει τίποτα, καθώς δεν πρόκειται για νέα εισαγωγή. Η Μαρία έχει ήδη AM "2022001" και ο Νέος Φοιτητής AM "2023001".
@@ -162,71 +180,77 @@ db.students.updateOne(
 11. **Μέσος όρος βαθμών ανά φοιτητή**:
    - Χρησιμοποίησε aggregation για να υπολογίσεις τον μέσο όρο βαθμών για κάθε φοιτητή.
 
-```javascript
-db.students.aggregate([
-  {
-    $addFields: { // Προσθέτει ένα νέο πεδίο "averageGrade" σε κάθε έγγραφο
-      averageGrade: { $avg: "$grades" }
-    }
-  },
-  {
-    $project: { // Επιλέγει ποια πεδία θα εμφανίσει
-      name: 1,
-      department: 1,
-      averageGrade: 1,
-      _id: 0 // Αφαιρεί το _id από την έξοδο
-    }
-  }
-]);
-```
+   - ΑΠΑΝΤΗΣΗ:
+  
+    ```javascript
+    db.students.aggregate([
+      {
+        $addFields: { // Προσθέτει ένα νέο πεδίο "averageGrade" σε κάθε έγγραφο
+          averageGrade: { $avg: "$grades" }
+        }
+      },
+      {
+        $project: { // Επιλέγει ποια πεδία θα εμφανίσει
+          name: 1,
+          department: 1,
+          averageGrade: 1,
+          _id: 0 // Αφαιρεί το _id από την έξοδο
+        }
+      }
+    ]);
+    ```
 
 12. **Πλήθος φοιτητών ανά τμήμα**:
    - Πόσοι φοιτητές υπάρχουν ανά τμήμα;
 
-```javascript
-db.students.aggregate([
-  {
-    $group: { // Ομαδοποιεί τα έγγραφα
-      _id: "$department", // Ομαδοποίηση βάσει του πεδίου 'department'
-      count: { $sum: 1 } // Μετράει κάθε έγγραφο στην ομάδα
-    }
-  },
-  {
-    $sort: {
-      count: -1 // Προαιρετική ταξινόμηση κατά αριθμό φοιτητών (φθίνουσα)
-    }
-  }
-]);
-```
+   - ΑΠΑΝΤΗΣΗ:
+   
+    ```javascript
+    db.students.aggregate([
+      {
+        $group: { // Ομαδοποιεί τα έγγραφα
+          _id: "$department", // Ομαδοποίηση βάσει του πεδίου 'department'
+          count: { $sum: 1 } // Μετράει κάθε έγγραφο στην ομάδα
+        }
+      },
+      {
+        $sort: {
+          count: -1 // Προαιρετική ταξινόμηση κατά αριθμό φοιτητών (φθίνουσα)
+        }
+      }
+    ]);
+    ```
 
 13. **Top 3 φοιτητές με βάση τον μέσο όρο**:
    - Επιστροφή των 3 καλύτερων φοιτητών ως προς τον μέσο όρο βαθμών.
 
-```javascript
-db.students.aggregate([
-  {
-    $addFields: {
-      averageGrade: { $avg: "$grades" } // Υπολογισμός μέσου όρου
-    }
-  },
-  {
-    $sort: {
-      averageGrade: -1 // Ταξινόμηση φθίνουσα βάσει μέσου όρου
-    }
-  },
-  {
-    $limit: 3 // Περιορισμός στα 3 κορυφαία αποτελέσματα
-  },
-  {
-    $project: {
-      name: 1,
-      department: 1,
-      averageGrade: 1,
-      _id: 0
-    }
-  }
-]);
-```
+   - ΑΠΑΝΤΗΣΗ:
+   
+    ```javascript
+    db.students.aggregate([
+      {
+        $addFields: {
+          averageGrade: { $avg: "$grades" } // Υπολογισμός μέσου όρου
+        }
+      },
+      {
+        $sort: {
+          averageGrade: -1 // Ταξινόμηση φθίνουσα βάσει μέσου όρου
+        }
+      },
+      {
+        $limit: 3 // Περιορισμός στα 3 κορυφαία αποτελέσματα
+      },
+      {
+        $project: {
+          name: 1,
+          department: 1,
+          averageGrade: 1,
+          _id: 0
+        }
+      }
+    ]);
+    ```
 
 14. **Ενσωμάτωση Δεδομένων**:
    - Μοντελοποίησε έναν φοιτητή που έχει:
@@ -234,34 +258,36 @@ db.students.aggregate([
      - λίστα μαθημάτων (με κωδικό & τίτλο)
      - λίστα βαθμών (με κωδικό μαθήματος & βαθμό)
 
-```javascript
-// Ένα παράδειγμα εγγράφου φοιτητή με ενσωματωμένα δεδομένα:
-{
-  "name": "Άννα Παπαδάκη",
-  "age": 22,
-  "department": "Ηλεκτρολόγων Μηχανικών",
-  "AM": "2023007",
-  "personalInfo": { // Ενσωματωμένο υπο-έγγραφο
-    "address": {
-      "street": "Ηρώων Πολυτεχνείου 10",
-      "city": "Αθήνα",
-      "zip": "15773"
-    },
-    "phone": "6981234567",
-    "email": "anna.p@example.com"
-  },
-  "coursesEnrolled": [ // Ενσωματωμένος πίνακας υπο-εγγράφων για μαθήματα
-    { "code": "EE101", "title": "Εισαγωγή στα Ηλεκτρονικά", "credits": 6 },
-    { "code": "MA201", "title": "Ανάλυση ΙΙ", "credits": 7 },
-    { "code": "CS305", "title": "Δομές Δεδομένων", "credits": 5 }
-  ],
-  "gradesDetails": [ // Ενσωματωμένος πίνακας υπο-εγγράφων για βαθμούς
-    { "courseCode": "EE101", "grade": 7.5, "semester": "Fall 2023" },
-    { "courseCode": "MA201", "grade": 6.8, "semester": "Fall 2023" },
-    { "courseCode": "CS305", "grade": 8.0, "semester": "Spring 2024" }
-  ]
-}
-```
+   - ΑΠΑΝΤΗΣΗ:
+   
+    ```javascript
+    // Ένα παράδειγμα εγγράφου φοιτητή με ενσωματωμένα δεδομένα:
+    {
+      "name": "Άννα Παπαδάκη",
+      "age": 22,
+      "department": "Ηλεκτρολόγων Μηχανικών",
+      "AM": "2023007",
+      "personalInfo": { // Ενσωματωμένο υπο-έγγραφο
+        "address": {
+          "street": "Ηρώων Πολυτεχνείου 10",
+          "city": "Αθήνα",
+          "zip": "15773"
+        },
+        "phone": "6981234567",
+        "email": "anna.p@example.com"
+      },
+      "coursesEnrolled": [ // Ενσωματωμένος πίνακας υπο-εγγράφων για μαθήματα
+        { "code": "EE101", "title": "Εισαγωγή στα Ηλεκτρονικά", "credits": 6 },
+        { "code": "MA201", "title": "Ανάλυση ΙΙ", "credits": 7 },
+        { "code": "CS305", "title": "Δομές Δεδομένων", "credits": 5 }
+      ],
+      "gradesDetails": [ // Ενσωματωμένος πίνακας υπο-εγγράφων για βαθμούς
+        { "courseCode": "EE101", "grade": 7.5, "semester": "Fall 2023" },
+        { "courseCode": "MA201", "grade": 6.8, "semester": "Fall 2023" },
+        { "courseCode": "CS305", "grade": 8.0, "semester": "Spring 2024" }
+      ]
+    }
+    ```
 **Πότε είναι κατάλληλο:** Όταν τα ενσωματωμένα δεδομένα είναι στενά συνδεδεμένα με το "γονικό" έγγραφο, έχουν μικρή πιθανότητα να αλλάξουν ανεξάρτητα και η πρόσβαση σε αυτά γίνεται κυρίως μέσω του γονικού εγγράφου. Αποφεύγει τα "joins" (όπως το `$lookup`), οδηγώντας σε ταχύτερες αναγνώσεις.
 
 15. **Διαχωρισμός και Αναφορά (Linking)**:
@@ -269,63 +295,65 @@ db.students.aggregate([
    - Το έγγραφο του φοιτητή περιέχει μόνο τους `course_ids`.
    - Στη συνέχεια, με χρήση aggregation, παρουσίασε τον φοιτητή μαζί με τις πλήρεις πληροφορίες των μαθημάτων του.
 
+   - ΑΠΑΝΤΗΣΗ:
+   
 **Βήμα 1: Δημιουργία `courses` collection και εισαγωγή δεδομένων.**
-```javascript
-db.courses.insertMany([
-  { _id: ObjectId("65c6c0b396b26d83a1a0f8b1"), "code": "CS101", "title": "Εισαγωγή στην Πληροφορική", "credits": 6 },
-  { _id: ObjectId("65c6c0b396b26d83a1a0f8b2"), "code": "MA201", "title": "Γραμμική Άλγεβρα", "credits": 7 },
-  { _id: ObjectId("65c6c0b396b26d83a1a0f8b3"), "code": "EE301", "title": "Ψηφιακά Συστήματα", "credits": 6 }
-]);
-```
+    ```javascript
+    db.courses.insertMany([
+      { _id: ObjectId("65c6c0b396b26d83a1a0f8b1"), "code": "CS101", "title": "Εισαγωγή στην Πληροφορική", "credits": 6 },
+      { _id: ObjectId("65c6c0b396b26d83a1a0f8b2"), "code": "MA201", "title": "Γραμμική Άλγεβρα", "credits": 7 },
+      { _id: ObjectId("65c6c0b396b26d83a1a0f8b3"), "code": "EE301", "title": "Ψηφιακά Συστήματα", "credits": 6 }
+    ]);
+    ```
 *Σημείωση:* Τα `ObjectId`'s είναι παραδείγματα. Θα δημιουργηθούν αυτόματα αν δεν τα ορίσετε. Μπορείτε να τα βρείτε στην έξοδο των `insertMany` ή `insertOne`.
 
 **Βήμα 2: Ενημέρωση ή εισαγωγή εγγράφων `students` με αναφορές (`ObjectId`) στα μαθήματα.**
 *Προσοχή:* Θα πρέπει να υπάρχουν τα `ObjectId`'s των μαθημάτων που εισάγατε παραπάνω.
-```javascript
-db.students.updateOne(
-  { "name": "Γιάννης Παπαδόπουλος" },
-  { $set: {
-      "enrolledCourseIds": [
-        ObjectId("65c6c0b396b26d83a1a0f8b1"), // CS101
-        ObjectId("65c6c0b396b26d83a1a0f8b2")  // MA201
-      ]
-    }
-  }
-);
+    ```javascript
+    db.students.updateOne(
+      { "name": "Γιάννης Παπαδόπουλος" },
+      { $set: {
+          "enrolledCourseIds": [
+            ObjectId("65c6c0b396b26d83a1a0f8b1"), // CS101
+            ObjectId("65c6c0b396b26d83a1a0f8b2")  // MA201
+          ]
+        }
+      }
+    );
 
-db.students.updateOne(
-  { "name": "Μαρία Νικολάου" },
-  { $set: {
-      "enrolledCourseIds": [
-        ObjectId("65c6c0b396b26d83a1a0f8b1"), // CS101
-        ObjectId("65c6c0b396b26d83a1a0f8b3")  // EE301
-      ]
-    }
-  }
-);
-```
+    db.students.updateOne(
+      { "name": "Μαρία Νικολάου" },
+      { $set: {
+          "enrolledCourseIds": [
+            ObjectId("65c6c0b396b26d83a1a0f8b1"), // CS101
+            ObjectId("65c6c0b396b26d83a1a0f8b3")  // EE301
+          ]
+        }
+      }
+    );
+    ```
 
 **Βήμα 3: Χρήση του `$lookup` (aggregation join) για να παρουσιάσεις τον φοιτητή μαζί με τις πλήρεις πληροφορίες των μαθημάτων του.**
-```javascript
-db.students.aggregate([
-  {
-    $lookup: {
-      from: "courses",             // Η συλλογή με την οποία θέλουμε να κάνουμε join
-      localField: "enrolledCourseIds", // Το πεδίο στο τρέχον έγγραφο (students) που περιέχει τα IDs
-      foreignField: "_id",         // Το πεδίο στο έγγραφο της 'courses' συλλογής που αντιστοιχεί στα IDs
-      as: "enrolledCourseDetails"  // Το όνομα του νέου πίνακα που θα περιέχει τα αντιστοιχισμένα έγγραφα μαθημάτων
-    }
-  },
-  {
-    $project: { // Προβολή των επιθυμητών πεδίων
-      name: 1,
-      department: 1,
-      enrolledCourseDetails: { code: 1, title: 1, credits: 1 }, // Επιλέγουμε συγκεκριμένα πεδία από τα ενσωματωμένα μαθήματα
-      _id: 0
-    }
-  }
-]);
-```
+    ```javascript
+    db.students.aggregate([
+      {
+        $lookup: {
+          from: "courses",             // Η συλλογή με την οποία θέλουμε να κάνουμε join
+          localField: "enrolledCourseIds", // Το πεδίο στο τρέχον έγγραφο (students) που περιέχει τα IDs
+          foreignField: "_id",         // Το πεδίο στο έγγραφο της 'courses' συλλογής που αντιστοιχεί στα IDs
+          as: "enrolledCourseDetails"  // Το όνομα του νέου πίνακα που θα περιέχει τα αντιστοιχισμένα έγγραφα μαθημάτων
+        }
+      },
+      {
+        $project: { // Προβολή των επιθυμητών πεδίων
+          name: 1,
+          department: 1,
+          enrolledCourseDetails: { code: 1, title: 1, credits: 1 }, // Επιλέγουμε συγκεκριμένα πεδία από τα ενσωματωμένα μαθήματα
+          _id: 0
+        }
+      }
+    ]);
+    ```
 **Πότε είναι κατάλληλο:** Όταν τα δεδομένα έχουν σχέση ένα-προς-πολλά ή πολλά-προς-πολλά, όταν τα ενσωματωμένα δεδομένα αλλάζουν συχνά και ανεξάρτητα (π.χ., πληροφορίες μαθήματος που μπορεί να ενημερωθούν μία φορά και να επηρεάσουν πολλούς φοιτητές), ή όταν το ενσωματωμένο σύνολο δεδομένων μπορεί να γίνει πολύ μεγάλο.
 
 ---
