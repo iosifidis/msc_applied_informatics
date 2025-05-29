@@ -16,7 +16,7 @@
 
 ### Βασικές λειτουργίες
 ```bash
-SET user:100 "{\"name\":\"John\", \"age\":30}"  # O(1)
+SET user:100 "{"name": "John", "age":30}"  # O(1)
 GET user:100  # O(1)
 
 SETNX lock:resource1 "locked"  # O(1) - χρήσιμο για distributed locks
