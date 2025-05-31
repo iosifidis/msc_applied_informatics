@@ -38,7 +38,7 @@ ORDER BY count DESC
 
 ```
 MATCH (p)-[:ACTED_IN]->(m)
-WHERE p.born>=1955 AND p.born<=
+WHERE p.born>=1955 AND p.born<=1975
 RETURN m.title, COUNT(*) AS count
 ```
 
@@ -84,7 +84,7 @@ RETURN DISTINCT p.name
 ```
 MATCH (p)-[:ACTED_IN]->(m)
 WITH p, count(*) AS played
-WHERE played>=
+WHERE played>=3
 RETURN p.name, played
 ORDER BY played DESC
 ```
@@ -121,7 +121,7 @@ RETURN p1.name, length(p)
 ```
 MATCH (p:Person)-[relatedTo]-(m:Movie)
 WITH p,m, COUNT(DISTINCT Type(relatedTo)) AS types
-WHERE types>=
+WHERE types>=2
 RETURN p.name, m.title, types
 ```
 
@@ -137,7 +137,7 @@ MATCH (n:Person) RETURN n
 MATCH (p:Person{name:'Tom Hanks'})-[:ACTED_IN]->(m)<-[:ACTED_IN]-
 (:Person{name:'Meg Ryan'}),(p)-[:ACTED_IN]->(m1)<-[:ACTED_IN]-
 (:Person{name:'Kevin Bacon'})
-RETURN m,m
+RETURN m,m1
 
 MATCH (p:Person{name:'Tom Hanks'})-[:ACTED_IN]->(m)<-[:ACTED_IN]-
 (:Person{name:'Meg Ryan'})
@@ -172,7 +172,7 @@ RETURN p
 
 ```
 MATCH (p:Person)-[:DIRECTED|WROTE]->(m:Movie)
-WHERE m.released>
+WHERE m.released>1970
 RETURN p,m
 ```
 
