@@ -1,4 +1,4 @@
-## Σημειώσεις για την Παρουσίαση "Analysis of Large Graphs: Link Analysis, PageRank"
+## Analysis of Large Graphs: Link Analysis, PageRank
 
 **Διαφάνεια 1: Εισαγωγή στην Ανάλυση Μεγάλων Γράφων**
 
