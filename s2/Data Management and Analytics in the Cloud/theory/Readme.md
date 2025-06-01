@@ -67,4 +67,5 @@
 Δείτε περισσότερα για [Γεωχωρικά Δεδομένα σε NoSQL (Geospatial in NoSQL)](12th_lecture_geospatal_in_nosql.md)   
 Δείτε περισσότερα για [Διαχείριση Χωρικών Δεδομένων (Spatial Data Management)](12th_lecture_spatial_data_management.md)   
 Δείτε περισσότερα για [PostGIS](12th_lecture_PostGIS.md)   
+Δείτε περισσότερα για [PostGIS Cheat Sheet](12th_lecture_PostGIS_cheat_sheet.md)   
 
