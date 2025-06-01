@@ -41,3 +41,30 @@
 ## 7. Column Stores & Cassandra
 
 Δείτε περισσότερα για [Column Stores & Cassandra](7th_lecture.md)   
+
+
+## 8. Βάσεις Δεδομένων Γραφήματος
+
+Δείτε περισσότερα για τις [Βάσεις Δεδομένων Γραφήματος](8th_lecture.md)   
+
+## 9. Παραδείγματα ερωτημάτων
+
+Δείτε περισσότερα για τα [Παραδείγματα ερωτημάτων](9th_lecture_exercise.md)   
+
+## 10. Neo4j
+
+Δείτε περισσότερα για [Graph Databases](10th_lecture_Neo4j.md)   
+Δείτε περισσότερα για [Network Analysis: Graph Data Science Library](10th_lecture_Neo4j_intro.md)   
+Δείτε περισσότερα για [Analysis of Large Graphs: Link Analysis, PageRank](10th_lecture_graph-pagerank.md)   
+
+## 11. Χωρικές Βάσεις Δεδομένων
+
+Δείτε περισσότερα για [Εισαγωγή στις Χωρικές Βάσεις Δεδομένων](11th_lecture_spatial_database.md)   
+Δείτε περισσότερα για [Εισαγωγή στα GIS (Geographic Information Systems)](11th_lecture_intro_gis.md)   
+
+## 12. Γεωχωρικά Δεδομένα σε NoSQL (Geospatial in NoSQL)
+
+Δείτε περισσότερα για [Γεωχωρικά Δεδομένα σε NoSQL (Geospatial in NoSQL)](12th_lecture_geospatal_in_nosql.md)   
+Δείτε περισσότερα για [Διαχείριση Χωρικών Δεδομένων (Spatial Data Management)](12th_lecture_spatial_data_management.md)   
+Δείτε περισσότερα για [PostGIS](12th_lecture_PostGIS.md)   
+
