@@ -1,0 +1,65 @@
+Classifier Name,Fold,Training or test set,Balanced or unbalanced train set,Number of training samples,Number of non-healthy companies in training sample,True positives TP,True negatives TN,False positives FP,False negatives FN,ROC-AUC
+Linear Discriminant Analysis,1,train,balanced,744,186,79,523,35,107,0.0
+Linear Discriminant Analysis,1,test,balanced,744,186,31,2399,218,31,0.8303339208894697
+Logistic Regression,1,train,balanced,744,186,69,526,32,117,0.0
+Logistic Regression,1,test,balanced,744,186,30,2431,186,32,0.8348700186127923
+Decision Trees,1,train,balanced,744,186,186,558,0,0,0.0
+Decision Trees,1,test,balanced,744,186,35,2149,468,27,0.6928427034156323
+Random Forests,1,train,balanced,744,186,186,558,0,0,0.0
+Random Forests,1,test,balanced,744,186,31,2382,235,31,0.8688969147139669
+k-Nearest Neighbors,1,train,balanced,744,186,115,517,41,71,0.0
+k-Nearest Neighbors,1,test,balanced,744,186,33,2311,306,29,0.8202201486558114
+Naïve Bayes,1,train,balanced,744,186,86,504,54,100,0.0
+Naïve Bayes,1,test,balanced,744,186,30,2318,299,32,0.8240105020523377
+Support Vector Machines,1,train,balanced,744,186,95,528,30,91,0.0
+Support Vector Machines,1,test,balanced,744,186,32,2422,195,30,0.8473319609994207
+Gradient Boosting,1,train,balanced,744,186,166,550,8,20,0.0
+Gradient Boosting,1,test,balanced,744,186,37,2347,270,25,0.8458712882271007
+Linear Discriminant Analysis,2,train,balanced,744,186,70,522,36,116,0.0
+Linear Discriminant Analysis,2,test,balanced,744,186,31,2438,179,31,0.8677012585205912
+Logistic Regression,2,train,balanced,744,186,57,529,29,129,0.0
+Logistic Regression,2,test,balanced,744,186,27,2473,144,35,0.8588262847140903
+Decision Trees,2,train,balanced,744,186,186,558,0,0,0.0
+Decision Trees,2,test,balanced,744,186,28,2148,469,34,0.6362000320485165
+Random Forests,2,train,balanced,744,186,186,558,0,0,0.0
+Random Forests,2,test,balanced,744,186,37,2444,173,25,0.8950349452093632
+k-Nearest Neighbors,2,train,balanced,744,186,108,519,39,78,0.0
+k-Nearest Neighbors,2,test,balanced,744,186,31,2354,263,31,0.8459760622234276
+Naïve Bayes,2,train,balanced,744,186,102,491,67,84,0.0
+Naïve Bayes,2,test,balanced,744,186,43,2265,352,19,0.8437449924192931
+Support Vector Machines,2,train,balanced,744,186,70,540,18,116,0.0
+Support Vector Machines,2,test,balanced,744,186,28,2501,116,34,0.8503519173641327
+Gradient Boosting,2,train,balanced,744,186,151,548,10,35,0.0
+Gradient Boosting,2,test,balanced,744,186,35,2384,233,27,0.8605766267703723
+Linear Discriminant Analysis,3,train,balanced,744,186,81,518,40,105,0.0
+Linear Discriminant Analysis,3,test,balanced,744,186,19,2435,182,43,0.7963008616120404
+Logistic Regression,3,train,balanced,744,186,71,526,32,115,0.0
+Logistic Regression,3,test,balanced,744,186,14,2452,165,48,0.7955304645802261
+Decision Trees,3,train,balanced,744,186,186,558,0,0,0.0
+Decision Trees,3,test,balanced,744,186,24,2235,382,38,0.6205640538908133
+Random Forests,3,train,balanced,744,186,186,558,0,0,0.0
+Random Forests,3,test,balanced,744,186,22,2438,179,40,0.7788960518692915
+k-Nearest Neighbors,3,train,balanced,744,186,111,521,37,75,0.0
+k-Nearest Neighbors,3,test,balanced,744,186,17,2371,246,45,0.7270329236875517
+Naïve Bayes,3,train,balanced,744,186,92,480,78,94,0.0
+Naïve Bayes,3,test,balanced,744,186,22,2290,327,40,0.7709640440297311
+Support Vector Machines,3,train,balanced,744,186,85,535,23,101,0.0
+Support Vector Machines,3,test,balanced,744,186,15,2477,140,47,0.7947723939009208
+Gradient Boosting,3,train,balanced,744,186,156,550,8,30,0.0
+Gradient Boosting,3,test,balanced,744,186,21,2411,206,41,0.7847264166060621
+Linear Discriminant Analysis,4,train,balanced,744,186,77,528,30,109,0.0
+Linear Discriminant Analysis,4,test,balanced,744,186,21,2422,195,41,0.850666239353113
+Logistic Regression,4,train,balanced,744,186,72,531,27,114,0.0
+Logistic Regression,4,test,balanced,744,186,20,2445,172,42,0.846567727143861
+Decision Trees,4,train,balanced,744,186,186,558,0,0,0.0
+Decision Trees,4,test,balanced,744,186,29,2185,432,33,0.651333711341477
+Random Forests,4,train,balanced,744,186,186,558,0,0,0.0
+Random Forests,4,test,balanced,744,186,30,2421,196,32,0.8643484906381353
+k-Nearest Neighbors,4,train,balanced,744,186,113,536,22,73,0.0
+k-Nearest Neighbors,4,test,balanced,744,186,31,2337,280,31,0.8079431015568184
+Naïve Bayes,4,train,balanced,744,186,98,498,60,88,0.0
+Naïve Bayes,4,test,balanced,744,186,32,2302,315,30,0.8387713091819
+Support Vector Machines,4,train,balanced,744,186,86,539,19,100,0.0
+Support Vector Machines,4,test,balanced,744,186,24,2439,178,38,0.8502286538390424
+Gradient Boosting,4,train,balanced,744,186,156,552,6,30,0.0
+Gradient Boosting,4,test,balanced,744,186,31,2396,221,31,0.8643916328719168
