@@ -36,28 +36,28 @@
 
 ### Συσταδοποίηση (Clustering)
 
-Δείτε περισσότερα στον [σύνδεσμο εδώ](7th_lecture_L3p.md)
+Δείτε περισσότερα στον [σύνδεσμο εδώ](7th_lecture_Clustering_L3p.md)
 
 ### Αξιολόγηση Απόδοσης (Performance Assessment)
 
-Δείτε περισσότερα στον [σύνδεσμο εδώ](8th_lecture_L4p.md)
+Δείτε περισσότερα στον [σύνδεσμο εδώ](8th_lecture_performance_assessment_L4p.md)
 
 ### Εισαγωγή στα Νευρωνικά Δίκτυα
 
-Δείτε περισσότερα στον [σύνδεσμο εδώ](9th_lecture_L5p.md)
+Δείτε περισσότερα στον [σύνδεσμο εδώ](9th_lecture_Artificial_neural_networks_L5p.md)
 
 ### Τεχνικές Μείωσης Διαστατικότητας
 
-Δείτε περισσότερα στον [σύνδεσμο εδώ](10th_lecture_L6p.md)
+Δείτε περισσότερα στον [σύνδεσμο εδώ](10th_lecture_Dimensionality_reduction_L6p.md)
 
 ### Συνελικτικά Νευρωνικά Δίκτυα (Convolutional Neural Networks - CNNs)
 
-Δείτε περισσότερα στον [σύνδεσμο εδώ](11th_lecture_L9p.md)
+Δείτε περισσότερα στον [σύνδεσμο εδώ](11th_lecture_Convolutional_Neural_Networks_L7p.md)
 
 ### Παραγωγικά Ανταγωνιστικά Δίκτυα (Generative Adversarial Networks - GANs)
 
-Δείτε περισσότερα στον [σύνδεσμο εδώ](12th_lecture_L10p.md)
+Δείτε περισσότερα στον [σύνδεσμο εδώ](12th_lecture_GANs_L8p.md)
 
 ### Σύνοψη Μαθήματος
 
-Δείτε περισσότερα στον [σύνδεσμο εδώ](13th_lecture_L11p.md)
+Δείτε περισσότερα στον [σύνδεσμο εδώ](13th_lecture_Course_summary_L9p.md)
