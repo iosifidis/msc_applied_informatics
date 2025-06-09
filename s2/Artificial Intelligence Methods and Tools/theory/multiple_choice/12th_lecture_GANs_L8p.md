@@ -3,121 +3,121 @@
 ## **ΕΝΟΤΗΤΑ 1: Μονή απάντηση ανά ερώτημα.**
 
 ### **Ε1.** Σύμφωνα με τις διαφάνειες, τα GANs ανήκουν στην κατηγορία των γεννητικών μοντέλων που μαθαίνουν:
-α. Explicit density models
-β. Implicit density models
-γ. Discriminative models
-δ. Parametric models
+α. Explicit density models   
+β. Implicit density models   
+γ. Discriminative models   
+δ. Parametric models   
 
 **Σωστή απάντηση:** β. Implicit density models
 
 ### **Ε2.** Ένα standard Generative Adversarial Network (GAN) αποτελείται από δύο βασικά νευρωνικά δίκτυα. Ποια είναι αυτά;
-α. Έναν Encoder και έναν Decoder
-β. Έναν Discriminator και έναν Classifier
-γ. Έναν Generator και έναν Discriminator
-δ. Έναν Autoencoder και έναν Generator
+α. Έναν Encoder και έναν Decoder   
+β. Έναν Discriminator και έναν Classifier   
+γ. Έναν Generator και έναν Discriminator   
+δ. Έναν Autoencoder και έναν Generator   
 
 **Σωστή απάντηση:** γ. Έναν Generator και έναν Discriminator
 
 ### **Ε3.** Τι λαμβάνει συνήθως ως είσοδο ο Generator σε ένα standard GAN;
-α. Πραγματικά δεδομένα από το dataset
-β. Τυχαίο θόρυβο (random noise)
-γ. Δεδομένα που έχουν ήδη υποβληθεί σε επεξεργασία από τον Discriminator
-δ. Labels των κλάσεων
+α. Πραγματικά δεδομένα από το dataset   
+β. Τυχαίο θόρυβο (random noise)   
+γ. Δεδομένα που έχουν ήδη υποβληθεί σε επεξεργασία από τον Discriminator   
+δ. Labels των κλάσεων   
 
 **Σωστή απάντηση:** β. Τυχαίο θόρυβο (random noise)
 
 ### **Ε4.** Τι προσπαθεί να μάθει ο Discriminator κατά την εκπαίδευση ενός standard GAN;
-α. Να παράγει νέα, ρεαλιστικά δείγματα
-β. Να μετασχηματίζει τον τυχαίο θόρυβο σε εικόνες
-γ. Να διακρίνει αν ένα δείγμα προέρχεται από την πραγματική κατανομή δεδομένων ή παράχθηκε από τον Generator
-δ. Να ελαχιστοποιήσει το σφάλμα ανακατασκευής
+α. Να παράγει νέα, ρεαλιστικά δείγματα  
+β. Να μετασχηματίζει τον τυχαίο θόρυβο σε εικόνες   
+γ. Να διακρίνει αν ένα δείγμα προέρχεται από την πραγματική κατανομή δεδομένων ή παράχθηκε από τον Generator   
+δ. Να ελαχιστοποιήσει το σφάλμα ανακατασκευής   
 
 **Σωστή απάντηση:** γ. Να διακρίνει αν ένα δείγμα προέρχεται από την πραγματική κατανομή δεδομένων ή παράχθηκε από τον Generator
 
 ### **Ε5.** Η εκπαίδευση ενός standard GAN βασίζεται σε μία διαδικασία που περιγράφεται ως:
-α. Επιβλεπόμενη μάθηση (Supervised Learning)
-β. Μη επιβλεπόμενη μάθηση (Unsupervised Learning)
-γ. Ενισχυτική μάθηση (Reinforcement Learning)
-δ. Ανταγωνιστικό παιχνίδι (Adversarial Game / Minimax Game)
+α. Επιβλεπόμενη μάθηση (Supervised Learning)   
+β. Μη επιβλεπόμενη μάθηση (Unsupervised Learning)   
+γ. Ενισχυτική μάθηση (Reinforcement Learning)   
+δ. Ανταγωνιστικό παιχνίδι (Adversarial Game / Minimax Game)   
 
 **Σωστή απάντηση:** δ. Ανταγωνιστικό παιχνίδι (Adversarial Game / Minimax Game)
 
 ### **Ε6.** Ποιο από τα παρακάτω είναι ένα συχνό πρόβλημα κατά την εκπαίδευση standard GANs, όπου ο Generator παράγει δείγματα από μία ή λίγες μόνο κατηγορίες της πραγματικής κατανομής;
-α. Vanishing Gradient
-β. Exploding Gradient
-γ. Mode Collapse
-δ. Overfitting
+α. Vanishing Gradient   
+β. Exploding Gradient   
+γ. Mode Collapse   
+δ. Overfitting   
 
 **Σωστή απάντηση:** γ. Mode Collapse
 
 ### **Ε7.** Ποια αρχιτεκτονική GAN χρησιμοποιεί Autoencoder μέσα στον Discriminator, μετρώντας την απόσταση (π.χ. MSE) μεταξύ της εισόδου και της ανακατασκευής του Autoencoder ως την "ενέργεια" ή το "σκορ" του Discriminator;
-α. Conditional GAN (cGAN)
-β. InfoGAN
-γ. Energy-Based GAN (EB-GAN)
-δ. Deep Convolutional GAN (DCGAN)
+α. Conditional GAN (cGAN)   
+β. InfoGAN   
+γ. Energy-Based GAN (EB-GAN)   
+δ. Deep Convolutional GAN (DCGAN)   
 
 **Σωστή απάντηση:** γ. Energy-Based GAN (EB-GAN)
 
 ### **Ε8.** Ποιος τύπος GANs επιτρέπει τον έλεγχο της γενιάς, π.χ. παράγοντας εικόνες συγκεκριμένων κλάσεων ή χαρακτηριστικών, με την παροχή επιπρόσθετων πληροφοριών (όπως labels ή κείμενο) στα δίκτυα Generator και/ή Discriminator;
-α. Standard GAN
-β. Conditional GAN (cGAN)
-γ. InfoGAN
-δ. Laplacian Pyramid of Adversarial Networks (LAPGAN)
+α. Standard GAN   
+β. Conditional GAN (cGAN)   
+γ. InfoGAN   
+δ. Laplacian Pyramid of Adversarial Networks (LAPGAN)   
 
 **Σωστή απάντηση:** β. Conditional GAN (cGAN)
 
 ### **Ε9.** Η τεχνική InfoGAN στοχεύει στην εκμάθηση disentangled αναπαραστάσεων, μεγιστοποιώντας την αμοιβαία πληροφορία (mutual information) μεταξύ:
-α. Του πραγματικού δείγματος και του παραγόμενου δείγματος.
-β. Του τυχαίου θορύβου (z) και του παραγόμενου δείγματος.
-γ. Ενός ειδικού λανθάνοντα κώδικα (c) και του παραγόμενου δείγματος.
-δ. Του Discriminator και του Generator.
+α. Του πραγματικού δείγματος και του παραγόμενου δείγματος.   
+β. Του τυχαίου θορύβου (z) και του παραγόμενου δείγματος.   
+γ. Ενός ειδικού λανθάνοντα κώδικα (c) και του παραγόμενου δείγματος.   
+δ. Του Discriminator και του Generator.   
 
 **Σωστή απάντηση:** γ. Ενός ειδικού λανθάνοντα κώδικα (c) και του παραγόμενου δείγματος.
 
 ### **Ε10.** Η αρχιτεκτονική DCGAN εισήγαγε συγκεκριμένες οδηγίες για την εκπαίδευση GANs σε εικόνες, όπως:
-α. Χρήση μόνο fully connected επιπέδων.
-β. Αποφυγή της Batch Normalization.
-γ. Αντικατάσταση των pooling επιπέδων με strided convolutions (στους Discriminator/Generator αντίστοιχα).
-δ. Χρήση μόνο της σιγμοειδούς συνάρτησης ενεργοποίησης.
+α. Χρήση μόνο fully connected επιπέδων.   
+β. Αποφυγή της Batch Normalization.   
+γ. Αντικατάσταση των pooling επιπέδων με strided convolutions (στους Discriminator/Generator αντίστοιχα).   
+δ. Χρήση μόνο της σιγμοειδούς συνάρτησης ενεργοποίησης.   
 
 **Σωστή απάντηση:** γ. Αντικατάσταση των pooling επιπέδων με strided convolutions (στους Discriminator/Generator αντίστοιχα). (Σημείωση: Οι διαφάνειες αναφέρουν αντικατάσταση FC layers με Conv και χρήση Batch Norm, αλλά η επιλογή γ. περιγράφει επίσης μια σημαντική αλλαγή αρχιτεκτονικής που εισήγαγε το DCGAN για downsampling/upsampling). *Αναθεώρηση: Η επιλογή γ. αναφέρει strided convolutions και στους δύο, ενώ το DCGAN χρησιμοποιεί strided convolutions στον D για downsampling και fractional-strided convolutions στον G για upsampling. Η πιο χαρακτηριστική αλλαγή είναι η αντικατάσταση των FC με Conv. Ας την προσαρμόσουμε ή να βρούμε άλλη.*
 
 ### **Ε10 (αναθεωρημένο).** Σύμφωνα με τις οδηγίες του DCGAN, ποια αλλαγή αρχιτεκτονικής συνιστάται για τη βελτίωση της σταθερότητας της εκπαίδευσης, ειδικά στον Generator;
-α. Χρήση περισσότερων Fully Connected επιπέδων.
-β. Χρήση Pooling επιπέδων για downsampling.
-γ. Χρήση Fractional-Strided Convolutions για upsampling.
-δ. Αποφυγή της Batch Normalization.
+α. Χρήση περισσότερων Fully Connected επιπέδων.   
+β. Χρήση Pooling επιπέδων για downsampling.   
+γ. Χρήση Fractional-Strided Convolutions για upsampling.   
+δ. Αποφυγή της Batch Normalization.   
 
 **Σωστή απάντηση:** γ. Χρήση Fractional-Strided Convolutions για upsampling. (Και η Batch Normalization είναι σημαντική, αλλά η ερώτηση ζητά *μία* οδηγία, και η χρήση συγκεκριμένων convolutions για upsampling/downsampling είναι βασικό στοιχείο του DCGAN).
 
 ### **Ε11.** Ποια εφαρμογή των GANs, όπως παρουσιάστηκε στις διαφάνειες, αφορά τη δημιουργία νέων εικόνων προσώπων που δείχνουν το ίδιο άτομο σε διαφορετικές ηλικίες;
-α. Image In-painting
-β. Image Editing
-γ. Face Aging
-δ. Image Blending
+α. Image In-painting   
+β. Image Editing   
+γ. Face Aging   
+δ. Image Blending   
 
 **Σωστή απάντηση:** γ. Face Aging
 
 ### **Ε12.** Η τεχνική LAPGAN (Laplacian Pyramid of Adversarial Networks) παράγει εικόνες υψηλής ανάλυσης χρησιμοποιώντας ένα ιεραρχικό σύστημα GANs που:
-α. Εκπαιδεύει ένα ενιαίο, πολύ μεγάλο δίκτυο για να παράγει την τελική εικόνα απευθείας.
-β. Παράγει μια εικόνα βάσης χαμηλής ανάλυσης και στη συνέχεια μαθαίνει να προσθέτει "διαφορές" (details) σε υψηλότερες αναλύσεις.
-γ. Χρησιμοποιεί έναν Autoencoder για να συμπιέσει την εικόνα πριν την δώσει στον Generator.
-δ. Βασίζεται αποκλειστικά στην υπόθεση γραμμικού διαχωρισμού των δεδομένων.
+α. Εκπαιδεύει ένα ενιαίο, πολύ μεγάλο δίκτυο για να παράγει την τελική εικόνα απευθείας.   
+β. Παράγει μια εικόνα βάσης χαμηλής ανάλυσης και στη συνέχεια μαθαίνει να προσθέτει "διαφορές" (details) σε υψηλότερες αναλύσεις.   
+γ. Χρησιμοποιεί έναν Autoencoder για να συμπιέσει την εικόνα πριν την δώσει στον Generator.   
+δ. Βασίζεται αποκλειστικά στην υπόθεση γραμμικού διαχωρισμού των δεδομένων.   
 
 **Σωστή απάντηση:** β. Παράγει μια εικόνα βάσης χαμηλής ανάλυσης και στη συνέχεια μαθαίνει να προσθέτει "διαφορές" (details) σε υψηλότερες αναλύσεις.
 
 ### **Ε13.** Τι επιδιώκει η Adversarially Learned Inference (ALI), εκτός από την εκμάθηση ενός Generator;
-α. Την εκμάθηση ενός Classifier για τα παραγόμενα δείγματα.
-β. Την εκμάθηση ενός Autoencoder για τα πραγματικά δεδομένα.
-γ. Την εκμάθηση ενός Encoder/Inference δικτύου για να αντιστοιχίσει δεδομένα στον λανθάνοντα χώρο.
-δ. Την εκμάθηση μιας νέας συνάρτησης απώλειας για τον Discriminator.
+α. Την εκμάθηση ενός Classifier για τα παραγόμενα δείγματα.   
+β. Την εκμάθηση ενός Autoencoder για τα πραγματικά δεδομένα.   
+γ. Την εκμάθηση ενός Encoder/Inference δικτύου για να αντιστοιχίσει δεδομένα στον λανθάνοντα χώρο.   
+δ. Την εκμάθηση μιας νέας συνάρτησης απώλειας για τον Discriminator.   
 
 **Σωστή απάντηση:** γ. Την εκμάθηση ενός Encoder/Inference δικτύου για να αντιστοιχίσει δεδομένα στον λανθάνοντα χώρο.
 
 ### **Ε14.** Ποιο από τα παρακάτω αναφέρεται στις διαφάνειες ως πλεονέκτημα των GANs για την παραγωγή δεδομένων, σε σύγκριση με ορισμένες άλλες μεθόδους;
-α. Εγγυημένη σύγκλιση κατά την εκπαίδευση.
-β. Αποφυγή του προβλήματος mode collapse.
-γ. Παραγωγή πιο "κοφτερών" (sharper) εικόνων.
-δ. Απλοποιημένη διαδικασία εκπαίδευσης.
+α. Εγγυημένη σύγκλιση κατά την εκπαίδευση.   
+β. Αποφυγή του προβλήματος mode collapse.   
+γ. Παραγωγή πιο "κοφτερών" (sharper) εικόνων.   
+δ. Απλοποιημένη διαδικασία εκπαίδευσης.   
 
 **Σωστή απάντηση:** γ. Παραγωγή πιο "κοφτερών" (sharper) εικόνων.
