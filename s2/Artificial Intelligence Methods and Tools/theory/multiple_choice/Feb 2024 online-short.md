@@ -2,31 +2,31 @@
 
 **ΕΝΟΤΗΤΑ 1: Σωστό/λάθος.**
 
-Ε1. α. Σωστό
-Ε2. α. Σωστό
-Ε3. β. Λάθος
-Ε4. β. Λάθος
-Ε5. β. Λάθος
-Ε6. α. Σωστό
-Ε7. α. Σωστό
-Ε8. α. Σωστό
-Ε9. α. Σωστό
+Ε1. α. Σωστό   
+Ε2. α. Σωστό   
+Ε3. β. Λάθος   
+Ε4. β. Λάθος   
+Ε5. β. Λάθος   
+Ε6. α. Σωστό   
+Ε7. α. Σωστό   
+Ε8. α. Σωστό   
+Ε9. α. Σωστό   
 
 **ΕΝΟΤΗΤΑ 2: Μονή απάντηση ανά ερώτημα.**
 
-Ε10. β. Μη γραμμικών
-Ε11. β. Stratification
-Ε12. β. Logistic regression
-Ε13. β. Αλλαγή του αλγορίθμου βελτιστοποίησης των παραμέτρων
-Ε14. δ. Ο τρόπος χρήσης εξαρτάται από το εκάστοτε πρόβλημα
-Ε15. α. Τα βάρη (weights) ρυθμίζονται με τη νόρμα 11.
-Ε16. β. Hard-margin SVM (linear kernel)
-Ε17. β. Ο(η)
+Ε10. β. Μη γραμμικών   
+Ε11. β. Stratification   
+Ε12. β. Logistic regression   
+Ε13. β. Αλλαγή του αλγορίθμου βελτιστοποίησης των παραμέτρων   
+Ε14. δ. Ο τρόπος χρήσης εξαρτάται από το εκάστοτε πρόβλημα   
+Ε15. α. Τα βάρη (weights) ρυθμίζονται με τη νόρμα 11.   
+Ε16. β. Hard-margin SVM (linear kernel)   
+Ε17. β. Ο(η)   
 
 **ΕΝΟΤΗΤΑ 3: Πολλαπλές απαντήσεις ανά ερώτημα.**
 
-Ε18. β. Linear Regression, γ. Naïve Bayes, δ. SVMs
-Ε19. a. Normalization, β. Outliers' removal, γ. Class-imbalance handling, δ. Dimensionality reduction
-Ε20. a. DBSCAN, β. OPTICS
-Ε21. β. RMSE, γ. ΜΑΕ
-Ε22. α. Δέντρα απόφασης, γ. SVM (Hard-margin), δ. Νευρωνικό δίκτυο (2 hidden layers)
+Ε18. β. Linear Regression, γ. Naïve Bayes, δ. SVMs   
+Ε19. a. Normalization, β. Outliers' removal, γ. Class-imbalance handling, δ. Dimensionality reduction    
+Ε20. a. DBSCAN, β. OPTICS   
+Ε21. β. RMSE, γ. ΜΑΕ   
+Ε22. α. Δέντρα απόφασης, γ. SVM (Hard-margin), δ. Νευρωνικό δίκτυο (2 hidden layers)   
