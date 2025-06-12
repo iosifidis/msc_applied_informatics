@@ -24,22 +24,22 @@
         *   Οι τιμές για τα ανεύρη πρέπει να είναι ακέραιες και να παρατίθενται με αύξουσα σειρά.
         *   Ιδανικό για: χρονολογικά δεδομένα (π.χ. partitioning by year, month), διαμερισμός σε εύρη ID, δεδομένα που θέλουμε να διαγράφουμε εύκολα με το dropping ενός partition.
         * Παράδειγμα:
-```sql
-     CREATE TABLE Employee (
-        emp_id INT AUTO_INCREMENT,
-        fname VARCHAR(50),
-        lname VARCHAR(50),
-        store_id TINYINT,
-        PRIMARY KEY  (emp_id)
-     ) ENGINE=MyISAM
-     PARTITION BY RANGE (emp_id) (
-        PARTITION p0 VALUES LESS THAN (10000),
-        PARTITION p1 VALUES LESS THAN (20000),
-        PARTITION p2 VALUES LESS THAN (30000),
-        PARTITION p3 VALUES LESS THAN (40000),
-        PARTITION p4 VALUES LESS THAN MAXVALUE
-     );
-```
+        ```sql
+             CREATE TABLE Employee (
+                emp_id INT AUTO_INCREMENT,
+                fname VARCHAR(50),
+                lname VARCHAR(50),
+                store_id TINYINT,
+                PRIMARY KEY  (emp_id)
+             ) ENGINE=MyISAM
+             PARTITION BY RANGE (emp_id) (
+                PARTITION p0 VALUES LESS THAN (10000),
+                PARTITION p1 VALUES LESS THAN (20000),
+                PARTITION p2 VALUES LESS THAN (30000),
+                PARTITION p3 VALUES LESS THAN (40000),
+                PARTITION p4 VALUES LESS THAN MAXVALUE
+             );
+        ```
      
     *   **LIST Partitioning (Slide 5):**
         *   Οι γραμμές κατανέμονται βάσει μιας συγκεκριμένης λίστας τιμών (list) της έκφρασης διαμερισμού.
@@ -48,20 +48,20 @@
         *   Ιδανικό για: διακριτές, μη ταξινομημένες τιμές (π.χ. partitioning by store ID, region code).
         *   **Σημαντική Περιορισμός (στο MySQL):** Αν ο πίνακας έχει Primary Key (ή οποιοδήποτε Unique Key), **όλες** οι στήλες που αποτελούν το Primary Key πρέπει να περιλαμβάνονται στην έκφραση διαμερισμού. Αυτό γίνεται για να μπορεί το MySQL να ελέγξει την μοναδικότητα ενός κλειδιού, ξέροντας εκ των προτέρω σε ποιο partition αναζητήσει.
         *  Παράδειγμα:
-```sql
-     CREATE TABLE Employee (
-        emp_id INT,
-        fname VARCHAR(50),
-        lname VARCHAR(50),
-        store_id TINYINT
-     ) ENGINE=MyISAM
-     PARTITION BY LIST (store_id) (
-        PARTITION pNorth VALUES IN (2,8,12),
-        PARTITION pEast VALUES IN (1,4,7),
-        PARTITION pWest VALUES IN (3,5,6,10),
-        PARTITION pSouth VALUES IN (9,11)
-     );
-```
+        ```sql
+             CREATE TABLE Employee (
+                emp_id INT,
+                fname VARCHAR(50),
+                lname VARCHAR(50),
+                store_id TINYINT
+             ) ENGINE=MyISAM
+             PARTITION BY LIST (store_id) (
+                PARTITION pNorth VALUES IN (2,8,12),
+                PARTITION pEast VALUES IN (1,4,7),
+                PARTITION pWest VALUES IN (3,5,6,10),
+                PARTITION pSouth VALUES IN (9,11)
+             );
+        ```
         
     *   **HASH Partitioning (Slide 6):**
         *   Οι γραμμές κατανέμονται βάσει της τιμής μιας συνάρτησης κατακερματισμού (hash function) που εφαρμόζεται στην έκφραση διαμερισμού.
@@ -69,20 +69,21 @@
         *   Η έκφραση πρέπει να επιστρέφει ακέραιο. Το MySQL χρησιμοποιεί modulo (`) στην τιμή για να καθορίσει σε ποιο από τα `<αριθμός>` partitions θα πάει η γραμμή (π.χ. `hash(expr) MOD <αριθμός>`).
         *   Ιδανικό για: ομοιόμορφη κατανομή δεδομένων όταν δεν υπάρχει σαφές εύρος ή λίστα. Βελτιώνει την απόδοση σε ερωτήματα ισότητας στο partitioning key (καθώς το MySQL ξέρει ακριβώς ποιο partition να ελέγξει).
         * Παράδειγμα:
-```sql
-     CREATE TABLE Employee (
-        emp_id INT AUTO_INCREMENT,
-        fname VARCHAR(50),
-        lname VARCHAR(50),
-        store_id TINYINT,
-        PRIMARY KEY  (emp_id)
-     ) ENGINE=MyISAM
-     PARTITION BY HASH (emp_id) PARTITIONS 4;
-```
-     * Αν `emp_id=9`, τότε:
-```
-     mod(9,4) = 1
-```
+        ```sql
+             CREATE TABLE Employee (
+                emp_id INT AUTO_INCREMENT,
+                fname VARCHAR(50),
+                lname VARCHAR(50),
+                store_id TINYINT,
+                PRIMARY KEY  (emp_id)
+             ) ENGINE=MyISAM
+             PARTITION BY HASH (emp_id) PARTITIONS 4;
+        ```
+        
+        * Αν `emp_id=9`, τότε:
+        ```
+             mod(9,4) = 1
+        ```
      Οπότε, η εγγραφή αποθηκεύεται στο partition `p1`.
         
     *   **KEY Partitioning (Slide 7):**
@@ -91,15 +92,15 @@
         *   Η έκφραση διαμερισμού δεν χρειάζεται να επιστρέφει ακέραιο - το MySQL την χειρίζεται εσωτερικά.
         *   Ιδανικό όταν θέλετε να κάνετε hash partitioning αλλά δεν υπάρχει ακέραια στήλη ή δεν θέλετε να ορίσετε δική σας hash συνάρτηση.
         * Παράδειγμα:
-```sql
-     CREATE TABLE Employee (
-        emp_id INT,
-        fname VARCHAR(50),
-        lname VARCHAR(50),
-        store_id TINYINT
-     ) ENGINE=MyISAM
-     PARTITION BY KEY (lname) PARTITIONS 4;
-```
+        ```sql
+             CREATE TABLE Employee (
+                emp_id INT,
+                fname VARCHAR(50),
+                lname VARCHAR(50),
+                store_id TINYINT
+             ) ENGINE=MyISAM
+             PARTITION BY KEY (lname) PARTITIONS 4;
+        ```
 
 4.  **Partition Pruning (Κλάδεμα Partitions) (Slides 8-14)**
     *   Αυτό είναι το κύριο όφελος απόδοσης.
@@ -172,10 +173,6 @@
     *   Π.χ. Ένας πίνακας διαιρεμένος σε 4 partitions, με 2 replicas ανά partition, θα έχει 8 fragments (4x2), κατανεμημένα στα Data Nodes.
     *   **Σημαντικό:** Αυτός ο συνδυασμός partitioning και built-in synchronous replication είναι αυτό που παρέχει την υψηλή διαθεσιμότητα και fault tolerance του MySQL Cluster, εγγυώμενος ότι οι αλλαγές γίνονται μόνιμες (persistent) σε πολλαπλούς Data Nodes *πριν* η συναλλαγή ολοκληρωθεί.
 
-**Συμπέρασμα:**
-
-Το Partitioning είναι μια τεχνική για τη διαχείριση μεγάλων πινάκων **εντός ενός MySQL server** ή ως βάση για διανομή. Βελτιώνει την απόδοση συγκεκριμένων ερωτημάτων και διευκολύνει τη διαχείριση. Το Replication είναι μια τεχνική για **αντιγραφή δεδομένων μεταξύ διαφορετικών MySQL servers**, κυρίως για High Availability και Read Scaling. Ενώ το standard MySQL replication είναι ασύγχρονο, το MySQL Cluster είναι ένα παράδειγμα κατανεμημένης αρχιτεκτονικής που συνδυάζει αυτόματο partitioning και *συγχρονισμένη* αναπαραγωγή για εγγενή HA.
-
 ---
 
 ## **Εφαρμογές & Παραδείγματα**
@@ -190,6 +187,8 @@
 ---
 
 ## **Συμπεράσματα**
+Το Partitioning είναι μια τεχνική για τη διαχείριση μεγάλων πινάκων **εντός ενός MySQL server** ή ως βάση για διανομή. Βελτιώνει την απόδοση συγκεκριμένων ερωτημάτων και διευκολύνει τη διαχείριση. Το Replication είναι μια τεχνική για **αντιγραφή δεδομένων μεταξύ διαφορετικών MySQL servers**, κυρίως για High Availability και Read Scaling. Ενώ το standard MySQL replication είναι ασύγχρονο, το MySQL Cluster είναι ένα παράδειγμα κατανεμημένης αρχιτεκτονικής που συνδυάζει αυτόματο partitioning και *συγχρονισμένη* αναπαραγωγή για εγγενή HA.
+
 - Ο **Κατακερματισμός (Partitioning)** βελτιστοποιεί την απόδοση μεγάλων πινάκων.
 - Η **Αναπαραγωγή (Replication)** διασφαλίζει την ανθεκτικότητα των δεδομένων.
 - Η **Ομαδοποίηση (Clustering)** είναι απαραίτητη για εξαιρετικά μεγάλες εφαρμογές.
