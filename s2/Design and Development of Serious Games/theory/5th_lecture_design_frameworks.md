@@ -1,6 +1,6 @@
 # **Πλαίσια Σχεδίασης (Design Frameworks)**
 
-**Εισαγωγή στα Πλαίσια Σχεδίασης**
+## **Εισαγωγή στα Πλαίσια Σχεδίασης**
 
 1.  **Ορισμός και Σκοπός:**
     *   Τα **πλαίσια σχεδίασης (design frameworks)** είναι δομημένες προσεγγίσεις και μοντέλα που καθοδηγούν τη διαδικασία δημιουργίας Παιχνιδιών Σοβαρού Σκοπού (SGs).
@@ -15,9 +15,9 @@
     *   **Σημαντική Σημείωση:** Τα πλαίσια σχεδίασης μπορούν να αξιοποιηθούν δευτερευόντως και ως βάση για την **αξιολόγηση** των SGs. (Σύνδεση με προηγούμενη ενότητα)
     *   *Πηγή CMX:* Christos Malliarakis, Maya Satratzemi and Stelios Xinogalos “Designing educational games for computer programming: A holistic framework” The Electronic Journal of e-Learning Volume 12 Issue 3 2014, (pp281-298).
 
-**Αναλυτική Παρουσίαση Πλαισίων Σχεδίασης**
+## **Αναλυτική Παρουσίαση Πλαισίων Σχεδίασης**
 
-**1. Four-dimensional framework (de Freitas & Jarvis, 2006)**
+## **1. Four-dimensional framework (de Freitas & Jarvis, 2006)**
 
 *   Ένα πλαίσιο που εξετάζει τέσσερις βασικές διαστάσεις:
     *   **Γενικό Πλαίσιο (Context):** Περιλαμβάνει τον τόπο (Place), την πρόσβαση (Access) και την τεχνική υποστήριξη (Tech Support). Καθοδηγεί τα σενάρια και τις αλληλεπιδράσεις.
@@ -35,7 +35,7 @@
         *   Περιλαμβάνει τον Κύκλο Μάθησης (Learning Circle) με Συνειρμική (Associative), Γνωστική (Cognitive) και Βιωματική (Situative) μάθηση.
         *   Η διαδικασία μάθησης πρέπει να είναι κατατοπιστική, σχετική, συνειρμική, με σταδιακή πρόοδο, κοινωνική υποστήριξη και παροχή βοήθειας.
 
-**2. Conceptual framework (Yusoff et al., 2009)**
+## **2. Conceptual framework (Yusoff et al., 2009)**
 
 *   Ένα πλαίσιο που εστιάζει στη σύνδεση μαθησιακών και παιχνιδικών στοιχείων.
     *   **Ικανότητες (Capability):** Οι δεξιότητες που αναπτύσσει ο παίκτης (αναλυτικές, κριτική σκέψη, ανάκτηση πληροφοριών).
@@ -54,7 +54,7 @@
     *   **Μηχανική Παιχνιδιού (Game mechanics):** Οι κανόνες, οι αλγόριθμοι, οι δομές που καθορίζουν την αλληλεπίδραση και επηρεάζονται από το περιεχόμενο.
     *   **Επιτεύγματα (Game achievement):** Τρόποι αναπαράστασης της επιτυχίας (scores, rewards) – μετρική αξιολόγησης.
 
-**3. The Design, Play and Experience framework (Salen & Zimmerman, 2004)**
+## **3. The Design, Play and Experience framework (Salen & Zimmerman, 2004)**
 
 *   Στοχεύει στην αποτύπωση της σχέσης σχεδιαστή-παίκτη και των στοιχείων σε κάθε φάση/επίπεδο.
 *   **Δομή:**
@@ -83,7 +83,7 @@
         *   Play: Η παροχή εύκολων τρόπων αλληλεπίδρασης μέσω του UI.
         *   Experience: Οι εμπειρίες που προσελκύουν, υποστηρίζουν κατανόηση και ανάπτυξη δεξιοτήτων.
 
-**4. EFM: Model for Educational Game Design (Song & Zhang, 2008)**
+## **4. EFM: Model for Educational Game Design (Song & Zhang, 2008)**
 
 *   Εστιάζει στη δημιουργία αποτελεσματικών εκπαιδευτικών περιβαλλόντων μάθησης μέσω παιχνιδιών.
 *   **7 Βασικές Απαιτήσεις Αποτελεσματικού Περιβάλλοντος Μάθησης:**
@@ -102,14 +102,14 @@
     4.  **Πρόκληση:** Στρατηγικές τόνωσης αυτοπεποίθησης μέσω ισορροπίας δεξιοτήτων-προκλήσεων (Confidence Strategies - Challenge).
 *   Ο σχεδιασμός των δραστηριοτήτων πρέπει να λαμβάνει υπόψη αυτές τις 4 στρατηγικές.
 
-**5. Educational Games Design Model framework (Ibrahim and Jaafar, 2009)**
+## **5. Educational Games Design Model framework (Ibrahim and Jaafar, 2009)**
 
 *   Οπτικό μοντέλο που συνδέει τρεις πυλώνες:
     *   **Game Design:** Εστιάζει σε Usability (ISO9241: satisfaction, efficiency, effectiveness), Multimodal (multimedia & interaction), Fun/Challenge (clear goals, uncertain outcome, self-esteem).
     *   **Pedagogy:** Περιλαμβάνει Learning Outcomes, Motivation Theory, Self-learning, Problem Solving.
     *   **Learning Content Modelling:** Περιλαμβάνει Syllabus Matching, Scaffolding.
 
-**6. Experiential Gaming Model framework (Kiili, 2005)**
+## **6. Experiential Gaming Model framework (Kiili, 2005)**
 
 *   Ένα κυκλικό μοντέλο βασισμένο στη βιωματική μάθηση.
 *   Περιγράφει έναν κύκλο σχεδιασμού (Design Cycle) που περιλαμβάνει:
@@ -125,7 +125,7 @@
     *   Θετικές στάσεις (Positive attitudes).
     *   Αίσθημα ελέγχου (Sense of control).
 
-**7. A Framework for Serious Educational Game Design (Anetta, 2010)**
+## **7. A Framework for Serious Educational Game Design (Anetta, 2010)**
 
 *   Παρουσιάζει τη σχεδίαση ως ομόκεντρους κύκλους, από μέσα προς τα έξω:
     *   **Identity:** Η ταυτότητα του παίκτη εντός του παιχνιδιού.
@@ -135,7 +135,7 @@
     *   **Informed Teaching:** Η τεκμηριωμένη διδασκαλία εντός του παιχνιδιού.
     *   **Instructional:** Το συνολικό διδακτικό πλαίσιο.
 
-**8. Serious Game Design Assessment framework (Mitgutsch & Alvarado, 2012)**
+## **8. Serious Game Design Assessment framework (Mitgutsch & Alvarado, 2012)**
 
 *   Παρότι αναφέρεται ως "Assessment" (Αξιολόγηση), εστιάζει στα δομικά στοιχεία της σχεδίασης, οργανωμένα γύρω από ένα κεντρικό Σύστημα Παιχνιδιού (Game System).
 *   **6 Βασικά Στοιχεία:**
@@ -183,7 +183,7 @@
         *   Game Achievement (Επιτεύγματα στο Παιχνίδι)
     *   **Στοιχεία Ειδικά για Προγραμματισμό (Specific to programming):** Programming-specific goals, Computer programming concepts, Programming editor, Drag & drop/mapping lines of code. Αυτά μπορούν να παραλειφθούν ή να προσαρμοστούν για SGs άλλων πεδίων.
 
-**Συγκριτικός Πίνακας 4 Πλαισίων**
+## **Συγκριτικός Πίνακας 4 Πλαισίων**
 
 (Ενσωμάτωση του πίνακα από τη διαφάνεια 30 εδώ - αποτελεί εξαιρετική σύνοψη)
 
@@ -219,6 +219,6 @@
 | Μεταγλωττιστής (Compiler)                   |                     |                             |                          |
 | **Επιτεύγματα στο παιχνίδι (Game achievement)**|                     | X (Game achievement)        | X (Gameplay)             |
 
-**Συμπέρασμα**
+## **Συμπέρασμα**
 
 Τα πλαίσια σχεδίασης παρέχουν πολύτιμη καθοδήγηση και δομή στη σύνθετη διαδικασία δημιουργίας Παιχνιδιών Σοβαρού Σκοπού. Καλύπτουν ένα ευρύ φάσμα παραμέτρων, από τους μαθησιακούς στόχους και την παιδαγωγική προσέγγιση, μέχρι τους μηχανισμούς του παιχνιδιού, την αφήγηση και την εμπειρία του χρήστη. Η κατανόηση αυτών των πλαισίων βοηθά τους σχεδιαστές να λαμβάνουν τεκμηριωμένες αποφάσεις για τη δημιουργία αποτελεσματικών και ελκυστικών SGs. Το πλαίσιο CMX αποτελεί ένα παράδειγμα ολιστικής προσέγγισης, ιδιαίτερα προσαρμοσμένο για εκπαιδευτικά παιχνίδια στον τομέα του προγραμματισμού, αλλά με αρχές που μπορούν να γενικευτούν.
