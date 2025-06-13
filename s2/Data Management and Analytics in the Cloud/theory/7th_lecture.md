@@ -1,6 +1,6 @@
 # **Column Stores / Column Family Databases - Με έμφαση στην Cassandra**
 
-**1. Σύγκριση Relational (OLTP) και OLAP (Slides 2-3)**
+## **1. Σύγκριση Relational (OLTP) και OLAP (Slides 2-3)**
 
 Πριν δούμε τις Column Stores, ανασκοπούμε τις διαφορές μεταξύ δύο κύριων κατηγοριών εφαρμογών βάσεων δεδομένων:
 
@@ -15,7 +15,7 @@
     *   Σχεσιακές βάσεις (RDBMS) έχουν βελτιστοποιηθεί πρωταρχικά για OLTP.
     *   **Data Warehouse:** Τυπική υλοποίηση για OLAP. Δεδομένα: ιστορικά, συνοπτικά, aggregated. Σχεδιασμός: Star schema, snowflake schema (αναφερόμαστε στη λογική οργάνωση, Slide 4). Δεδομένα συχνά απο-κανονικοποιημένα (unormalized). Κυρίως εργασίες ανάγνωσης (read operations). Ενημερώσεις γίνονται σπάνια και σε batches (batch updates).
 
-**2. Η προσέγγιση Columnar (Slides 5-7)**
+## **2. Η προσέγγιση Columnar (Slides 5-7)**
 
 *   **Βασική Ιδέα (Key Intuition):** Αντί να αποθηκεύουμε τα δεδομένα οργανωμένα κατά **γραμμή (row-oriented)** (όπως τα παραδοσιακά RDBMS), αποθηκεύουμε τα δεδομένα οργανωμένα κατά **στήλη (column-oriented)**.
     *   Σε μια Row-oriented βάση, για έναν πίνακα (π.χ. Employee) με στήλες (ID, Name, DOB, Salary, Sales, Expenses), η εγγραφή για τον "Dick" αποθηκεύεται ως μια συνεχόμενη ακολουθία τιμών: [1001, Dick, 21/12/1960, 67000, 78980, 3244]. Όλη η γραμμή είναι μαζί.
@@ -32,7 +32,7 @@
     *   Μέθοδοι Συμπίεσης (Slide 10): Dictionary encoding (αντικατάσταση επαναλαμβανόμενων τιμών με μικρότερους δείκτες), Delta encoding (αποθήκευση διαφορών μεταξύ διαδοχικών τιμών - λειτουργεί καλύτερα σε ταξινομημένα δεδομένα).
 *   **Ιστορικό Column Stores (Slide 12):** Δεν είναι νέα ιδέα. Πρωτοεμφανίστηκαν σε εξειδικευμένα Data Warehousing συστήματα από τα μέσα των 90s (Sybase IQ), με πιο εξελιγμένες υλοποιήσεις μετά τα 2000 (C-Store, Vertica, InfoBright). Πιο πρόσφατα, η columnar αποθήκευση έχει ενσωματωθεί και σε παραδοσιακά RDBMS για OLAP workloads (π.χ. Oracle Exadata, MS SQL Server Columnstore Index, SAP HANA).
 
-**3. Αρχιτεκτονική Column Databases (Slides 13-16)**
+## **3. Αρχιτεκτονική Column Databases (Slides 13-16)**
 
 *   **Πρόκληση Ενημερώσεων:** Η Columnar οργάνωση είναι ακατάλληλη για workloads με συνεχή ροή ενημερώσεων (write-heavy OLTP). Οι batch updates λειτουργούν καλύτερα.
 *   **Λύση: Write-Optimized Delta Store (Slides 13, 14):** Για να διαχειριστούν τις συχνές ενημερώσεις, πολλές Columnar βάσεις χρησιμοποιούν μια "υβριδική" αρχιτεκτονική. Τα δεδομένα που **ενημερώνονται συχνά** ή εισάγονται πρόσφατα, αποθηκεύονται προσωρινά σε μια δομή **write-optimized** (π.χ. σε RAM ή SSD με δομή LSM Tree), ενώ τα "παλαιότερα" και πιο σταθερά δεδομένα αποθηκεύονται στη βελτιστοποιημένη για ανάγνωση Columnar δομή.
@@ -46,7 +46,7 @@
     *   Οι προβολές μπορούν να δημιουργηθούν χειροκίνητα, αυτόματα από τον query optimizer (βάσει ερωτημάτων) ή μαζικά (batch) βάσει ιστορικού workloads.
     *   Στόχος: να βελτιστοποιηθεί η προσπέλαση για συγκεκριμένα ερωτήματα διατηρώντας μόνο τις απαραίτητες στήλες μαζί και με την κατάλληλη διάταξη.
 
-**4. Cassandra (Slides 1, 17-47)**
+## **4. Cassandra (Slides 1, 17-47)**
 
 Η **Cassandra** είναι ένα δημοφιλές παράδειγμα Column Family Store στο χώρο του NoSQL. Δημιουργήθηκε από τη Facebook (2008), open-sourced στην Apache. Γράφτηκε σε Java. (Slide 17)
 
@@ -125,7 +125,7 @@
     *   Υποστηρίζει **ελαφριές συναλλαγές (LWT)**, που εφαρμόζουν **μία μόνο operation** και υποστηρίζουν το μοτίβο **compare-and-set (CAS)**.
     *   CAS: Ελέγχει την τιμή ενός κελιού. Αν η τιμή είναι αυτή που περίμενες, τότε θέτει μια νέα τιμή. Παρόμοιο με **optimistic locking**. Δεν είναι πλήρεις ACID συναλλαγές.
 
-**5. Σύνοψη Cassandra (Slide 53)**
+## **5. Σύνοψη Cassandra (Slide 53)**
 
 *   Open-source υπό Apache license.
 *   Data Model: Column Family Store (βασισμένο σε BigTable), αλλά παρέχει ταμπέλα-όμοια (tabular) αφαίρεση μέσω της CQL.
@@ -133,7 +133,7 @@
 *   Clustering/Partioning: Consistent Hashing.
 *   APIs: CQL (Cassandra Query Language).
 
-**Σύνδεση με το μάθημα:**
+## **Σύνδεση με το μάθημα:**
 
 Η Cassandra, ως Column Family Store, είναι εξαιρετική για workloads με **υψηλό read/write throughput** και για **χειρισμό αραιών δεδομένων (sparse data)**. Ο Peer-to-Peer σχεδιασμός, η έμφαση στην A+P του CAP Theorem (Tunable Consistency, Replication Strategies, Gossip, Anti-entropy), και η βελτιστοποίηση για SSD/Flash media την καθιστούν κατάλληλη για εφαρμογές όπου η διαθεσιμότητα και η κλιμακούμενοτητα σε παγκόσμια κλίμακα είναι πιο κρίσιμες από την αυστηρή συνέπεια και τις πολύπλοκες συναλλαγές/joins.
 
