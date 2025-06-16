@@ -397,7 +397,7 @@ CREATE (c2)-[:MADE]->(:Booking {bookingId: 'B005', bookingDate: date('2023-11-05
     B) `MATCH (b:Booking {bookingId: 'B001'}) REMOVE b;`   
     C) `MATCH (b:Booking {bookingId: 'B001'}) DETACH DELETE b;`   
     D) `DROP NODE (b:Booking {bookingId: 'B001'}) CASCADE;`   
-    **Σωστή Απάντηση:** C
+    **Σωστή Απάντηση:** C   
     **Επεξήγηση:** Η `DETACH DELETE` διαγράφει έναν κόμβο και όλες τις σχέσεις του, επιλύοντας το πρόβλημα των "ορφανών" σχέσεων που θα προκαλούσε ένα απλό `DELETE`.
 
 10. **Ποιο Cypher query βρίσκει τους πελάτες (`Customer`) που έχουν ενοικιάσει αυτοκίνητο από την εταιρεία `Hertz`;**   
@@ -525,7 +525,7 @@ CREATE (c2)-[:MADE]->(:Booking {bookingId: 'B005', bookingDate: date('2023-11-05
     B) `SELECT * FROM RentalCar WHERE model = 'Corolla';`   
     C) `GET (rc:RentalCar {model: 'Corolla'});`   
     D) `MATCH (rc:RentalCar) WHERE rc.model CONTAINS 'Corolla' RETURN rc;`   
-    **Σωστή Απάντηση:** A
+    **Σωστή Απάντηση:** A   
     **Επεξήγηση:** Απλή `MATCH` και φιλτράρισμα με `WHERE` σε ιδιότητα.
 
 26. **Ποιο Cypher query μετρά το σύνολο των πτήσεων που έχουν αναχωρήσει μετά από μια συγκεκριμένη ημερομηνία, π.χ., μετά την `2023-11-20` ;**   
