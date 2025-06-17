@@ -1,0 +1,16 @@
+{
+  "name": "data",
+  "version": "1.0.0",
+  "main": "mongo_queries.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@turf/turf": "^7.2.0",
+    "mongodb": "^6.16.0"
+  }
+}

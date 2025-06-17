@@ -1,0 +1,74 @@
+{ "type": "Feature", "properties": { "pk_uid": 1, "id": 1, "onoma": "Δασκαλογιάννης CHQ Χανιά, Σούδα" }, "geometry": { "type": "Point", "coordinates": [ 24.1437989, 35.5341529 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 2, "id": 2, "onoma": "Μάλεμε" }, "geometry": { "type": "Point", "coordinates": [ 23.8311205, 35.5313473 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 3, "id": 3, "onoma": "Τυμπάκι LG54\n" }, "geometry": { "type": "Point", "coordinates": [ 24.7507049, 35.0684426 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 4, "id": 4, "onoma": "Νίκος Καζαντζάκης LGIR HER Ηράκλειο" }, "geometry": { "type": "Point", "coordinates": [ 25.1800728, 35.3395865 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 5, "id": 5, "onoma": "Καστέλι LGTL\n" }, "geometry": { "type": "Point", "coordinates": [ 25.3272186, 35.1922714 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 6, "id": 6, "onoma": "Σητεία LGST JSH" }, "geometry": { "type": "Point", "coordinates": [ 26.1003891, 35.2158564 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 7, "id": 7, "onoma": "Δωδεκανήσου-Κάσος- ΔΑΚΑ LGKS\/KSJ-2245041587" }, "geometry": { "type": "Point", "coordinates": [ 26.9110393, 35.421431 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 8, "id": 8, "onoma": "Δωδεκανήσου-Κάρπαθος-ΚΑΚΠ LGKP\/AOK-2245091120" }, "geometry": { "type": "Point", "coordinates": [ 27.1452914, 35.4212217 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 9, "id": 9, "onoma": "Διαγόρας LGRP RHO Παραδείσι, Ρόδου" }, "geometry": { "type": "Point", "coordinates": [ 28.0895413, 36.4061989 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 10, "id": 10, "onoma": "Μαρίτσα LGRD Ρόδος" }, "geometry": { "type": "Point", "coordinates": [ 28.112268, 36.3834609 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 11, "id": 11, "onoma": "Καστελορίζου LGKJ KZSΜεγίστη" }, "geometry": { "type": "Point", "coordinates": [ 29.5762535, 36.1416763 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 12, "id": 12, "onoma": "Κυθήρων LGKC KIT" }, "geometry": { "type": "Point", "coordinates": [ 23.0159891, 36.2754057 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 13, "id": 13, "onoma": "Σπάρτη LGSP SPJ" }, "geometry": { "type": "Point", "coordinates": [ 22.5254259, 36.9736948 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 14, "id": 14, "onoma": "Καλαμάτα LGKL KLX" }, "geometry": { "type": "Point", "coordinates": [ 22.0253869, 37.0682351 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 15, "id": 15, "onoma": "Τρίοδο LG55 Καλαμάτα" }, "geometry": { "type": "Point", "coordinates": [ 21.9903595, 37.094909 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 16, "id": 16, "onoma": "Αλεξακης LGHL PKH Πορτο Χέλι" }, "geometry": { "type": "Point", "coordinates": [ 23.1494603, 37.2986321 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 17, "id": 17, "onoma": "Τριπολίς LGTP" }, "geometry": { "type": "Point", "coordinates": [ 22.4027402, 37.5290433 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 18, "id": 18, "onoma": "Επιταλιον LGEP" }, "geometry": { "type": "Point", "coordinates": [ 21.4932865, 37.6157287 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 19, "id": 19, "onoma": "Αράξου LGRX GPA Πατραι" }, "geometry": { "type": "Point", "coordinates": [ 21.4256456, 38.1509464 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 20, "id": 20, "onoma": "Διονύσιος Σολωμός LGZA ZTH Ζακύνθου" }, "geometry": { "type": "Point", "coordinates": [ 20.8849553, 37.7524814 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 21, "id": 21, "onoma": "Κεφαλλονιά" }, "geometry": { "type": "Point", "coordinates": [ 20.4977281, 38.1235578 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 22, "id": 22, "onoma": "Αιτωλοακαρνανίας-Αγρίνιο-ΚΑΑΓ LGAG\/AGQ-Υπο Αναστολή" }, "geometry": { "type": "Point", "coordinates": [ 21.350044, 38.6036205 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 23, "id": 23, "onoma": "Αερολέσχη Αγρίνιο" }, "geometry": { "type": "Point", "coordinates": [ 21.3928781, 38.6140753 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 24, "id": 24, "onoma": "Πρέβεζας LGPZ PVK ’κτιου" }, "geometry": { "type": "Point", "coordinates": [ 20.7678036, 38.9264326 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 25, "id": 25, "onoma": "Ιωάννης Καποδίστριας LGKR CFU Κέρκυρα" }, "geometry": { "type": "Point", "coordinates": [ 19.9115073, 39.6049915 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 26, "id": 26, "onoma": "Ιωάννινα LGIO IOA" }, "geometry": { "type": "Point", "coordinates": [ 20.8210381, 39.6952722 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 27, "id": 27, "onoma": "Αριστοτέλης LGKA KSO Καστοριά" }, "geometry": { "type": "Point", "coordinates": [ 21.2825572, 40.4457544 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 28, "id": 28, "onoma": "Φλώρινα LGFL FLO" }, "geometry": { "type": "Point", "coordinates": [ 21.4348711, 40.8051933 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 29, "id": 29, "onoma": "Έδεσσας LGED" }, "geometry": { "type": "Point", "coordinates": [ 21.8216104, 40.840736 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 30, "id": 30, "onoma": "Γίδας LGAX AXY Αλεξάνδρεια" }, "geometry": { "type": "Point", "coordinates": [ 22.4930114, 40.6487276 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 31, "id": 31, "onoma": "Μακεδονία LGTS SKG Θεσσαλονίκης" }, "geometry": { "type": "Point", "coordinates": [ 22.9682437, 40.5201668 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 32, "id": 32, "onoma": "Μακεδονία LGTS SKG" }, "geometry": { "type": "Point", "coordinates": [ 22.9703751, 40.5218066 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 33, "id": 33, "onoma": "Ελληνικό LGSD" }, "geometry": { "type": "Point", "coordinates": [ 23.0383627, 40.5300927 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 34, "id": 34, "onoma": "Αμυγδαλεώνας LGKM Καβάλα" }, "geometry": { "type": "Point", "coordinates": [ 24.346683, 40.9686113 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 35, "id": 35, "onoma": "Καβάλας-Χρυσούπολη-Μέγας Αλέξανδρος (ΚΑΚΒΑ) LGKV\/KVA-2591053400" }, "geometry": { "type": "Point", "coordinates": [ 24.6225365, 40.9198077 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 36, "id": 36, "onoma": "Κομοτηνή" }, "geometry": { "type": "Point", "coordinates": [ 25.3233666, 41.1110906 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 37, "id": 37, "onoma": "Δημόκριτος LGAL AXD Αλεξανδρούπολη" }, "geometry": { "type": "Point", "coordinates": [ 25.9463353, 40.8555867 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 38, "id": 38, "onoma": "Ασιμενειο" }, "geometry": { "type": "Point", "coordinates": [ 26.5479255, 41.4021184 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 39, "id": 39, "onoma": "Λιτόχωρο" }, "geometry": { "type": "Point", "coordinates": [ 22.5355309, 40.1237429 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 40, "id": 40, "onoma": "Κοζάνη LGKZ KZI Φίλιππο" }, "geometry": { "type": "Point", "coordinates": [ 21.835728, 40.2920523 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 41, "id": 41, "onoma": "Λάρισα LGLR LRA" }, "geometry": { "type": "Point", "coordinates": [ 22.4543568, 39.6486266 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 42, "id": 42, "onoma": "Στεφανοβικειο LGSV" }, "geometry": { "type": "Point", "coordinates": [ 22.7686274, 39.4794814 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 43, "id": 43, "onoma": "Νεα Αγχιαλου LGBL VOL Βόλος" }, "geometry": { "type": "Point", "coordinates": [ 22.7782317, 39.2196193 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 44, "id": 44, "onoma": "Λαμία LG53" }, "geometry": { "type": "Point", "coordinates": [ 22.4365349, 38.8731544 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 45, "id": 45, "onoma": "Μόλου" }, "geometry": { "type": "Point", "coordinates": [ 22.6603481, 38.8269761 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 46, "id": 46, "onoma": "Ίκαρος Κωπαϊδα - Ιδιοκτησία ( Απόστολου Μοσχώνη )" }, "geometry": { "type": "Point", "coordinates": [ 23.1370441, 38.4316625 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 47, "id": 47, "onoma": "Δήμητρα Ιδιοκτησία ( Παπαδόπουλου )" }, "geometry": { "type": "Point", "coordinates": [ 23.1342963, 38.4564919 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 48, "id": 48, "onoma": "Θηβαι" }, "geometry": { "type": "Point", "coordinates": [ 23.2565712, 38.375959 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 49, "id": 49, "onoma": "Τανάγρα LGTG" }, "geometry": { "type": "Point", "coordinates": [ 23.5796372, 38.3370135 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 50, "id": 50, "onoma": "Κοτρόνη LGKN Μαραθώνας" }, "geometry": { "type": "Point", "coordinates": [ 23.9510969, 38.1398311 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 51, "id": 51, "onoma": "Δεκελεια LGTT Τατόι" }, "geometry": { "type": "Point", "coordinates": [ 23.7831247, 38.1078718 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 52, "id": 52, "onoma": "Ελευσις LGEL" }, "geometry": { "type": "Point", "coordinates": [ 23.5561658, 38.0656286 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 53, "id": 53, "onoma": "Μέγαρα LGMG" }, "geometry": { "type": "Point", "coordinates": [ 23.3640287, 37.9811094 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 54, "id": 54, "onoma": "Ελευθέριος Βενιζέλος LGAV ATH Διεθνή" }, "geometry": { "type": "Point", "coordinates": [ 23.9451649, 37.9373348 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 55, "id": 55, "onoma": "Ελληνικό LGAT HEW Διεθνή" }, "geometry": { "type": "Point", "coordinates": [ 23.7309945, 37.8897646 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 56, "id": 56, "onoma": "Λήμνου LGLM LXS" }, "geometry": { "type": "Point", "coordinates": [ 25.2354772, 39.9227545 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 57, "id": 57, "onoma": "Μαγνησίας-Σκιάθος-Αλέξανδρος Παπαδιαμάντης (ΚΑΣΚ) LGSK\/JSI-2427029105" }, "geometry": { "type": "Point", "coordinates": [ 23.5039842, 39.1778573 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 58, "id": 58, "onoma": "Σκύρου LGSY SKU" }, "geometry": { "type": "Point", "coordinates": [ 24.4874473, 38.9658103 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 59, "id": 59, "onoma": "Οδυσσέας Ελύτης LGMT MJT Μυτιλήνη" }, "geometry": { "type": "Point", "coordinates": [ 26.6022899, 39.0543271 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 60, "id": 60, "onoma": "Πολιχνίτος LG0D" }, "geometry": { "type": "Point", "coordinates": [ 26.1953598, 39.0894855 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 61, "id": 61, "onoma": "Χίου LGHI JKH" }, "geometry": { "type": "Point", "coordinates": [ 26.1404369, 38.3424267 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 62, "id": 62, "onoma": "Ολύμποι LG56" }, "geometry": { "type": "Point", "coordinates": [ 25.9383104, 38.2361443 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 63, "id": 63, "onoma": "Αρίσταρχος LGSM SMI Σάμος" }, "geometry": { "type": "Point", "coordinates": [ 26.9137004, 37.6903513 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 64, "id": 64, "onoma": "Ικαρία LGIK JIK" }, "geometry": { "type": "Point", "coordinates": [ 26.345584, 37.6847424 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 65, "id": 65, "onoma": "Ιπποκράτης LGKO KG Κω" }, "geometry": { "type": "Point", "coordinates": [ 27.0897361, 36.8007351 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 66, "id": 66, "onoma": "Κάλυμνος LGKY JKL" }, "geometry": { "type": "Point", "coordinates": [ 26.938687, 36.9634784 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 67, "id": 67, "onoma": "Λέρου LGLE LRS" }, "geometry": { "type": "Point", "coordinates": [ 26.8002209, 37.1847579 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 68, "id": 68, "onoma": "Αστυπάλαια LGPL JTV" }, "geometry": { "type": "Point", "coordinates": [ 26.3755011, 36.5796993 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 69, "id": 69, "onoma": "Σαντορίνη LGSR JTR Θήρα" }, "geometry": { "type": "Point", "coordinates": [ 25.4771411, 36.403224 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 70, "id": 70, "onoma": "Μήλου LGML MLO" }, "geometry": { "type": "Point", "coordinates": [ 24.4738402, 36.696577 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 71, "id": 71, "onoma": "Πάρος LGPA PAS" }, "geometry": { "type": "Point", "coordinates": [ 25.12801, 37.0114976 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 72, "id": 72, "onoma": "Νάξου LGNX JNK" }, "geometry": { "type": "Point", "coordinates": [ 25.3682326, 37.0848011 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 73, "id": 73, "onoma": "Μύκονος LGMK JMK" }, "geometry": { "type": "Point", "coordinates": [ 25.3468926, 37.4355449 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 74, "id": 74, "onoma": "Σύρου LGSO JSY" }, "geometry": { "type": "Point", "coordinates": [ 24.94983, 37.4228404 ] } }

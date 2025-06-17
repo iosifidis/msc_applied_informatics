@@ -1,0 +1,3 @@
+{ "type": "Feature", "properties": { "pk_uid": 28, "onoma": "Καστοριά", "name": "Kastoria" }, "geometry": { "type": "Point", "coordinates": [ 21.2683997, 40.5192368 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 25, "onoma": "Βέροια", "name": "Beroia" }, "geometry": { "type": "Point", "coordinates": [ 22.2017503, 40.5243073 ] } }
+{ "type": "Feature", "properties": { "pk_uid": 23, "onoma": "Γρεβενά", "name": "Grebena" }, "geometry": { "type": "Point", "coordinates": [ 21.4264228, 40.0836029 ] } }

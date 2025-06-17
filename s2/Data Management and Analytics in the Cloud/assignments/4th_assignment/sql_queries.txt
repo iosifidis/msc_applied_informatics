@@ -1,0 +1,19 @@
+-- query1 Νομοί από τους οποίους περνά το δίκτυο του ΟΣΕ
+select distinct n.*
+from nomoi as n
+join sidhrodromiko_diktyo as ose on st_intersects(n.geometry, ose.geometry);
+
+
+-- query2 Νομοί με τους οποίους συνορεύει ο νομός Θεσσαλονίκης και έχουν στο έδαφός τους λίμνη
+select distinct n2.*
+from nomoi as n1
+join nomoi as n2 on st_touches(n1.geometry, n2.geometry)
+join limnes as l on st_intersects(n2.geometry, l.geometry)
+where n1.name_gr like '%ΘΕΣΣ%' and n2.name_gr not like '%ΘΕΣΣ%';
+
+
+-- query3 Νομοί που δεν έχουν αεροδρόμιο
+select n.*
+from nomoi as n
+left join aerodromia as a on st_contains(n.geometry, a.geometry)
+where a.geometry is null;
