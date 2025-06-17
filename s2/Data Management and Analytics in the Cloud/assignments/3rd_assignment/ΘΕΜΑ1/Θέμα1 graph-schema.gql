@@ -1,0 +1,59 @@
+type Φοιτητής {
+  ΑΕΜ: 
+  Όνομα: 
+  : Τμήμα @relationship(type: "ΑΝΗΚΕΙ_ΣΕ", direction: OUT)
+  : Εξέταση @relationship(type: "ΒΑΘΜΟΛΟΓΕΙΤΑΙ_ΣΕ", direction: OUT)
+}
+
+type Μάθημα {
+  κωδικός: 
+  τίτλος: 
+  διδακτικές_μονάδες: 
+  : Τμήμα @relationship(type: "ΔΙΔΑΣΚΕΤΑΙ", direction: IN)
+  : Εξέταση @relationship(type: "ΕΞΕΤΑΖΕΤΑΙ_ΣΕ", direction: IN)
+}
+
+type Διδάσκουσα {
+  ΑΦΜ: 
+  όνομα: 
+  διεύθυνση: 
+  : Τμήμα @relationship(type: "ΔΙΔΑΣΚΕΤΑΙ_ΑΠΟ", direction: IN)
+}
+
+type Αμφιθέατρο {
+  αριθμός: 
+  θέσεις: 
+  : Τμήμα @relationship(type: "ΔΙΔΑΣΚΕΤΑΙ_ΣΤΟ", direction: IN)
+  : Εξέταση @relationship(type: "ΦΙΛΟΞΕΝΕΙΤΑΙ_ΣΕ", direction: IN)
+}
+
+type Επιτηρήτρια {
+  κωδικός: 
+  όνομα: 
+  τηλέφωνο: 
+  : Εξέταση @relationship(type: "ΕΠΙΤΗΡΕΙΤΑΙ_ΑΠΟ", direction: IN)
+}
+
+type Τμήμα {
+  α_α: 
+  ημέρα: 
+  ώρα : 
+  : Φοιτητής @relationship(type: "ΑΝΗΚΕΙ_ΣΕ", direction: IN)
+  : Διδάσκουσα @relationship(type: "ΔΙΔΑΣΚΕΤΑΙ_ΑΠΟ", direction: OUT)
+  : Αμφιθέατρο @relationship(type: "ΔΙΔΑΣΚΕΤΑΙ_ΣΤΟ", direction: OUT)
+  : Μάθημα @relationship(type: "ΔΙΔΑΣΚΕΤΑΙ", direction: OUT)
+}
+
+type Εξέταση {
+  εξεταστική: 
+  ώρα: 
+  ημερομηνία: 
+  : Φοιτητής @relationship(type: "ΒΑΘΜΟΛΟΓΕΙΤΑΙ_ΣΕ", direction: IN)
+  : Αμφιθέατρο @relationship(type: "ΦΙΛΟΞΕΝΕΙΤΑΙ_ΣΕ", direction: OUT)
+  : Επιτηρήτρια @relationship(type: "ΕΠΙΤΗΡΕΙΤΑΙ_ΑΠΟ", direction: OUT)
+  : Μάθημα @relationship(type: "ΕΞΕΤΑΖΕΤΑΙ_ΣΕ", direction: OUT)
+}
+
+interface {
+  βαθμός: 
+}

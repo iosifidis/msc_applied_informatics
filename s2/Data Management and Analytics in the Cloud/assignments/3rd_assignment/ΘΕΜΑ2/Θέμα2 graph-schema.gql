@@ -1,0 +1,40 @@
+type Πελάτης {
+  email: 
+  όνομα: 
+  τηλέφωνο: 
+  ff: Αεροπορική_Εταιρία @relationship(type: "ΕΧΕΙ_FF_ΛΟΓΑΡΙΑΣΜΟ", direction: OUT, properties: "Ff")
+  : Επιλογή_Προτίμησης @relationship(type: "ΚΑΝΕΙ_ΕΠΙΛΟΓΗ", direction: OUT)
+}
+
+type Αεροπορική_Εταιρία {
+  url: 
+  όνομα: 
+  αεροδρόμιο_έδρα: 
+  ff: Πελάτης @relationship(type: "ΕΧΕΙ_FF_ΛΟΓΑΡΙΑΣΜΟ", direction: IN, properties: "Ff")
+  : Επιλογή_Προτίμησης @relationship(type: "ΠΡΟΤΙΜΑ_ΑΕΡΟΠΟΡΙΚΗ", direction: IN)
+}
+
+type Χώρα {
+  όνομα: 
+  νόμισμα: 
+  : Προορισμός @relationship(type: "ΒΡΙΣΚΕΤΑΙ_ΣΕ", direction: IN)
+}
+
+type Προορισμός {
+  κωδικός: 
+  όνομα: 
+  : Χώρα @relationship(type: "ΒΡΙΣΚΕΤΑΙ_ΣΕ", direction: OUT)
+  : Επιλογή_Προτίμησης @relationship(type: "ΑΦΟΡΑ_ΠΡΟΟΡΙΣΜΟ", direction: IN)
+}
+
+type Επιλογή_Προτίμησης {
+  : 
+  : Πελάτης @relationship(type: "ΚΑΝΕΙ_ΕΠΙΛΟΓΗ", direction: IN)
+  : Προορισμός @relationship(type: "ΑΦΟΡΑ_ΠΡΟΟΡΙΣΜΟ", direction: OUT)
+  : Αεροπορική_Εταιρία @relationship(type: "ΠΡΟΤΙΜΑ_ΑΕΡΟΠΟΡΙΚΗ", direction: OUT)
+}
+
+interface Ff {
+  αριθμός_μέλους: 
+  πόντοι: 
+}

@@ -1,0 +1,73 @@
+1.
+MATCH (q:Question)-[:TAGGED]->(t1:Tag),
+      (q)-[:TAGGED]->(t2:Tag)
+WHERE t1.name = 'cypher' AND t2.name = 'indexing'
+RETURN q.title , t1.name , t2.name 
+
+2.
+MATCH (u:User)-[:ASKED]->(q:Question)
+WHERE NOT (q)<-[:ANSWERED]-(:Answer)
+AND (q)<-[:COMMENTED_ON]-(:Comment)
+RETURN DISTINCT u.display_name
+
+3.
+MATCH (u:User)-[:ASKED]->(q:Question)-[:TAGGED]->(t:Tag)
+WITH u, COLLECT(DISTINCT t.name) AS distinctTagNames
+RETURN u.display_name AS UserName, SIZE(distinctTagNames) AS TotalDistinctTags
+ORDER BY TotalDistinctTags DESC
+LIMIT 1
+
+4.
+MATCH (q:Question)
+RETURN q
+ORDER BY q.view_count DESC
+LIMIT 1
+
+5.
+MATCH (u:User)-[:ASKED]->(q:Question)
+WHERE NOT EXISTS {
+  MATCH (u)-[:PROVIDED]->(:Answer)-[:ANSWERED]->(q)
+}
+AND NOT EXISTS {
+  MATCH (u)-[:COMMENTED]->(:Comment)-[:COMMENTED_ON]->(q)
+}
+RETURN DISTINCT u.display_name
+
+6.
+MATCH (q:Question)-[:TAGGED]->(t:Tag)
+WITH q, COLLECT(DISTINCT t.name) AS tags
+MATCH (q)<-[:COMMENTED_ON]-(c:Comment)
+WITH q, tags, COUNT(DISTINCT c) AS comment_count
+WHERE comment_count >= 10
+RETURN q.title AS question_title, comment_count, tags
+
+7.
+MATCH (t1:Tag)<-[:TAGGED]-(q:Question)-[:TAGGED]->(t2:Tag)
+WHERE t1.name < t2.name
+WITH t1.name AS tag1, t2.name AS tag2, COUNT(q) AS count
+WHERE count > 10
+RETURN tag1, tag2, count
+ORDER BY count DESC
+
+8.
+MATCH path = (c1:Comment)-[*..5]-(c2:Comment)
+WHERE c1.score > 1 AND c2.score > 1
+  AND id(c1) < id(c2)
+RETURN path
+
+
+9.
+MATCH (t1:Tag), (t2:Tag)
+WHERE t1.name CONTAINS 'neo4j' AND t1.name <> 'neo4j'
+  AND t2.name CONTAINS 'neo4j' AND t2.name <> 'neo4j'
+  AND id(t1) < id(t2)
+MATCH p = shortestPath((t1)-[*]-(t2))
+RETURN t1.name, t2.name2, length(p) 
+
+10.
+MATCH (u:User)
+WHERE EXISTS { (u)-[:ASKED]->(:Question) }
+  AND EXISTS { (u)-[:PROVIDED]->(:Answer) }
+  AND EXISTS { (u)-[:COMMENTED]->(:Comment) }
+RETURN u.display_name AS display_name
+

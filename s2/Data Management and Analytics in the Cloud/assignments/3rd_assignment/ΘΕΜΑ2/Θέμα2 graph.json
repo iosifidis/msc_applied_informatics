@@ -1,0 +1,181 @@
+{
+  "style": {
+    "font-family": "Nunito Sans",
+    "background-color": "#F2F2F2",
+    "background-image": "",
+    "background-size": "100%",
+    "node-color": "#4C8EDA",
+    "border-width": 0,
+    "border-color": "#000000",
+    "radius": 75,
+    "node-padding": 5,
+    "node-margin": 2,
+    "outside-position": "auto",
+    "node-icon-image": "",
+    "node-background-image": "",
+    "icon-position": "inside",
+    "icon-size": 64,
+    "caption-position": "inside",
+    "caption-max-width": 200,
+    "caption-color": "#ffffff",
+    "caption-font-size": 20,
+    "caption-font-weight": "normal",
+    "label-position": "inside",
+    "label-display": "bare",
+    "label-color": "#ffffff",
+    "label-background-color": "#848484",
+    "label-border-color": "#848484",
+    "label-border-width": 3,
+    "label-font-size": 20,
+    "label-padding": 5,
+    "label-margin": 4,
+    "directionality": "directed",
+    "detail-position": "above",
+    "detail-orientation": "parallel",
+    "arrow-width": 3,
+    "arrow-color": "#848484",
+    "margin-start": 5,
+    "margin-end": 5,
+    "margin-peer": 20,
+    "attachment-start": "normal",
+    "attachment-end": "normal",
+    "relationship-icon-image": "",
+    "type-color": "#848484",
+    "type-background-color": "#F2F2F2",
+    "type-border-color": "#848484",
+    "type-border-width": 0,
+    "type-font-size": 21,
+    "type-padding": 5,
+    "property-position": "outside",
+    "property-alignment": "colon",
+    "property-color": "#848484",
+    "property-font-size": 20,
+    "property-font-weight": "normal"
+  },
+  "nodes": [
+    {
+      "id": "n0",
+      "position": {
+        "x": -304.46491812150845,
+        "y": -8
+      },
+      "caption": "",
+      "style": {},
+      "labels": [
+        "Πελάτης"
+      ],
+      "properties": {
+        "email": "",
+        "όνομα": "",
+        "τηλέφωνο": ""
+      }
+    },
+    {
+      "id": "n1",
+      "position": {
+        "x": 429.6534423685585,
+        "y": -8
+      },
+      "caption": "",
+      "style": {},
+      "labels": [
+        "Αεροπορική_Εταιρία"
+      ],
+      "properties": {
+        "url": "",
+        "όνομα": "",
+        "αεροδρόμιο_έδρα": ""
+      }
+    },
+    {
+      "id": "n2",
+      "position": {
+        "x": -304.46491812150845,
+        "y": 478.2878850507535
+      },
+      "caption": "",
+      "style": {},
+      "labels": [
+        "Χώρα"
+      ],
+      "properties": {
+        "όνομα": "",
+        "νόμισμα": ""
+      }
+    },
+    {
+      "id": "n3",
+      "position": {
+        "x": 321.49647884550575,
+        "y": 478.2878850507535
+      },
+      "caption": "",
+      "style": {},
+      "labels": [
+        "Προορισμός"
+      ],
+      "properties": {
+        "κωδικός": "",
+        "όνομα": ""
+      }
+    },
+    {
+      "id": "n4",
+      "position": {
+        "x": 8.515780361998422,
+        "y": 235.14394252537713
+      },
+      "caption": "",
+      "style": {},
+      "labels": [
+        "Επιλογή_Προτίμησης"
+      ],
+      "properties": {}
+    }
+  ],
+  "relationships": [
+    {
+      "id": "n0",
+      "type": "ΕΧΕΙ_FF_ΛΟΓΑΡΙΑΣΜΟ",
+      "style": {},
+      "properties": {
+        "αριθμός_μέλους": "",
+        "πόντοι": ""
+      },
+      "fromId": "n0",
+      "toId": "n1"
+    },
+    {
+      "id": "n1",
+      "type": "ΒΡΙΣΚΕΤΑΙ_ΣΕ",
+      "style": {},
+      "properties": {},
+      "fromId": "n3",
+      "toId": "n2"
+    },
+    {
+      "id": "n2",
+      "type": "ΚΑΝΕΙ_ΕΠΙΛΟΓΗ",
+      "style": {},
+      "properties": {},
+      "fromId": "n0",
+      "toId": "n4"
+    },
+    {
+      "id": "n3",
+      "type": "ΑΦΟΡΑ_ΠΡΟΟΡΙΣΜΟ",
+      "style": {},
+      "properties": {},
+      "fromId": "n4",
+      "toId": "n3"
+    },
+    {
+      "id": "n4",
+      "type": "ΠΡΟΤΙΜΑ_ΑΕΡΟΠΟΡΙΚΗ",
+      "style": {},
+      "properties": {},
+      "fromId": "n4",
+      "toId": "n1"
+    }
+  ]
+}

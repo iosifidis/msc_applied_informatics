@@ -1,0 +1,150 @@
+﻿[
+  {
+    "nodes": [
+      {
+        "identity": -103,
+        "labels": [
+          "Answer"
+        ],
+        "properties": {
+          "name": "Answer",
+          "indexes": [],
+          "constraints": [
+            "Constraint( id=19, name='constraint_7e29bbac', type='NODE PROPERTY UNIQUENESS', schema=(:Answer {uuid}), ownedIndex=16 )"
+          ]
+        },
+        "elementId": "-103"
+      },
+      {
+        "identity": -104,
+        "labels": [
+          "Comment"
+        ],
+        "properties": {
+          "name": "Comment",
+          "indexes": [],
+          "constraints": [
+            "Constraint( id=20, name='constraint_32ea8862', type='NODE PROPERTY UNIQUENESS', schema=(:Comment {uuid}), ownedIndex=17 )"
+          ]
+        },
+        "elementId": "-104"
+      },
+      {
+        "identity": -101,
+        "labels": [
+          "User"
+        ],
+        "properties": {
+          "name": "User",
+          "indexes": [],
+          "constraints": [
+            "Constraint( id=21, name='constraint_b13a3b7d', type='NODE PROPERTY UNIQUENESS', schema=(:User {uuid}), ownedIndex=15 )"
+          ]
+        },
+        "elementId": "-101"
+      },
+      {
+        "identity": -100,
+        "labels": [
+          "Question"
+        ],
+        "properties": {
+          "name": "Question",
+          "indexes": [],
+          "constraints": [
+            "Constraint( id=18, name='constraint_401df8db', type='NODE PROPERTY UNIQUENESS', schema=(:Question {uuid}), ownedIndex=13 )"
+          ]
+        },
+        "elementId": "-100"
+      },
+      {
+        "identity": -102,
+        "labels": [
+          "Tag"
+        ],
+        "properties": {
+          "name": "Tag",
+          "indexes": [],
+          "constraints": [
+            "Constraint( id=22, name='constraint_64b1b1cf', type='NODE PROPERTY UNIQUENESS', schema=(:Tag {name}), ownedIndex=14 )"
+          ]
+        },
+        "elementId": "-102"
+      }
+    ],
+    "relationships": [
+      {
+        "identity": -101,
+        "start": -100,
+        "end": -102,
+        "type": "TAGGED",
+        "properties": {
+          "name": "TAGGED"
+        },
+        "elementId": "-101",
+        "startNodeElementId": "-100",
+        "endNodeElementId": "-102"
+      },
+      {
+        "identity": -100,
+        "start": -101,
+        "end": -100,
+        "type": "ASKED",
+        "properties": {
+          "name": "ASKED"
+        },
+        "elementId": "-100",
+        "startNodeElementId": "-101",
+        "endNodeElementId": "-100"
+      },
+      {
+        "identity": -102,
+        "start": -103,
+        "end": -100,
+        "type": "ANSWERED",
+        "properties": {
+          "name": "ANSWERED"
+        },
+        "elementId": "-102",
+        "startNodeElementId": "-103",
+        "endNodeElementId": "-100"
+      },
+      {
+        "identity": -105,
+        "start": -101,
+        "end": -104,
+        "type": "COMMENTED",
+        "properties": {
+          "name": "COMMENTED"
+        },
+        "elementId": "-105",
+        "startNodeElementId": "-101",
+        "endNodeElementId": "-104"
+      },
+      {
+        "identity": -104,
+        "start": -104,
+        "end": -100,
+        "type": "COMMENTED_ON",
+        "properties": {
+          "name": "COMMENTED_ON"
+        },
+        "elementId": "-104",
+        "startNodeElementId": "-104",
+        "endNodeElementId": "-100"
+      },
+      {
+        "identity": -103,
+        "start": -101,
+        "end": -103,
+        "type": "PROVIDED",
+        "properties": {
+          "name": "PROVIDED"
+        },
+        "elementId": "-103",
+        "startNodeElementId": "-101",
+        "endNodeElementId": "-103"
+      }
+    ]
+  }
+]
