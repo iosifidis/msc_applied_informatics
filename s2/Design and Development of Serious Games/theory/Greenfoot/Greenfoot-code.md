@@ -376,31 +376,28 @@ public class Hero extends Actor
     }
     
     public void animate(int first, int last)
-    // ...
-}
+    {
+        if (currentImage < first || currentImage >= last)
+        {
+            currentImage = first;
+        }
+        else
+        {
+            currentImage++;
+        }
+        setImage(images[currentImage]);
+    }
 
-{
-    if (currentImage < first || currentImage >= last)
+    private void checkKeys()
     {
-        currentImage = first;
-    }
-    else
-    {
-        currentImage++;
-    }
-    setImage(images[currentImage]);
-}
-
-private void checkKeys()
-{
-    if (Greenfoot.isKeyDown("right"))
-    {
-        animate(0, 2);
-    }
-    if (Greenfoot.isKeyDown("left"))
-    {
-        animate(3, 5);
-    }
+        if (Greenfoot.isKeyDown("right"))
+        {
+            animate(0, 2);
+        }
+        if (Greenfoot.isKeyDown("left"))
+        {
+            animate(3, 5);
+        }
 }
 ```
 
@@ -428,6 +425,8 @@ public void sunPlanetMoon() {
     addObject(new Body(20, 4.2, new Vector(90, 2.2), new Color(0, 124, 196)), 720, 260);
     addObject(new Body(5, 0.8, new Vector(90, 3.25), new Color(240, 220, 96)), 748, 260);
 }
+
+// addObject(new Body(μέγεθος, μάζα, new Vector(κατεύθυνση, ταχύτητα), new Color(r, g, b)), x, y);
 
 // Αφαίρεση όλων των αντικειμένων
 private void removeAllObjects() {
