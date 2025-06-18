@@ -444,6 +444,17 @@ public void sunPlanetMoon() {
 }
 ```
 
+## Κλάση Vector
+
+```
+public final class Vector
+{
+    double dx;
+    double dy;
+    int direction;
+    double length;
+```
+
 ## **Σελίδα 20 – Ορισμός της κλάσης Body**
 ```java
 public class Body extends SmoothMover {
@@ -459,6 +470,7 @@ public class Body extends SmoothMover {
     // Constructor με ορίσματα
     public Body(int size, double mass, Vector movement, Color color) {
         this.mass = mass;
+        addForce(movement)
         GreenfootImage image = new GreenfootImage(size, size);
         image.setColor(color);
         image.fillOval(0, 0, size - 1, size - 1);
@@ -472,12 +484,32 @@ public class Body extends SmoothMover {
 
     public void act() {
         // εδώ μπαίνει η κίνηση και η φυσική
+        move(); // κληρονομείται από την SmoothMover
     }
 }
 ```
 
 ## **Σελίδα 29 – Υπολογισμός βαρυτικής δύναμης**
 ```java
+public void act()
+{
+    applyForces();
+    move();
+}
+
+private void applyForces()
+{
+    List<Body> bodies = getWorld.getObjects(Body.class);
+    
+    for (Body body : bodies)
+    {
+        if (body!= this)
+        {
+            applyGravity (body); // Υπολογίζουμε δυνάμεις βαρύτητας
+        }
+     }
+}     
+
 private void applyGravity(Body other) {
     double dx = other.getExactX() - this.getExactX();
     double dy = other.getExactY() - this.getExactY();
@@ -497,16 +529,20 @@ private void applyGravity(Body other) {
 ## **Κατασκευαστής κλάσης Space: Σχεδίαση σκηνικού με κώδικα**
 ```java
 // Στο constructor της Space:
-GreenfootImage bg = getBackground();
-bg.setColor(Color.BLACK);
-bg.fill();
-Rocket rocket = new Rocket();
-addObject(rocket, getWidth()/2, getHeight()/2);
-addAsteroids(5);
-Counter scoreboard = new Counter("Score: ");
-addObject(scoreboard, 50, 20);
-Explosion.initializeImages();
-ProtonWave.initializeImages();
+public Space()
+{
+    super(600, 400, 1);
+    GreenfootImage bg = getBackground();
+    bg.setColor(Color.BLACK);
+    bg.fill();
+    Rocket rocket = new Rocket();
+    addObject(rocket, getWidth()/2, getHeight()/2);
+    addAsteroids(5);
+    Counter scoreboard = new Counter("Score: ");
+    addObject(scoreboard, 50, 20);
+    Explosion.initializeImages();
+    ProtonWave.initializeImages();
+}
 ```
 
 ## **Μέθοδος addAsteroids: Προσθήκη αστεροειδών**
@@ -514,9 +550,40 @@ ProtonWave.initializeImages();
 private void addAsteroids(int count) {
     for (int i = 0; i < count; i++) {
         Asteroid a = new Asteroid();
-        int x = Greenfoot.getRandomNumber(getWidth());
-        int y = Greenfoot.getRandomNumber(getHeight());
+        int x = Greenfoot.getRandomNumber(getWidth()/2);
+        int y = Greenfoot.getRandomNumber(getHeight()/2);
         addObject(a, x, y);
+    }
+}
+```
+
+## **Προσθήκη αστριών**
+```
+public class Space extends World
+{
+    private Counter scoreCounter;
+    private int startAsteroids = 3;
+
+    public Space()
+    {
+        super(600, 400, 1);
+        GreenfootImage background = getBackground();
+        background.setColor(Color.BLACK);
+        background.fill();
+        createStars(300);
+    }
+
+    private void createStars(int number)
+    {
+        GreenfootImage background = getBackground();
+        for(int i=0; i < number; i++)
+        {
+            int x = Greenfoot.getRandomNumber( getWidth() );
+            int y = Greenfoot.getRandomNumber( getHeight() );
+            int color = 120 - Greenfoot.getRandomNumber(100);
+            background.setColor(new Color(color,color,color));
+            background.fillOval(x, y, 2, 2);
+        }
     }
 }
 ```
@@ -524,8 +591,9 @@ private void addAsteroids(int count) {
 ## **Κλάση Rocket: Έλεγχος κίνησης & ώθηση**
 ```java
 public void act() {
+    if (Greenfoot.isKeyDown("space")) fire();
     if (Greenfoot.isKeyDown("left")) turn(-5);
-    if (Greenfoot.isKeyDown("right")) turn(5);
+    if (Greenfoot.isKeyDown("right")) turn(5); // setRotation(getRotation() + 5);
     if (Greenfoot.isKeyDown("up")) {
         Vector thrust = new Vector(getRotation(), 0.3);
         addForce(thrust);
