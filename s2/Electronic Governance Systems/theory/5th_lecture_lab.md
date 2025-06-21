@@ -1,4 +1,4 @@
-### ΒΡΜΝ (BPMN) - Events & Gateways  
+# ΒΡΜΝ (BPMN) - Events & Gateways  
 
 ---
 
