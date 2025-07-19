@@ -35,7 +35,7 @@ def calculate_grades():
     
     # Βαθμολογίες Εξετάσεων
     pollaplon_grade = get_grade_input("Βαθμός Εξέτασης Πολλαπλών: ")
-    bpmn_grade = get_grade_input("Βαθμός Εξέτασης ΒΠΜΝ: ")
+    bpmn_grade = get_grade_input("Βαθμός Εξέτασης BPMN: ")
 
     # Βαθμολογίες Εργασιών
     assignment_grades = []
