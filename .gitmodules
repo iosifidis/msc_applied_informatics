@@ -1,0 +1,3 @@
+[submodule "thesis/msc-pims-code"]
+	path = thesis/msc-pims-code
+	url = https://github.com/iosifidis/msc-pims.git
