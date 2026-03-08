@@ -4,3 +4,6 @@
 [submodule "s1/Cloud Service Development/assignments/RideOrCry-docker-deployment"]
 	path = s1/Cloud Service Development/assignments/RideOrCry-docker-deployment
 	url = https://github.com/ihopewecanchangeitlater/Cloud-Services-Development.git
+[submodule "s2/Design and Development of Serious Games/assignments/2nd_assignment/Phaser-code"]
+	path = s2/Design and Development of Serious Games/assignments/2nd_assignment/MindBloom
+	url = https://github.com/ihopewecanchangeitlater/SG-Final-Project.git
