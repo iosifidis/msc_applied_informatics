@@ -1,3 +1,6 @@
 [submodule "thesis/msc-pims-code"]
 	path = thesis/msc-pims-code
 	url = https://github.com/iosifidis/msc-pims.git
+[submodule "s1/Cloud Service Development/assignments/RideOrCry-docker-deployment"]
+	path = s1/Cloud Service Development/assignments/RideOrCry-docker-deployment
+	url = https://github.com/ihopewecanchangeitlater/Cloud-Services-Development.git
