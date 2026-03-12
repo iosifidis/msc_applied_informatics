@@ -22,6 +22,8 @@
 
 ## Βαθμός: 9,4
 
+Σύνδεσμος στο Ιδρυματικό Αποθετήριο [ΨΗΦΙΔΑ](https://dspace.lib.uom.gr/handle/2159/34163)
+
 ## 🔗 Αποθετήριο Ανάπτυξης
 Ο κώδικας του έργου φιλοξενείται στο εξής αποθετήριο:
 [https://github.com/iosifidis/msc-pims](https://github.com/iosifidis/msc-pims)
@@ -51,6 +53,8 @@ Using Gemini 3 Pro as a development partner (AI-Assisted Development) yielded th
 * **The Developer's Role:** Human insight is crucial for ensuring security, architectural coherence, and solving complex logic. The developer's role shifts from writing manual code to acting as a "Software Architect / Orchestrator".
 
 ## Grade: 9.4 / 10
+
+Link to UoM Digital Library and Institutional Repository [PSEPHEDA](https://dspace.lib.uom.gr/handle/2159/34163)
 
 ## 🔗 Repository
 The full source code of this project can be found here:
